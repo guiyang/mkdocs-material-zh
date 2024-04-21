@@ -1,4 +1,4 @@
-# How to upgrade
+# 如何升级
 
 Upgrade to the latest version with:
 
