@@ -1,26 +1,20 @@
-# Creating a reproduction
+# 创建复现步骤 {#creating-a-reproduction}
 
-A reproduction is a simplified version of a bug that demonstrates the specific
-scenario in which the bug occurred. It includes all necessary minimal settings
-and instructions and should be as simple as possible while still demonstrating
-the issue.
+复现步骤是指重现软件中某个特定错误的简化版过程。它包括所有必要的最小设置和说明，并且应尽可能简单，同时能够展示问题所在。
 
-## Guide
+## 指南 {#guide}
 
-### Environment <small>optional</small> { #environment }
+### 环境 <small>可选</small> { #environment }
 
-We recommend using a [virtual environment], which is an isolated Python runtime.
-If you are in a virtual environment, any packages that you install or upgrade
-will be local to the environment. If you run into problems, you can
-just delete and recreate the environment. It's trivial to set up:
+我们推荐使用[虚拟环境][virtual environment]，这是一个隔离的Python运行时环境。如果你在虚拟环境中，你安装或升级的任何包都只限于该环境中。如果遇到问题，你可以简单地删除并重建环境。设置非常简单：
 
--   Create a new virtual environment with:
+-   创建一个新的虚拟环境：
 
     ```
     python3 -m venv venv
     ```
 
--   Activate the environment with:
+-   激活环境：
 
     === ":material-apple: macOS"
 
@@ -41,10 +35,9 @@ just delete and recreate the environment. It's trivial to set up:
         ```
 
 
-    Your terminal should now print `(venv)` before the prompt, which is how you
-    know that you are inside the virtual environment that you just created.
+    此时你的终端应该在提示符前显示`(venv)`，这表示你已经处于刚刚创建的虚拟环境中。
 
--   Exit the environment with:
+-   退出环境：
 
     ```
     deactivate
@@ -52,64 +45,46 @@ just delete and recreate the environment. It's trivial to set up:
 
   [virtual environment]: https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment
 
-### Minimal reproduction
+### 最小化复现 {#minimal-reproduction}
 
-Following the instructions below, you will set up a skeleton project to create
-a reproduction. As mentioned above, we recommend using a [virtual environment],
-so create a new folder in your working directory and a new virtual environment
-inside it. Next:
+按照下面的说明，你将设置一个项目骨架来创建复现。如上所述，我们推荐使用[虚拟环境][virtual environment]，因此在你的工作目录中创建一个新文件夹，并在其中设置一个新的虚拟环境。接下来：
 
-1.  As mentioned in our [bug reporting guide], ensure that you're running the
-    latest version of Material for MkDocs, which might already include a fix for
-    the bug:
+1.  正如我们在[错误报告指南][bug reporting guide]中提到的，确保你运行的是Material for MkDocs的最新版本，这可能已经包含了对该错误的修复：
 
     ```
     pip install --upgrade --force-reinstall mkdocs-material
     ```
 
-2.  Bootstrap a new documentation project using the `mkdocs` executable,
-    which you use as a basis for the reproduction. It's essential to create a
-    new, empty project for this:
+2.  使用`mkdocs`可执行文件启动一个新的文档项目，作为复现的基础。创建一个全新的空项目至关重要：
 
     ```
     mkdocs new .
     ```
 
-    Start by adding the [minimal configuration] in `mkdocs.yml`:
+    首先在`mkdocs.yml`中添加[最小配置][minimal configuration]：
 
     ``` yaml
     theme:
       name: material
     ```
 
-3.  Now, only add the necessary settings to `mkdocs.yml` to keep the
-    reproduction minimal. If you are creating a reproduction for a rendering
-    bug, create only the necessary amount of Markdown documents. __Repeat this
-    step until the bug you want to report can be observed.__
+3.  现在，只在`mkdocs.yml`中添加必要的设置以保持复现的最小化。如果你正在为渲染错误创建复现，只创建必要的Markdown文档。__重复此步骤直到你想报告的错误能够被观察到。__
 
-4.  As a last step, before packing everything into a `.zip` file, double-check
-    all settings and documents if they are essential to the reproduction, which
-    means that the bug does not occur when they are omitted. Remove all
-    non-essential lines and files.
+4.  在将所有内容打包进一个`.zip`文件之前的最后一步，再次检查所有设置和文件是否必要，这意味着如果省略它们错误就不会发生。移除所有非必要的行和文件。
 
   [bug reporting guide]: ../contributing/reporting-a-bug.md#upgrade-to-latest-version
   [minimal configuration]: ../creating-your-site.md#minimal-configuration
 
-### Creating a `.zip` file
+### 创建 `.zip` 文件 {#creating-a-zip-file}
 
-Material for MkDocs 9.0.0 includes a new plugin solely intended to create
-reproductions for bug reports. When the built-in info plugin is enabled, MkDocs
-will add all relevant files to a `.zip`, print a summary to the terminal and
-exit. Add the following lines to `mkdocs.yml`:
+Material for MkDocs 9.0.0包括一个新插件，专门用于为错误报告创建复现。当启用内置的信息插件时，MkDocs会将所有相关文件添加到一个`.zip`中，打印摘要到终端并退出。在`mkdocs.yml`中添加以下行：
 
 ``` yaml
 plugins:
   - info
 ```
 
-Now, when running `mkdocs build`, a file called `example.zip` is automatically
-created, containing the minimal reproduction you can directly attach to your bug
-report.
+现在，当运行`mkdocs build`时，一个名为`example.zip`的文件会自动创建，包含你可以直接附加到你的错误报告中的最小复现。
 
 ```
 INFO     -  Started archive creation for bug report

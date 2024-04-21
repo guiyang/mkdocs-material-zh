@@ -1,93 +1,66 @@
-# Built-in plugins
+# 内置插件 {#built-in-plugins}
 
-Material for MkDocs started out as a theme for [MkDocs][mkdocs], but has since
-evolved into a full-fledged framework for building and maintaining documentation.
-The theme is still the core of the project, but it's now accompanied by a
-growing number of complementary built-in plugins.
+Material for MkDocs 最初是作为 [MkDocs][mkdocs] 的一个主题开始的，但自那以后，它已发展成为一个完整的框架，用于构建和维护文档。主题仍然是项目的核心，但现在它伴随着越来越多的补充内置插件。
 
-We strive to make those plugins as modular and generic as possible, so that they
-can be used in a wide variety of projects and use cases. By providing useful
-default settings, we also try to make them as easy to use as possible, so that
-you can get started quickly, tweaking their settings later on. When
-developing built-in plugins, we always adhere to the following design principles:
+我们努力使这些插件尽可能模块化和通用，以便它们可以在各种项目和用例中使用。通过提供有用的默认设置，我们还尝试使它们尽可能易于使用，以便您可以快速开始，稍后再调整它们的设置。在开发内置插件时，我们始终遵循以下设计原则：
 
-- **Modularity:** Built-in plugins are designed to be modular, so that they can
-  be easily combined to implement sophisticated pipelines. For example, the
-  [offline], [optimize] and [privacy] plugins can be used together to build
-  truly [offline-capable documentation].
+- **模块化:** 内置插件被设计为模块化的，因此它们可以轻松组合以实现复杂的流程。例如，[offline]、[optimize] 和 [privacy] 插件可以一起使用，构建真正的[离线可用文档]。
 
-- **Interoperability:** Built-in plugins are designed to be as compatible as
-  possible, so they can be used in combination with other plugins, including
-  third-party plugins. We strive to make it simple to integrate with the vast
-  ecosystem that has evolved around [MkDocs][mkdocs].
+- **互操作性：** 内置插件被设计为尽可能兼容，因此它们可以与其他插件（包括第三方插件）组合使用。我们努力使其简单地与围绕 [MkDocs][mkdocs] 发展的庞大生态系统集成。
 
-- **Performance:** Built-in plugins are designed to be as fast and
-  memory-efficient as possible, so that they don't unnecessarily slow down
-  builds. This is particularly important for large documentation projects with
-  thousands of pages.
+- **性能：** 内置插件被设计为尽可能快速和内存高效，以便它们不会不必要地减慢构建速度。这对于拥有数千页面的大型文档项目尤其重要。
 
   [mkdocs]: https://www.mkdocs.org/
   [design principles]: ../design-principles.md
-  [offline-capable documentation]: ../setup/building-for-offline-usage.md
+  [离线可用文档]: ../setup/building-for-offline-usage.md
 
-## Categories
+## 类别 {#categories}
 
-### Management
+### 管理 {#management}
 
-The following plugins greatly improve the authoring experience when working on
-documentation projects by providing better management capabilities, from the
-management of plugins, multiple projects, and metadata, to the creation of
-minimal reproductions for bug reports:
+以下插件极大地改善了在文档项目上工作时的编写体验，提供了更好的管理功能，从插件管理、多项目管理和元数据管理，到为错误报告创建最小复现：
 
 <div class="grid cards" markdown>
 
--   :material-format-list-group: &nbsp; __[Built-in group plugin][group]__
+-   :material-format-list-group: &nbsp; __[内置群组插件][group]__
 
     ---
 
-    The group plugin allows to group plugins into logical units to conditionally
-    enable or disable them for specific environments with the use of
-    [environment variables][mkdocs.env].
+    群组插件允许将插件分组为逻辑单元，以便使用[环境变量][mkdocs.env]为特定环境有条件地启用或禁用它们。
 
     ---
 
-    __Optimal management of plugins when building in different environments__
+    __在不同环境中构建时优化插件管理__
 
--   :material-file-tree: &nbsp; __[Built-in meta plugin][meta]__
-
-    ---
-
-    The meta plugin makes it easy to manage metadata (front matter) for all
-    pages in a folder, so a certain subset of pages uses specific tags or a
-    custom template.
+-   :material-file-tree: &nbsp; __[内置元数据插件][meta]__
 
     ---
 
-    __Simpler organization, categorization and management of metadata__
-
--   :material-folder-open: &nbsp; __[Built-in projects plugin][projects]__
+    元数据插件便于管理文件夹中所有页面的元数据（前言），因此某些页面使用特定标签或自定义模板。
 
     ---
 
-    The projects plugin allows to split your main project into multiple distinct
-    projects, build them concurrently and preview them together as one.
+    __简化元数据的组织、分类和管理__
+
+-   :material-folder-open: &nbsp; __[内置项目插件][projects]__
 
     ---
 
-    __Connect multiple projects together, and build them separately or as one__
-
--   :material-information: &nbsp; __[Built-in info plugin][info]__
+    项目插件允许将您的主项目拆分为多个独立的项目，同时构建并一起预览为一个整体。
 
     ---
 
-    The info plugin is a small and useful utility that helps to create
-    self-contained minimal reproductions, so we maintainers can fix reported
-    bugs more quickly.
+    __连接多个项目在一起，分别或作为一个整体构建__
+
+-   :material-information: &nbsp; __[内置信息插件][info]__
 
     ---
 
-    __Your bug reports are of the highest quality, so we can fix them as fast as
-    possible__
+    信息插件是一个小而有用的工具，帮助创建自包含的最小复现，因此我们的维护人员可以更快地修复报告的错误。
+
+    ---
+
+    __您的错误报告质量最高，以便我们能尽快修复__
 
 
 </div>
@@ -97,63 +70,51 @@ minimal reproductions for bug reports:
   [meta]: meta.md
   [projects]: projects.md
 
-### Optimization
+### 优化 {#optimization}
 
-The following plugins are designed to help you build optimized documentation,
-making it more accessible to your users through faster loading times, better
-search engine rankings, beautiful preview images on social media, and GDPR
-compliance with a few lines of configuration:
+以下插件旨在帮助您构建优化的文档，通过更快的加载时间、更好的搜索引擎排名、在社交媒体上的美观预览图像和几行配置实现 GDPR 合规性，使其对用户更加可访问：
 
 <div class="grid cards" markdown>
 
--   :material-share-circle: &nbsp; __[Built-in social plugin][social]__
+-   :material-share-circle: &nbsp; __[内置社交插件][social]__
 
     ---
 
-    The social plugin automatically generates beautiful and customizable
-    social cards for each page of your documentation, showing as previews on
-    social media.
+    社交插件自动生成每个页面的美观且可定制的社交卡片，显示为社交媒体上的预览。
 
     ---
 
-    __Links to your site render beautiful social cards when shared on social
-    media__
+    __当在社交媒体上分享您的网站链接时，渲染美观的社交卡片__
 
--   :material-rabbit: &nbsp; __[Built-in optimize plugin][optimize]__
-
-    ---
-
-    The optimize plugin automatically identifies and optimizes all media files
-    that you reference in your project by using compression and conversion
-    techniques.
+-   :material-rabbit: &nbsp; __[内置优化插件][optimize]__
 
     ---
 
-    __Your site loads faster as smaller images are served to your users__
-
--   :material-shield-account: &nbsp; __[Built-in privacy plugin][privacy]__
+    优化插件自动识别并使用压缩和转换技术优化您项目中引用的所有媒体文件。
 
     ---
 
-    The privacy plugin downloads external assets automatically for easy
-    self-hosting, allowing for GDPR compliance with a single line of
-    configuration.
+    __您的站点加载更快，因为为您的用户提供了更小的图片__
+
+-   :material-shield-account: &nbsp; __[内置隐私插件][privacy]__
 
     ---
 
-    __Your documentation can be made GDPR compliant with minimal effort__
-
--   :material-connection: &nbsp; __[Built-in offline plugin][offline]__
+    隐私插件自动下载外部资产以便易于自托管，允许通过一行配置实现 GDPR 合规。
 
     ---
 
-    The offline plugin adds support for building [offline-capable documentation],
-    so you can distribute the [`site` directory][mkdocs.site_dir] as a `.zip`
-    file that can be downloaded.
+    __您的文档可以通过最小的努力实现 GDPR 合规__
+
+-   :material-connection: &nbsp; __[内置离线插件][offline]__
 
     ---
 
-    __Your documentation can work without connectivity to the internet__
+    离线插件添加了构建[离线可用文档]的支持，因此您可以将 [`site` 目录][mkdocs.site_dir] 分发为可下载的 `.zip` 文件。
+
+    ---
+
+    __您的文档可以在没有互联网连接的情况下工作__
 
 </div>
 
@@ -162,62 +123,51 @@ compliance with a few lines of configuration:
   [privacy]: privacy.md
   [social]: social.md
 
-### Content
+### 内容 {#content}
 
-The following plugins are designed to help you set up a blog, provide search
-functionality to your users, add tags to pages and posts, and use the same
-typesetting capabilities in specific parts of the documentation exactly as in
-the main content:
+以下插件旨在帮助您设置博客，为用户提供搜索功能，向页面和帖子添加标签，并在文档的特定部分使用与主内容相同的排版能力：
 
 <div class="grid cards" markdown>
 
--   :material-newspaper-variant-outline: &nbsp; __[Built-in blog plugin][blog]__
+-   :material-newspaper-variant-outline: &nbsp; __[内置博客插件][blog]__
 
     ---
 
-    The blog plugin adds first-class support for blogging to Material for
-    MkDocs, either as a sidecar to your documentation or as a standalone
-    installation.
+    博客插件为 Material for MkDocs 添加了一流的博客支持，可以作为文档的侧车或作为独立安装。
 
     ---
 
-    __Your blog is built with the same powerful engine as your documentation__
+    __您的博客使用与您的文档相同的强大引擎构建__
 
--   :material-magnify: &nbsp; __[Built-in search plugin][search]__
-
-    ---
-
-    The search plugin adds a search bar to the header, allowing users to search
-    the entire documentation, so it's easier for them to find what they're
-    looking for.
+-   :material-magnify: &nbsp; __[内置搜索插件][search]__
 
     ---
 
-    __Your documentation is searchable without any external services, even
-    offline__
-
--   :material-tag-text: &nbsp; __[Built-in tags plugin][tags]__
+    搜索插件在标题栏中添加了一个搜索栏，允许用户搜索整个文档，使他们更容易找到他们正在寻找的内容。
 
     ---
 
-    The tags plugin adds first-class support for categorizing pages with tags,
-    adding the ability to group related pages to improve the discovery of
-    related content.
+    __您的文档即使离线也可以搜索，无需任何外部服务__
+
+-   :material-tag-text: &nbsp; __[内置标签插件][tags]__
 
     ---
 
-    __Your pages are categorized with tags, yielding additional context__
-
--   :material-format-title: &nbsp; __[Built-in typeset plugin][typeset]__
+    标签插件为使用标签对页面进行分类添加了一流的支持，增加了将相关页面分组以改善相关内容发现的能力。
 
     ---
 
-    The typeset plugin allows to preserve the enriched presentation of titles
-    and headlines within the navigation and table of contents.
+    __您的页面通过标签进行分类，提供额外的上下文__
+
+-   :material-format-title: &nbsp; __[内置排版插件][typeset]__
 
     ---
 
-    __Sidebars preserve the same formatting as section titles in pages__
+    排版插件允许在导航和目录中保留标题和标题的丰富展示。
+
+    ---
+
+    __侧边栏保留与页面中章节标题相同的格式__
 
 </div>
 
@@ -226,21 +176,18 @@ the main content:
   [tags]: tags.md
   [typeset]: typeset.md
 
-## Architecture
+## 架构 {#architecture}
 
-### Multiple instances
+### 多实例 {#multiple-instances}
 
-Several built-in plugins have support for multiple instances, which means that
-they can be used multiple times in the same configuration file, allowing to
-fine-tune behavior for separate sections of your project. Currently, the
-following plugins have support for multiple instances:
+几个内置插件支持多实例，这意味着它们可以在同一配置文件中多次使用，允许为项目的不同部分微调行为。目前，以下插件支持多实例：
 
 <div class="mdx-columns" markdown>
 
-- [Built-in blog plugin][blog]
-- [Built-in group plugin][group]
-- [Built-in optimize plugin][optimize]
-- [Built-in privacy plugin][privacy]
-- [Built-in social plugin][social]
+- [内置博客插件][blog]
+- [内置群组插件][group]
+- [内置优化插件][optimize]
+- [内置隐私插件][privacy]
+- [内置社交插件][social]
 
 </div>

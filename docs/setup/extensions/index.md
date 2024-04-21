@@ -1,23 +1,18 @@
 ---
-title: Extensions
+title: 扩展
 ---
 
-# Extensions
+# 扩展 {#extensions}
 
-Markdown is a very small language with a kind-of reference implementation called
-[John Gruber's Markdown]. [Python Markdown] and [Python Markdown Extensions]
-are two packages that enhance the Markdown writing experience, adding useful
-syntax extensions for technical writing.
+Markdown 是一种非常简单的语言，有一个被称为 [John Gruber's Markdown] 的类参考实现。[Python Markdown] 和 [Python Markdown Extensions] 是两个增强 Markdown 写作体验的包，为技术写作添加了有用的语法扩展。
 
   [John Gruber's Markdown]: https://daringfireball.net/projects/markdown/
   [Python Markdown]: python-markdown.md
   [Python Markdown Extensions]: python-markdown-extensions.md
 
-## Supported extensions
+## 支持的扩展 {#supported-extensions}
 
-The following extensions are all supported by Material for MkDocs and therefore
-strongly recommended. Click on each extension to learn about its purpose and
-configuration:
+以下扩展均由 Material for MkDocs 支持，因此强烈推荐。点击每个扩展了解其用途和配置：
 
 <div class="mdx-columns" markdown>
 
@@ -67,19 +62,15 @@ configuration:
   [Tables]: python-markdown.md#tables
   [Tasklist]: python-markdown-extensions.md#tasklist
 
-## Configuration
+## 配置 {#configuration}
 
-Extensions are configured as part of `mkdocs.yml` – the MkDocs configuration
-file. The following sections contain two example configurations to bootstrap
-your documentation project.
+扩展作为 `mkdocs.yml` -- MkDocs 配置文件的一部分进行配置。以下部分包含两个示例配置，以启动您的文档项目。
 
   [overview]: #advanced-configuration
 
-### Minimal configuration
+### 最小配置 {#minimal-configuration}
 
-This configuration is a good starting point for when you're using Material for
-MkDocs for the first time. The best idea is to explore the [reference], and
-gradually add what you want to use:
+这个配置是您第一次使用 Material for MkDocs 时的良好起点。最好的想法是探索[参考文档]，并逐渐添加您想要使用的内容：
 
 ``` yaml
 markdown_extensions:
@@ -93,12 +84,11 @@ markdown_extensions:
   - pymdownx.superfences
 ```
 
-  [reference]: ../../reference/index.md
+  [参考文档]: ../../reference/index.md
 
-### Recommended configuration
+### 推荐配置 {#recommended-configuration}
 
-This configuration enables all Markdown-related features of Material for MkDocs
-and is great for experienced users bootstrapping a new documentation project:
+此配置启用了 Material for MkDocs 的所有与 Markdown 相关的功能，非常适合有经验的用户启动一个新的文档项目：
 
 ``` yaml
 markdown_extensions:

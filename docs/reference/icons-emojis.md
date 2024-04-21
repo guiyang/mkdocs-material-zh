@@ -2,17 +2,14 @@
 icon: material/emoticon-happy-outline
 ---
 
-# Icons, Emojis
+# 图标与表情符号 Icons, Emojis {#icons-emojis}
 
-One of the best features of Material for MkDocs is the possibility to use [more
-than 10,000 icons][icon search] and thousands of emojis in your project
-documentation with practically zero additional effort. Moreover, [custom icons
-can be added] and used in `mkdocs.yml`, documents and templates.
+Material for MkDocs 的最佳功能之一是可以在您的项目文档中使用[超过10,000个图标][图标搜索]和数千个表情符号，几乎不需要额外的努力。此外，还可以添加和使用[自定义图标]。
 
-  [icon search]: #search
-  [custom icons can be added]: ../setup/changing-the-logo-and-icons.md#additional-icons
+  [图标搜索]: #search
+  [自定义图标]: ../setup/changing-the-logo-and-icons.md#additional-icons
 
-## Search
+## 搜索 {#search}
 
 <div class="mdx-iconsearch" data-mdx-component="iconsearch">
   <input
@@ -31,11 +28,9 @@ can be added] and used in `mkdocs.yml`, documents and templates.
   shortcode to copy it to your clipboard.
 </small>
 
-## Configuration
+## 配置 {#configuration}
 
-This configuration enables the use of icons and emojis by using simple
-shortcodes which can be discovered through the [icon search]. Add the following
-lines to `mkdocs.yml`:
+此配置通过使用简单的短代码启用图标和表情符号的使用，这些短代码可以通过[图标搜索]找到。将以下行添加到 `mkdocs.yml`：
 
 ``` yaml
 markdown_extensions:
@@ -45,34 +40,32 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 ```
 
-The following icon sets are bundled with Material for MkDocs:
+Material for MkDocs 预装了以下图标集：
 
 - :material-material-design: – [Material Design]
 - :fontawesome-brands-font-awesome: – [FontAwesome]
 - :octicons-mark-github-16: – [Octicons]
 - :simple-simpleicons: – [Simple Icons]
 
-See additional configuration options:
+查看其他配置选项：
 
-- [Attribute Lists]
-- [Emoji]
-- [Emoji with custom icons]
+- [属性列表]
+- [表情]
+- [自定义图标的表情]
 
   [Material Design]: https://materialdesignicons.com/
   [FontAwesome]: https://fontawesome.com/search?m=free
   [Octicons]: https://octicons.github.com/
   [Simple Icons]: https://simpleicons.org/
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [Emoji]: ../setup/extensions/python-markdown-extensions.md#emoji
-  [Emoji with custom icons]: ../setup/extensions/python-markdown-extensions.md#+pymdownx.emoji.options.custom_icons
+  [属性列表]: ../setup/extensions/python-markdown.md#attribute-lists
+  [表情]: ../setup/extensions/python-markdown-extensions.md#emoji
+  [自定义图标的表情]: ../setup/extensions/python-markdown-extensions.md#+pymdownx.emoji.options.custom_icons
 
-## Usage
+## 使用方法 {#usage]}
 
-### Using emojis
+### 使用表情符号 {#using-emojis}
 
-Emojis can be integrated in Markdown by putting the shortcode of the emoji
-between two colons. If you're using [Twemoji] (recommended), you can look up
-the shortcodes at [Emojipedia]:
+通过将表情符号的短代码放在两个冒号之间，可以在 Markdown 中集成表情符号。如果您使用 [Twemoji]（推荐），可以在 [Emojipedia] 查找短代码：
 
 ``` title="Emoji"
 :smile:
@@ -86,11 +79,10 @@ the shortcodes at [Emojipedia]:
   [Twemoji]: https://github.com/twitter/twemoji
   [Emojipedia]: https://emojipedia.org/twitter/
 
-### Using icons
 
-When [Emoji] is enabled, icons can be used similar to emojis, by referencing
-a valid path to any icon bundled with the theme, which are located in the
-[`.icons`][custom icons] directory, and replacing `/` with `-`:
+### 使用图标 {#using-icons}
+
+启用 [表情] 后，可以通过引用主题中预装的图标的有效路径来类似地使用图标，这些图标位于 [`.icons`][自定义图标] 目录中，并将 `/` 替换为 `-`：
 
 ``` title="Icon"
 :fontawesome-regular-face-laugh-wink:
@@ -102,14 +94,11 @@ a valid path to any icon bundled with the theme, which are located in the
 
 </div>
 
-  [custom icons]: https://github.com/squidfunk/mkdocs-material/tree/master/material/templates/.icons
+  [自定义图标]: https://github.com/squidfunk/mkdocs-material/tree/master/material/templates/.icons
 
-#### with colors
+#### 带颜色的 {#with-colors}
 
-When [Attribute Lists] is enabled, custom CSS classes can be added to icons by
-suffixing the icon with a special syntax. While HTML allows to use [inline
-styles], it's always recommended to add an [additional style sheet] and move
-declarations into dedicated CSS classes:
+启用 [属性列表] 后，可以通过在图标后附加特殊语法添加自定义 CSS 类。虽然 HTML 允许使用[内联样式]，但总是推荐添加[额外样式表]并将声明移到专用的 CSS 类中：
 
 <style>
   .youtube {
@@ -132,7 +121,7 @@ declarations into dedicated CSS classes:
       - stylesheets/extra.css
     ```
 
-After applying the customization, add the CSS class to the icon shortcode:
+应用自定义后，将 CSS 类添加到图标短代码中：
 
 ``` markdown title="Icon with color"
 :fontawesome-brands-youtube:{ .youtube }
@@ -144,15 +133,13 @@ After applying the customization, add the CSS class to the icon shortcode:
 
 </div>
 
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [inline styles]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style
-  [additional style sheet]: ../customization.md#additional-css
+  [属性列表]: ../setup/extensions/python-markdown.md#attribute-lists
+  [内联样式]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style
+  [额外样式表]: ../customization.md#additional-css
 
-#### with animations
+#### 带动画的 {#with-animations}
 
-Similar to adding [colors], it's just as easy to add [animations] to icons by
-using an [additional style sheet], defining a `@keyframes` rule and adding a
-dedicated CSS class to the icon:
+类似于添加[颜色]，通过使用[额外样式表]定义一个 `@keyframes` 规则并向图标添加专用 CSS 类，也很容易为图标添加[动画]：
 
 === ":octicons-file-code-16: `docs/stylesheets/extra.css`"
 
@@ -177,7 +164,7 @@ dedicated CSS class to the icon:
       - stylesheets/extra.css
     ```
 
-After applying the customization, add the CSS class to the icon shortcode:
+应用自定义后，将 CSS 类添加到图标短代码中：
 
 ``` markdown title="Icon with animation"
 :octicons-heart-fill-24:{ .heart }
@@ -189,24 +176,20 @@ After applying the customization, add the CSS class to the icon shortcode:
 
 </div>
 
-  [colors]: #with-colors
-  [animations]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+  [颜色]: #with-colors
+  [动画]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
 
-### Icons, emojis in sidebars :smile:
+### 在侧边栏中使用图标和表情符号 :smile: {#icons-emojis-in-sidebars}
 
-With the help of the [built-in typeset plugin], you can use icons and emojis
-in headings, which will then be rendered in the sidebars. The plugin preserves
-Markdown and HTML formatting.
+借助[内置排版插件]，您可以在标题中使用图标和表情符号，这些标题随后将在侧边栏中渲染。该插件保留 Markdown 和 HTML 格式。
 
-  [built-in typeset plugin]: ../plugins/typeset.md
+  [内置排版插件]: ../plugins/typeset.md
 
-## Customization
+## 自定义 {#customization}
 
-### Using icons in templates
+### 在模板中使用图标 {#using-icons-in-templates}
 
-When you're [extending the theme] with partials or blocks, you can simply
-reference any icon that's [bundled with the theme][icon search] with Jinja's
-[`include`][include] function and wrap it with the `.twemoji` CSS class:
+当您[扩展主题]时，可以简单地引用任何[与主题捆绑的图标][图标搜索]，使用 Jinja 的[`include`][include]函数，并将其包裹在 `.twemoji` CSS 类中：
 
 ``` html
 <span class="twemoji">
@@ -225,7 +208,7 @@ reference any icon that's [bundled with the theme][icon search] with Jinja's
       </div>
     </div>
 
-This is exactly what Material for MkDocs does in its templates.
+这正是 Material for MkDocs 在其模板中所做的。
 
-  [extending the theme]: ../customization.md#extending-the-theme
+  [扩展主题]: ../customization.md#extending-the-theme
   [include]: https://jinja.palletsprojects.com/en/2.11.x/templates/#include

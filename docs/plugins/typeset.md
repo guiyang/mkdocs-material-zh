@@ -1,72 +1,57 @@
 ---
-title: Built-in typeset plugin
+title: 内置排版插件
 icon: material/format-title
 ---
 
-# Built-in typeset plugin
+# 内置排版插件 {#built-in-typeset-plugin}
 
-The typeset plugin allows to preserve the enriched presentation of titles and
-headlines within the navigation and table of contents. This means that code
-blocks, icons, emojis and any other inline formatting can be rendered exactly
-as defined in the page's content.
+排版插件允许在导航和目录表中保留标题和标题的丰富展示。这意味着代码块、图标、表情符号以及任何其他内联格式化都可以按照页面内容中定义的方式精确渲染。
 
 ---
 
-<!-- md:sponsors --> __Sponsors only__ – this plugin is currently reserved to
-[our awesome sponsors].
+<!-- md:sponsors --> __仅限赞助者__ —— 此插件目前仅对[我们的赞助者]开放。
 
-  [our awesome sponsors]: ../insiders/index.md
+  [我们的赞助者]: ../insiders/index.md
 
-## Objective
 
-### How it works
+## 目标 {#objective}
 
-When [building your project], MkDocs extracts the plain text from headlines and
-drops the original formatting. This is generally useful and a good idea, since
-this information is made available to other plugins that might have problems
-when being passed HTML instead of plain text.
+### 它是如何工作的 {#how-it-works}
 
-However, it also means that the entire formatting is lost.
+在[构建您的项目]时，MkDocs 从标题中提取纯文本并丢弃原始格式化。通常，这是有用的，也是个好主意，因为这些信息可以提供给其他可能在传递 HTML 而不是纯文本时遇到问题的插件。
 
-The plugin hooks into the rendering process, extracts the original headlines,
-and makes them available to be used in templates and plugins. The templates of
-Material for MkDocs use this information to render an enriched version of the
-navigation and table of contents.
+然而，这也意味着所有格式化都丢失了。
 
-  [building your project]: ../creating-your-site.md#building-your-site
+插件挂接到渲染过程中，提取原始标题，并使它们可用于模板和插件。Material for MkDocs 的模板使用这些信息来渲染导航和目录表的丰富版本。
 
-### When to use it
+  [构建您的项目]: ../creating-your-site.md#building-your-site
 
-It's generally recommended to use the plugin, because it is a drop-in solution
-that doesn't require any configuration and is designed to work out of the box.
-Since it doesn't overwrite but only adds information, it's not expected to
-interfere with other plugins.
+### 何时使用它 {#when-to-use-it}
 
-## Configuration
+通常建议使用此插件，因为它是一个即插即用的解决方案，不需要任何配置，并且设计为开箱即用。由于它不会覆盖而只是添加信息，因此预期不会与其他插件冲突。
+
+## 配置 {#configuration}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.27.0 -->
 <!-- md:plugin [typeset] – built-in -->
 <!-- md:flag experimental -->
 
-As with all [built-in plugins], getting started with the typeset plugin is
-straightforward. Just add the following lines to `mkdocs.yml`, and observe the
-enriched navigation and table of contents:
+与所有[内置插件]一样，开始使用排版插件非常简单。只需将以下行添加到`mkdocs.yml`中，然后观察丰富的导航和目录表：
 
 ``` yaml
 plugins:
   - typeset
 ```
 
-The typeset plugin is built into Material for MkDocs and doesn't need to be
-installed.
+排版插件内置于 Material for MkDocs 中，无需安装。
 
   [typeset]: typeset.md
-  [built-in plugins]: index.md
+  [内置插件]: index.md
 
-### General
+### 通用 {#general}
 
-The following settings are available:
+以下设置可用：
 
 ---
 
@@ -76,9 +61,7 @@ The following settings are available:
 <!-- md:version insiders-4.27.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable the plugin when [building your project].
-It's normally not necessary to specify this setting, but if you want to disable
-the plugin, use:
+使用此设置在[构建您的项目]时启用或禁用插件。通常不需要指定此设置，但如果您想禁用插件，请使用：
 
 ``` yaml
 plugins:
@@ -86,4 +69,4 @@ plugins:
       enabled: false
 ```
 
-  [building your project]: ../creating-your-site.md#building-your-site
+  [构建您的项目]: ../creating-your-site.md#building-your-site

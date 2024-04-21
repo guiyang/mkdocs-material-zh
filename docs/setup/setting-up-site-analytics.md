@@ -1,29 +1,22 @@
-# Setting up site analytics
+# 设置站点分析 {#setting-up-site-analytics}
 
-As with any other service offered on the web, understanding how your project
-documentation is actually used can be an essential success factor. Material for
-MkDocs natively integrates with [Google Analytics] and offers a customizable
-[cookie consent] and a [feedback widget].
+如同网络上提供的任何其他服务一样，了解您的项目文档实际使用情况可能是成功的关键因素。Material for MkDocs 与 [Google Analytics] 原生集成，并提供可定制的 [cookie 同意] 和 [反馈小部件]。
 
   [Google Analytics]: https://developers.google.com/analytics
-  [cookie consent]: ensuring-data-privacy.md#cookie-consent
-  [feedback widget]: #was-this-page-helpful
+  [cookie 同意]: ensuring-data-privacy.md#cookie-consent
+  [反馈小部件]: #was-this-page-helpful
 
-## Configuration
+## 配置 {#configuration}
 
 ### Google Analytics
 
 <!-- md:version 7.1.8 -->
 <!-- md:default none -->
 
-Material for MkDocs integrates natively with Google Analytics 4[^1]. If you
-already set up Google Analytics and have a property, enable it by adding the
-following lines to `mkdocs.yml`:
+Material for MkDocs 与 Google Analytics 4[^1] 原生集成。如果您已经设置了 Google Analytics 并拥有一个属性，请通过添加以下行到 `mkdocs.yml` 来启用它：
 
   [^1]:
-    Prior to Material for MkDocs 9.2.0, Universal Analytics was supported as
-    well. However, since Universal Analytics has been sunset, this integration
-    was removed in 9.2.0.
+    在 Material for MkDocs 9.2.0 之前，也支持 Universal Analytics。但是，由于 Universal Analytics 已经停用，这一集成在 9.2.0 中被移除。
 
 ``` yaml
 extra:
@@ -32,28 +25,24 @@ extra:
     property: G-XXXXXXXXXX
 ```
 
-??? question "How to measure site search usage?"
+??? question "如何测量站点搜索使用情况？"
 
-    Besides page views and events, [site search] can be tracked to better
-    understand how people use your documentation and what they expect to find.
-    In order to enable site search tracking, the following steps are required:
+    除了页面浏览和事件，[站点搜索]也可以被跟踪，以更好地了解人们如何使用您的文档以及他们期望找到什么。为了启用站点搜索跟踪，需要执行以下步骤：
 
-    1. Go to your Google Analytics __admin settings__
-    2. Select the property for the respective tracking code
-    3. Select the __data streams__ tab and click the corresponding URL
-    4. Click the gear icon within the __enhanced measurement__ section
-    5. Ensure that __site search__ is enabled
+    1. 转到您的 Google Analytics __管理设置__
+    2. 选择相应跟踪代码的属性
+    3. 选择 __数据流__ 标签并点击相应的 URL
+    4. 在 __增强测量__ 部分点击齿轮图标
+    5. 确保启用了 __站点搜索__
 
-  [site search]: setting-up-site-search.md
+  [站点搜索]: setting-up-site-search.md
 
-### Was this page helpful?
+### 这个页面有帮助吗？ {#was-this-page-helpful}
 
 <!-- md:version 8.4.0 -->
 <!-- md:default none -->
 
-A simple [feedback widget] can be included at the bottom of each page,
-encouraging users to give instant feedback whether a page was helpful or not.
-Add the following lines to `mkdocs.yml`:
+在每个页面的底部可以包含一个简单的 [反馈小部件]，鼓励用户立即反馈页面是否有帮助。在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 extra:
@@ -74,79 +63,58 @@ extra:
             using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
 ```
 
-1.  This feature is natively integrated with [Google Analytics][analytics],
-    which is why `provider` and `property` are also required. However, it's also
-    possible to provide a [custom feedback integration].
+1.  这个功能与 [Google Analytics][analytics] 原生集成，这就是为什么也需要 `provider` 和 `property`。然而，也可以提供一个 [自定义反馈集成]。
 
-2.  You can add arbitrary HTML tags to the note which is shown after the user
-    submitted the feedback, e.g. to link to a feedback form.
+2.  您可以向提交反馈后显示的注释中添加任意 HTML 标签，例如链接到反馈表单。
 
-Both properties, `title` and `ratings`, are required. Note that it's allowed to
-define more than two ratings, e.g. to implement a 1-5 star rating. Since the
-feedback widget sends data to a third-party service, it is, of course, natively
-integrated with the [cookie consent] feature[^2].
+两个属性，`title` 和 `ratings`，是必需的。请注意，允许定义两个以上的评级，例如实施 1-5 星级评级。由于反馈小部件将数据发送到第三方服务，因此它当然与 [cookie 同意] 功能原生集成[^2]。
 
   [^2]:
-    If the user doesn't accept the `analytics` cookie, the feedback widget is
-    not shown.
+    如果用户不接受 `analytics` cookie，反馈小部件将不会显示。
 
-??? question "How to visualize the collected feedback ratings?"
+??? question "如何可视化收集的反馈评级？"
 
-    To visualize feedback ratings you'll need to create a custom report with
-    [Google Analytics] that will quickly show you the worst- and best-rated
-    pages of your project documentation.
+    要可视化反馈评级，您需要在 [Google Analytics] 中创建一个自定义报告，快速显示您的项目文档中评级最低和评级最高的页面。
 
-    1.  Go to your Google Analytics __dashboard__
+    1.  转到您的 Google Analytics __仪表板__
 
-    2.  Go to the __configure__ page on the left hand menu, then select
-        __custom definitions__
+    2.  在左侧菜单中转到 __配置__ 页面，然后选择 __自定义定义__
 
-    3.  Click the __custom metrics__ tab and then __create custom metrics__,
-        enter the following values:
+    3.  点击 __自定义指标__ 标签，然后 __创建自定义指标__，输入以下值：
 
-        * Metric name: Page helpful
-        * Description: Was this page helpful?
-        * Event parameter: `data`
-        * Unit of measurement: Standard
+        * Metric name (指标名称): Page helpful (页面有帮助)
+        * Description (描述): Was this page helpful? (这个页面有帮助吗？)
+        * Event parameter (事件参数): `data`
+        * Unit of measurement (测量单位): Standard (标准)
 
-    4.  Go to the __explore__ page on the left hand menu, create a new
-        __blank exploration__
+    4.  在左侧菜单中转到 __探索__ 页面，创建一个新的 __空白探索__
 
-    5.  Configure the report as follows:
+    5.  配置报告如下：
 
-        * Dimensions: Add `Event name` and `Page location`
-        * Metrics: Add `Event count` and `Page helpful`
-          (the custom metric created in step 3)
-        * Rows: `Page location`
-        * Values: Drag in both `Event count` and `Page helpful`
-        * Filters: Add a new filter for
-          `Event name / exactly matches / feedback`
+        * Dimensions (维度): Add `Event name` and `Page location` (添加 `事件名称` 和 `页面位置`)
+        * Metrics (指标): Add `Event count` and `Page helpful` (the custom metric created in step 3) (添加 `事件计数` 和 `页面有帮助`) (在步骤 3 中创建的自定义指标)
+        * Rows (行): `Page location` (`页面位置`)
+        * Values (值): Drag in both `Event count` and `Page helpful` (拖入 `事件计数` 和 `页面有帮助`)
+        * Filters (过滤器): Add a new filter for `Event name / exactly matches / feedback` 添加一个新的过滤器 `事件名称 / 精确匹配 / 反馈`
 
-    !!! warning "Delay in data availability"
+    !!! warning "数据可用性延迟"
 
-        The report may take 24 hours or longer to begin displaying data
+        报告可能需要 24 小时或更长时间才能开始显示数据
 
-    Now, after you've saved the report and collected some feedback ratings,
-    you'll have a list of all pages with the total number of ratings, and an
-    average rating per page. This should help you identify pages that need to
-    be improved:
+    现在，在您保存了报告并收集了一些反馈评级后，您将拥有一个页面列表，其中包含总评级数和每个页面的平均评级。这应该帮助您识别需要改进的页面：
 
-    !!! danger "Google Analytics 4 does not support average values"
+    !!! danger "Google Analytics 4 不支持平均值"
 
-        To our knowledge, Google Analytics 4 has currently no feature that
-        allows to define a custom calculated metric to compute the average
-        rating of a page. See #5740.
+        据我们所知，Google Analytics 4 目前没有功能允许定义一个自定义计算指标来计算页面的平均评级。请参见 #5740。
 
     [![feedback report]][feedback report]
 
-The following properties are available for each rating:
+每个评级的以下属性可用：
 
 <!-- md:option analytics.feedback.ratings.icon -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    This property must point to a valid icon path referencing [any icon bundled
-    with the theme][custom icons], or the build will not succeed. Some popular
-    combinations:
+    此属性必须指向一个有效的图标路径，引用 [主题中捆绑的任何图标][custom icons]，否则构建将不会成功。一些流行的组合：
 
     * :material-emoticon-happy-outline: + :material-emoticon-sad-outline: – `material/emoticon-happy-outline` + `material/emoticon-sad-outline`
     * :material-thumb-up-outline: + :material-thumb-down-outline: – `material/thumb-up-outline` + `material/thumb-down-outline`
@@ -155,57 +123,50 @@ The following properties are available for each rating:
 <!-- md:option analytics.feedback.ratings.name -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    The value of this property is shown on user interaction (i.e. keyboard focus
-    or mouse hover), explaining the meaning of the rating behind the icon.
+    此属性的值在用户交互时显示（即键盘焦点或鼠标悬停），解释图标背后的评级含义。
 
 <!-- md:option analytics.feedback.ratings.data -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    The value of this property is sent as a data value with the custom event
-    that is transmitted to Google Analytics[^3] (or any custom integration).
+    此属性的值将作为自定义事件的数据值发送到 Google Analytics[^3]（或任何自定义集成）。
 
   [^3]:
-    Note that for Google Analytics, the data value must be an integer.
+    请注意，对于 Google Analytics，数据值必须是整数。
 
 <!-- md:option analytics.feedback.ratings.note -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    The value of this property is shown after the user selected the rating.
-    It may contain arbitrary HTML tags, which is especially useful to ask the
-    user to provide more detailed feedback for the current page through a form.
-    It's also possible to pre-fill forms with the URL and title of the current
-    page by using the following placeholders:
+    此属性的值在用户选择评级后显示。它可以包含任意 HTML 标签，这对于要求用户通过表单为当前页面提供更详细的反馈非常有用。也可以使用以下占位符预填充表单：
 
-    - `{url}` – Page URL
-    - `{title}` – Page title
+    - `{url}` – 页面 URL
+    - `{title}` – 页面标题
 
     ```
     https://github.com/.../issues/new/?title=[Feedback]+{title}+-+{url}
     ```
 
-    In this example, when clicking the link, the user is redirected to the "new
-    issue" form of your repository, with a pre-filled title including the path
-    of the current document, e.g.:
+    在这个例子中，当点击链接时，用户将被重定向到您仓库的“新问题”表单，其中包括当前文档路径的预填充标题，例如：
 
     ```
     [Feedback] Setting up site analytics – /setup/setting-up-site-analytics/
     ```
 
-    An alternative to GitHub issues is [Google Forms].
+    除 GitHub 问题外的另一种选择是 [Google 表单]。
 
   [feedback widget]: #feedback
   [analytics]: #google-analytics
   [feedback report]: ../assets/screenshots/feedback-report.png
-  [custom feedback integration]: #custom-site-feedback
+  [自定义反馈集成]: #custom-site-feedback
   [custom icons]: https://github.com/squidfunk/mkdocs-material/tree/master/material/templates/.icons
-  [Google Forms]: https://www.google.com/forms/about/
+  [Google 表单]: https://www.google.com/forms/about/
 
-## Usage
+## 使用 {#usage}
 
-### Hiding the feedback widget
+### 隐藏反馈小部件 {#hiding-the-feedback-widget}
 
 The [feedback widget] can be hidden for a document with the front matter `hide`
 property. Add the following lines at the top of a Markdown file:
+可以为带有前 matter `hide` 属性的文档隐藏 [反馈小部件]。在 Markdown 文件的顶部添加以下行：
 
 ``` yaml
 ---
@@ -217,14 +178,11 @@ hide:
 ...
 ```
 
-## Customization
+## 自定义 {#customization}
 
-### Custom site analytics
+### 自定义站点分析 {#custom-site-analytics}
 
-In order to integrate another analytics service provider offering a
-JavaScript-based tracking solution, just follow the guide on [theme extension]
-and create a new partial in the `overrides` folder. The name of the partial is
-used to configure the custom integration via `mkdocs.yml`:
+为了整合另一种提供基于 JavaScript 的跟踪解决方案的分析服务提供商，只需按照 [主题扩展] 指南操作，并在 `overrides` 文件夹中创建一个新的部分。该部分的名称用于通过 `mkdocs.yml` 配置自定义集成：
 
 === ":octicons-file-code-16: `overrides/partials/integrations/analytics/custom.html`"
 
@@ -242,11 +200,8 @@ used to configure the custom integration via `mkdocs.yml`:
     </script>
     ```
 
-    1.  As an example, this variable receives the value set in `mkdocs.yml`,
-        which is `"foobar"` for `property`.
-    2.  If you're using [instant loading], you can use the `location$`
-        observable to listen for navigation events, which always emits the
-        current `URL`.
+    1.  作为一个示例，此变量接收在 `mkdocs.yml` 中设置的值，对于 `property` 是 `"foobar"`。
+    2.  如果您使用 [即时加载]，可以使用 `location$` 可观察对象来监听导航事件，它总是发出当前 `URL` 的信号。
 
 === ":octicons-file-code-16: `mkdocs.yml`"
 
@@ -257,18 +212,14 @@ used to configure the custom integration via `mkdocs.yml`:
         property: foobar # (1)!
     ```
 
-    1.  You can add arbitrary key-value combinations to configure your
-        custom integration. This is especially useful if you're sharing the
-        custom integration across multiple repositories.
+    1.  您可以添加任意键值组合来配置您的自定义集成。如果您在多个存储库中共享自定义集成，这特别有用。
 
-  [theme extension]: ../customization.md#extending-the-theme
-  [instant loading]: setting-up-navigation.md#instant-loading
+  [主题扩展]: ../customization.md#extending-the-theme
+  [即时加载]: setting-up-navigation.md#instant-loading
 
-### Custom site feedback
+### 自定义站点反馈 {#custom-site-feedback}
 
-A custom feedback widget integration just needs to process the events that are
-generated by users interacting with the feedback widget with the help of some
-[additional JavaScript]:
+自定义反馈小部件集成只需要处理用户与反馈小部件互动生成的事件，这可以通过一些 [额外的 JavaScript] 来实现：
 
 === ":octicons-file-code-16: `docs/javascripts/feedback.js`"
 
@@ -294,18 +245,15 @@ generated by users interacting with the feedback widget with the help of some
     })
     ```
 
-    1.  The feedback widget is hidden by default so that it does not appear when
-        people have JavaScript turned off. So, it needs to be turned on here.
+    1.  反馈小部件默认隐藏，因此在人们关闭 JavaScript 时不会显示。因此，需要在这里打开它。
 
-    2.  Retrieve page and feedback value.
+    2.  检索页面和反馈值。
 
-    3.  Replace this with the code that sends the data off to your analytics
-        provider.
+    3.  替换此代码以将数据发送到您的分析提供商。
 
-    4.  Disable the form after submission.
+    4.  提交后禁用表单。
 
-    5.  Show the configured notes. Which one is shown depends on the user
-        feedback.
+    5.  显示配置的注释。显示哪一个取决于用户反馈。
 
 === ":octicons-file-code-16: `mkdocs.yml`"
 
@@ -317,4 +265,4 @@ generated by users interacting with the feedback widget with the help of some
 &nbsp;
 { #feedback style="margin: 0; height: 0" }
 
-  [additional JavaScript]: ../customization.md#additional-javascript
+  [额外的 JavaScript]: ../customization.md#additional-javascript

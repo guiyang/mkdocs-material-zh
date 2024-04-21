@@ -1,60 +1,39 @@
-# Bug reports
+# 错误报告 {#bug-reports}
 
-Material for MkDocs is an actively maintained project that we constantly strive
-to improve. With a project of this size and complexity, bugs may occur. If you
-think you have discovered a bug, you can help us by submitting an issue in our
-public [issue tracker], following this guide.
+MkDocs 的 Material 是一个活跃维护的项目，我们始终致力于改进。对于这样一个庞大且复杂的项目，有时可能会出现错误。如果你认为你发现了一个错误，你可以通过在我们的公共[问题跟踪器][issue tracker]提交一个问题来帮助我们，按照本指南操作。
 
   [issue tracker]: https://github.com/squidfunk/mkdocs-material/issues
 
-## Before creating an issue
+## 在创建问题之前 {#before-creating-an-issue}
 
-With more than 20,000 users, issues are created every other day. The maintainers
-of this project are trying very hard to keep the number of open issues down by
-fixing bugs as fast as possible. By following this guide, you will know exactly
-what information we need to help you quickly.
+这个项目拥有超过20,000名用户，每隔一天就会有问题被创建。这个项目的维护者们正在努力通过尽快修复错误来减少未解决问题的数量。按照本指南，你将清楚我们需要哪些信息来快速帮助你。
 
-__But first, please do the following things before creating an issue.__
+__但在创建问题之前，请先做以下几件事。__
 
-### Upgrade to latest version
+### 升级到最新版本 {#upgrade-to-latest-version}
 
-Chances are that the bug you discovered was already fixed in a subsequent
-version. Thus, before reporting an issue, ensure that you're running the
-[latest version] of Material for MkDocs. Please consult our [upgrade guide] to
-learn how to upgrade to the latest version.
+很有可能你发现的错误在后续版本中已经修复。因此，在报告问题之前，请确保你正在运行[MkDocs 的 Material 的最新版本][latest version]。请查阅我们的[升级指南][upgrade guide]了解如何升级到最新版本。
 
-!!! warning "Bug fixes are not backported"
+!!! warning "错误修复不会回溯到旧版本"
 
-    Please understand that only bugs that occur in the latest version of
-    Material for MkDocs will be addressed. Also, to reduce duplicate efforts,
-    fixes cannot be backported to earlier versions.
+    请理解，只有在最新版本的 MkDocs 的 Material 中出现的错误才会被处理。此外，为了减少重复工作，修复不能回溯到早期版本。
 
-### Remove customizations
+### 移除自定义设置 {#remove-customizations}
 
-If you're using [customizations] like [additional CSS], [JavaScript], or
-[theme extension], please remove them from `mkdocs.yml` before reporting a bug.
-We can't offer official support for bugs that might hide in your overrides, so
-make sure to omit the following settings from `mkdocs.yml`:
+如果你使用了[自定义设置][customizations]，如[额外的 CSS][additional CSS]、[JavaScript][JavaScript] 或[主题扩展][theme extension]，请在报告错误之前从 `mkdocs.yml` 中移除它们。我们无法为可能隐藏在你的自定义设置中的错误提供官方支持，因此请确保从 `mkdocs.yml` 中省略以下设置：
 
   - [`theme.custom_dir`][theme.custom_dir]
   - [`hooks`][hooks]
   - [`extra_css`][extra_css]
   - [`extra_javascript`][extra_javascript]
 
-If, after removing those settings, the bug is gone, the bug is likely caused by
-your customizations. A good idea is to add them back gradually to narrow down
-the root cause of the problem. If you did a major version upgrade, make sure you
-adjusted all partials you have overridden.
+如果在移除这些设置后错误消失了，那么错误可能是由你的自定义设置引起的。一个好主意是逐步添加它们回去，以缩小问题的根源。如果你进行了重大版本升级，请确保你调整了所有你覆盖的部分。
 
-!!! warning "Customizations mentioned in our documentation"
+!!! warning "我们文档中提到的自定义设置"
 
-    A handful of the features Material for MkDocs offers can only be implemented
-    with customizations. If you find a bug in any of the customizations [that
-    our documentation explicitly mentions], you are, of course, encouraged to
-    report it.
+    MkDocs 的 Material 提供的一些功能只能通过自定义设置来实现。如果你在[我们的文档明确提到的自定义设置][that our documentation explicitly mentions]中发现了一个错误，我们当然鼓励你报告它。
 
-__Don't be shy to ask on our [discussion board] for help if you run into
-problems.__
+__如果在解决问题时遇到困难，不要害羞，在我们的[讨论板][discussion board]上寻求帮助。__
 
   [latest version]: ../changelog/index.md
   [upgrade guide]: ../upgrade.md
@@ -70,67 +49,41 @@ problems.__
   [StackOverflow]: https://stackoverflow.com
   [that our documentation explicitly mentions]: ?q="extends+base"
 
-### Search for solutions
+### 寻找解决方案 {#search-for-solutions}
 
-At this stage, we know that the problem persists in the latest version and is
-not caused by any of your customizations. However, the problem might result from
-a small typo or a syntactical error in a configuration file, e.g., `mkdocs.yml`.
+在这个阶段，我们知道问题在最新版本中依然存在，并且不是由你的任何自定义设置引起的。然而，问题可能是由于 `mkdocs.yml` 等配置文件中的一个小错误或语法错误造成的。
 
-Now, before you go through the trouble of creating a bug report that is answered
-and closed right away with a link to the relevant documentation section or
-another already reported or closed issue or discussion, you can save time for
-us and yourself by doing some research:
+现在，在你创建一个可能会立即得到回复并关闭的错误报告之前，通过查阅相关文档章节或其他已报告或已关闭的问题或讨论，你可以为我们和你自己节省时间：
 
-1.  [Search our documentation] and look for the relevant sections that could
-    be related to your problem. If found, make sure that you configured
-    everything correctly.[^1]
+1.  [搜索我们的文档][Search our documentation]并查找与你的问题相关的部分。如果找到了，请确保你正确配置了一切。
 
-  [^1]:
-    When adding lines to `mkdocs.yml`, make sure you are preserving the
-    indentation as mentioned in the documentation since YAML is a
-    whitespace-sensitive language. Many reported issues turn out to be
-    configuration errors.
+1.  [搜索我们的问题跟踪器][issue tracker]，因为其他用户可能已经报告了相同的问题，并且可能已经有了已知的解决方法或修复。因此，无需创建新问题。
 
-1.  [Search our issue tracker][issue tracker], as another user might already
-    have reported the same problem, and there might even be a known workaround
-    or fix for it. Thus, no need to create a new issue.
+2.  [搜索我们的讨论板][discussion board]了解其他用户是否也在努力解决类似的问题，并与我们伟大的社区一起寻找解决方案。许多问题都在这里得到了解决。
 
-2.  [Search our discussion board][discussion board] to learn if other users
-    are struggling with similar problems and work together with our great
-    community towards a solution. Many problems are solved here.
-
-__Keep track of all <u>search terms</u> and <u>relevant links</u>, you'll need
-them in the bug report.__[^2]
+__记下所有<u>搜索词</u>和<u>相关链接</u>，你将在错误报告中需要它们。__
 
   [^2]:
-    We might be using terminology in our documentation different from yours,
-    but we mean the same. When you include the search terms and related links
-    in your bug report, you help us to adjust and improve the documentation.
+    我们在文档中使用的术语可能与您的不同，但我们的意思是相同的。当您在错误报告中包含搜索词和相关链接时，您帮助我们调整和改进文档。
 
 ---
 
-At this point, when you still haven't found a solution to your problem, we
-encourage you to create an issue because it's now very likely that you
-stumbled over something we don't know yet. Read the following section to learn
-how to create a complete and helpful bug report.
+在这一点上，当你仍然没有找到问题的解决方案时，我们鼓励你创建一个问题，因为现在很可能你遇到了我们还不知道的东西。阅读以下部分了解如何创建一个完整且有用的错误报告。
 
   [Search our documentation]: ?q=
 
-## Issue template
+## 问题模板 {#issue-template}
 
-We have created a new issue template to make the bug reporting process as simple
-as possible and more efficient for our community and us. It is the result of
-our experience answering and fixing more than 1,600 issues (and counting) and
-consists of the following parts:
+我们创建了一个新的问题模板，使错误报告过程尽可能简单且对我们的社区和我们更高效。这是我们回答和修复超过1,600个问题（并且还在增加）的经验结果，包括以下部分：
 
-- [Title]
-- [Context] <small>optional</small>
-- [Bug description]
-- [Related links]
-- [Reproduction]
-- [Steps to reproduce]
-- [Browser] <small>optional</small>
-- [Checklist]
+- [标题][Title]
+- [上下文][Context] <small>可选</small>
+- [错误描述][Bug description]
+- [相关链接][Related links]
+- [复现][Reproduction]
+- [复现步骤][Steps to reproduce]
+- [浏览器][Browser] <small>可选</small>
+- [清单][Checklist]
 
   [Title]: #title
   [Context]: #context
@@ -141,173 +94,105 @@ consists of the following parts:
   [Browser]: #browser
   [Checklist]: #checklist
 
-### Title
+### 标题 {#title}
 
-A good title is short and descriptive. It should be a one-sentence executive
-summary of the issue, so the impact and severity of the bug you want to report
-can be inferred from the title.
+一个好的标题应该简短且具有描述性。它应该是问题的一句话执行摘要，因此可以从标题中推断出你想报告的错误的影响和严重程度。
 
-| <!-- --> | Example  |
+| <!-- --> | 示例  |
 | -------- | -------- |
-| :material-check:{ style="color: #4DB6AC" } __Clear__ | Built-in `typeset` plugin changes precedence of nav title over `h1`
-| :material-close:{ style="color: #EF5350" } __Wordy__ | The built-in `typeset` plugin changes the precedence of the nav title over the document headline
-| :material-close:{ style="color: #EF5350" } __Unclear__ | Title does not work
-| :material-close:{ style="color: #EF5350" } __Useless__ | Help
+| :material-check:{ style="color: #4DB6AC" } __清晰__ | 内置 `typeset` 插件改变了导航标题优先于 `h1`
+| :material-close:{ style="color: #EF5350" } __冗长__ | 内置 `typeset` 插件改变了导航标题优先于文档标题的优先级
+| :material-close:{ style="color: #EF5350" } __不清晰__ | 标题不起作用
+| :material-close:{ style="color: #EF5350" } __无用__ | 帮助
 
-### Context <small>optional</small> { #context }
+### 上下文 <small>可选</small> { #context }
 
-Before describing the bug, you can provide additional context for us to
-understand what you were trying to achieve. Explain the circumstances
-in which you're using Material for MkDocs, and what you _think_ might be
-relevant. Don't write about the bug here.
+在描述错误之前，你可以提供额外的上下文，以便我们了解你试图实现什么。解释你在使用 MkDocs 的 Material 的情况，以及你认为可能相关的内容。不要在这里写关于错误的内容。
 
-> __Why this might be helpful__: some errors only manifest in specific settings,
-> environments or edge cases, for example, when your documentation contains
-> thousands of documents.
+> __为什么这可能有帮助__：有些错误只在特定的设置、环境或边缘情况下表现出来，例如，当你的文档包含成千上万的文档时。
 
-### Bug description
+### 错误描述 {#bug-description}
 
-Now, to the bug you want to report. Provide a clear, focused, specific, and
-concise summary of the bug you encountered. Explain why you think this is a bug
-that should be reported to Material for MkDocs, and not to one of its
-dependencies.[^3] Adhere to the following principles:
+现在，来到你想报告的错误。提供一个清晰、集中、具体和简洁的错误总结。解释为什么你认为这是一个应该报告给 MkDocs 的 Material 的错误，而不是其依赖项的错误。坚持以下原则：
 
   [^3]:
-    Sometimes, users report bugs on our [issue tracker] that are caused by one
-    of our upstream dependencies, including [MkDocs], [Python Markdown],
-    [Python Markdown Extensions] or third-party plugins. A good rule of thumb is
-    to change the [`theme.name`][theme.name] to `mkdocs` or `readthedocs` and
-    check if the problem persists. If it does, the problem is likely not
-    related to Material for MkDocs and should be reported upstream. When in
-    doubt, use our [discussion board] to ask for help.
+    有时，用户在我们的[问题跟踪器][issue tracker]上报告的错误是由我们的上游依赖项引起的，包括[MkDocs]、[Python Markdown]、[Python Markdown Extensions]或第三方插件。一个好的经验法则是将[`theme.name`][theme.name]更改为`mkdocs`或`readthedocs`，并检查问题是否仍然存在。如果问题仍然存在，那么问题可能与 MkDocs 的 Material 无关，应该向上游报告。如果有疑问，使用我们的[讨论板][discussion board]寻求帮助。
 
--   __Explain the <u>what</u>, not the <u>how</u>__ – don't explain
-    [how to reproduce the bug][Steps to reproduce] here, we're getting there.
-    Focus on articulating the problem and its impact as clearly as possible.
+-   __解释<u>什么</u>，而不是<u>如何</u>__ – 不要在这里解释[如何复现错误][Steps to reproduce]，我们会涉及到这一点。专注于尽可能清楚地表达问题及其影响。
 
--   __Keep it short and concise__ – if the bug can be precisely explained in one
-    or two sentences, perfect. Don't inflate it – maintainers and future users
-    will be grateful for having to read less.
+-   __保持简短和简洁__ – 如果错误可以在一两句话中精确解释，那就完美了。不要夸大其词 – 维护者和未来的用户会感激你少读一些内容。
 
--   __One bug at a time__ – if you encounter several unrelated bugs, please
-    create separate issues for them. Don't report them in the same issue, as
-    this makes attribution difficult.
+-   __一次报告一个错误__ – 如果你遇到几个不相关的错误，请为它们创建单独的问题。不要在同一个问题中报告它们，因为这会使归因变得困难。
 
 ---
 
-:material-run-fast: __Stretch goal__ – if you found a workaround or a way to fix
-the bug, you can help other users temporarily mitigate the problem before
-we maintainers can fix the bug in our code base.
+:material-run-fast: __额外目标__ – 如果你找到了一个解决方法或修复错误的方法，你可以帮助其他用户在我们维护者能够在我们的代码库中修复错误之前临时缓解问题。
 
-> __Why we need this__: in order for us to understand the problem, we
-> need a clear description of it and quantify its impact, which is essential
-> for triage and prioritization.
+> __我们为什么需要这个__：为了我们能够理解问题，我们需要对其进行清晰的描述并量化其影响，这对于分级和优先级排序至关重要。
 
   [MkDocs]: https://www.mkdocs.org
   [Python Markdown]: https://python-markdown.github.io/extensions/
   [Python Markdown Extensions]: https://facelessuser.github.io/pymdown-extensions/
   [theme.name]: https://www.mkdocs.org/user-guide/configuration/#theme
 
-### Related links
+### 相关链接 {#related-links}
 
-Of course, prior to reporting a bug, you have read our documentation and
-[could not find a working solution][search for solutions]. Please share links
-to all sections of our documentation that might be relevant to the bug, as it
-helps us gradually improve it.
+当然，在报告错误之前，你已经阅读了我们的文档并[未能找到有效的解决方案][search for solutions]。请分享与错误相关的我们文档的所有部分的链接，这有助于我们逐步改进它。
 
-Additionally, since you have searched our [issue tracker] and [discussion board]
-before reporting an issue, and have possibly found several issues or
-discussions, include those as well. Every link to an issue or discussion creates
-a backlink, guiding us maintainers and other users in the future.
+此外，由于你在报告问题之前已经搜索过我们的[问题跟踪器][issue tracker]和[讨论板][discussion board]，并可能找到了几个问题或讨论，也请包括这些内容。每个问题或讨论的链接都会创建一个反向链接，为我们的维护者和未来的用户提供指导。
 
 ---
 
-:material-run-fast: __Stretch goal__ – if you also include the search terms you
-used when [searching for a solution][search for solutions] to your problem, you
-make it easier for us maintainers to improve the documentation.
+:material-run-fast: __延伸目标__ — 如果你还包括了在[寻找解决方案][search for solutions]时使用的搜索词，你就会让我们维护者更容易改进文档。
 
-> __Why we need this__: related links help us better understand what you were
-> trying to achieve and whether sections of our documentation need to be
-> adjusted, extended, or overhauled.
+> __为什么我们需要这些__：相关链接帮助我们更好地理解你在尝试实现什么，以及我们的文档的哪些部分需要调整、扩展或彻底改写。
 
   [search for solutions]: #search-for-solutions
 
-### Reproduction
+### 复现
 
-A minimal reproduction is at the heart of every well-written bug report, as
-it allows us maintainers to instantly recreate the necessary conditions to
-inspect the bug to quickly find its root cause. It's a proven fact that issues
-with concise and small reproductions can be fixed much faster.
+一个最小化的复现是每一个写得好的错误报告的核心，因为它允许我们维护者立即重新创建必要的条件来检查错误，以快速找到其根本原因。有明确和简洁复现的问题可以更快得到解决。
 
-[:material-bug: Create reproduction][Create reproduction]{ .md-button .md-button--primary }
+[:material-bug: 创建复现][Create reproduction]{ .md-button .md-button--primary }
 
 ---
 
-After you have created the reproduction, you should have a `.zip` file, ideally
-not larger than 1 MB. Just drag and drop the `.zip` file into this field, which
-will automatically upload it to GitHub.
+在你创建了复现后，你应该会有一个 `.zip` 文件，理想情况下不应大于 1 MB。只需将 `.zip` 文件拖放到此字段中，它将自动上传到 GitHub。
 
-> __Why we need this__: if an issue contains no minimal reproduction or just
-> a link to a repository with thousands of files, the maintainers would need to
-> invest a lot of time into trying to recreate the right conditions to even
-> inspect the bug, let alone fix it.
+> __为什么我们需要这个__：如果一个问题不包含最小化复现，或者只是一个包含成千上万个文件的仓库的链接，维护者需要花费大量时间尝试重新创建正确的条件以检查错误，更不用说修复它了。
 
-!!! warning "Don't share links to repositories"
+!!! warning "不要分享仓库链接"
 
-    While we know that it is a good practice among developers to include a link
-    to a repository with the bug report, we currently don't support those in our
-    process. The reason is that the reproduction, which is automatically
-    produced by the [built-in info plugin] contains all of the necessary
-    environment information that is often forgotten to be included.
+    虽然我们知道在开发者中包含一个带有错误报告的仓库链接是一种好习惯，但我们目前在我们的流程中不支持这些。原因是自动生成的复现包含了通常被遗忘的所有必要的环境信息。
 
-    Additionally, there are many non-technical users of Material for MkDocs that
-    have trouble creating repositories.
+    此外，很多使用 MkDocs 的 Material 的非技术用户在创建仓库时会遇到困难。
 
   [Create reproduction]: ../guides/creating-a-reproduction.md
   [built-in info plugin]: ../plugins/info.md
 
-### Steps to reproduce
+### 复现步骤 {#steps-to-reproduce}
 
-At this point, you provided us with enough information to understand the bug
-and provided us with a reproduction that we could run and inspect. However, when
-we run your reproduction, it might not be immediately apparent how we can see
-the bug in action.
+此时，你已经为我们提供了足够的信息来理解错误，并为我们提供了一个我们可以运行和检查的复现。然而，当我们运行你的复现时，可能不会立即明显我们如何可以看到错误发生。
 
-Thus, please list the specific steps we should follow when running your
-reproduction to observe the bug. Keep the steps short and concise, and make sure
-not to leave anything out. Use simple language as you would explain it to a
-five-year-old, and focus on continuity.
+因此，请列出我们在运行你的复现时应该遵循的具体步骤以观察错误。保持步骤简短且精确，确保不遗漏任何内容。使用简单的语言，就像你向一个五岁的孩子解释一样，并关注连续性。
 
-> __Why we need this__: we must know how to navigate your reproduction in order
-> to observe the bug, as some bugs only occur at certain viewports or in
-> specific conditions.
+> __为什么我们需要这个__：我们必须知道如何导航你的复现以观察错误，因为有些错误只在特定的视口或在特定条件下发生。
 
-### Browser <small>optional</small> { #browser }
+### 浏览器 <small>可选</small> {#browser}
 
-If you're reporting a bug that only occurs in one or more _specific_ browsers,
-we need to know which browsers are affected. This field is optional, as it is
-only relevant when the bug you are reporting does not involve a crash when
-[previewing] or [building] your site.
+如果你报告的错误只在一个或多个特定的浏览器中发生，我们需要知道哪些浏览器受到影响。此字段为可选，因为它只与当你报告的错误不涉及在[预览][previewing]或[构建][building]你的网站时崩溃相关。
 
 ---
 
-:material-incognito: __Incognito mode__ – Please verify that a the bug is
-not caused by a browser extension. Switch to incognito mode and try to reproduce
-the bug. If it's gone, it's caused by an extension.
+:material-incognito: __隐身模式__ — 请验证错误是否不是由浏览器扩展引起的。切换到隐身模式并尝试复现错误。如果问题消失了，那么它是由一个扩展引起的。
 
-> __Why we need this__: some bugs only occur in specific browsers or versions.
-> Since now, almost all browsers are evergreen, we usually don't need to know the
-> version in which it occurs, but we might ask for it later. When in doubt, add
-> the browser version as the first step in the field above.
+> __为什么我们需要这个__：有些错误只在特定的浏览器或版本中发生。由于现在几乎所有的浏览器都是常绿的，我们通常不需要知道问题发生的版本，但我们可能稍后会询问。如果有疑问，请在上面的字段中首先添加浏览器版本。
 
   [previewing]: http://localhost:8000/mkdocs-material/creating-your-site/#previewing-as-you-write
   [building]: http://localhost:8000/mkdocs-material/creating-your-site/#building-your-site
 
-### Checklist
+### 清单 {#checklist}
 
-Thanks for following the guide and creating a high-quality and complete bug
-report – you are almost done. The checklist ensures that you have read this guide
-and have worked to your best knowledge to provide us with everything we need to
-know to help you.
+感谢你遵循指南并创建了一个高质量且完整的错误报告——你几乎完成了。清单确保你已经阅读了这份指南，并已尽你所能提供了我们需要知道的一切信息来帮助你。
 
-__We'll take it from here.__
+__我们将从这里接手。__

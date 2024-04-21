@@ -1,49 +1,42 @@
-# Setting up a blog
+# 设置博客 {#setting-up-a-blog}
 
-Material for MkDocs makes it very easy to build a blog, either as a sidecar to
-your documentation or standalone. Focus on your content while the engine does
-all the heavy lifting, automatically generating [archive] and [category]
-indexes, [post slugs], configurable [pagination] and more.
+Material for MkDocs 让建立博客变得非常简单，无论是作为您文档的辅助功能还是独立存在。专注于您的内容，而引擎则自动完成所有繁重的工作，自动生成[归档]和[分类]索引、[文章短链接]、可配置的[分页]等。
 
 ---
 
 __Check out our [blog], which is created with the new [built-in blog plugin]!__
 
-  [archive]: ../plugins/blog.md#archive
-  [category]: ../plugins/blog.md#categories
-  [post slugs]: ../plugins/blog.md#config.post_url_format
-  [pagination]: ../plugins/blog.md#pagination
+  [归档]: ../plugins/blog.md#archive
+  [分类]: ../plugins/blog.md#categories
+  [文章短链接]: ../plugins/blog.md#config.post_url_format
+  [分页]: ../plugins/blog.md#pagination
   [blog]: ../blog/index.md
 
-## Configuration
+## 配置 {#configuration}
 
-### Built-in blog plugin
+### 内置博客插件 {#built-in-blog-plugin}
 
 <!-- md:version 9.2.0 -->
 <!-- md:plugin -->
 <!-- md:flag experimental -->
 
-The built-in blog plugin adds support for building a blog from a folder of
-posts, which are annotated with dates and other structured data. First, add the
-following lines to `mkdocs.yml`:
+内置博客插件支持从一个包含带有日期和其他结构化数据的帖子的文件夹构建博客。首先，将以下行添加到 `mkdocs.yml` 中：
 
 ``` yaml
 plugins:
   - blog
 ```
 
-For a list of all settings, please consult the [plugin documentation].
+有关所有设置的列表，请查阅[插件文档]。
 
-  [plugin documentation]: ../plugins/blog.md
+  [插件文档]: ../plugins/blog.md
 
-#### Advanced settings
+#### 高级设置 {#advanced-settings}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.44.0 -->
 
-The following advanced settings are currently reserved to our [sponsors]
-[Insiders]. They are entirely optional, and don't affect the functionality of
-the blog, but can be helpful for customizations:
+以下高级设置目前仅限于我们的[赞助者][Insiders]。它们完全是可选的，并不影响博客的功能，但可以帮助自定义：
 
 - [`archive_pagination`][config.archive_pagination]
 - [`archive_pagination_per_page`][config.archive_pagination_per_page]
@@ -54,10 +47,10 @@ the blog, but can be helpful for customizations:
 - [`authors_profiles_pagination`][config.authors_profiles_pagination]
 - [`authors_profiles_pagination_per_page`][config.authors_profiles_pagination_per_page]
 
-We'll add more settings here, as we discover new use cases.
+我们会在这里添加更多设置，随着我们发现新的使用场景。
 
   [Insiders]: ../insiders/index.md
-  [built-in blog plugin]: ../plugins/blog.md
+  [内置博客插件]: ../plugins/blog.md
   [built-in plugins]: ../insiders/getting-started.md#built-in-plugins
   [docs_dir]: https://www.mkdocs.org/user-guide/configuration/#docs_dir
   [start writing your first post]: #writing-your-first-post
@@ -76,15 +69,13 @@ We'll add more settings here, as we discover new use cases.
 <!-- md:version 9.2.0 -->
 <!-- md:plugin [rss] -->
 
-The [built-in blog plugin] integrates seamlessly with the [RSS plugin][rss],
-which provides a simple way to add an RSS feed to your blog (or to your whole
-documentation). Install it with `pip`:
+[内置博客插件]与[RSS 插件][rss]无缝集成，后者提供了一种简单的方式来向您的博客（或整个文档）添加 RSS 源。使用 `pip` 安装它：
 
 ```
 pip install mkdocs-rss-plugin
 ```
 
-Then, add the following lines to `mkdocs.yml`:
+然后，在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 plugins:
@@ -97,19 +88,15 @@ plugins:
         - tags # (2)!
 ```
 
-1.  The RSS plugin allows to filter for URLs to be included in the feed. In
-    this example, only blog posts will be part of the feed.
+1.  RSS 插件允许筛选要包含在源中的 URL。在此示例中，只有博客帖子将包含在源中。
 
-2.  If you want to include a post's categories as well as its tags in the feed,
-    add both `categories` and `tags` here.
+2.  如果您想在源中包括帖子的分类和标签，请在此处添加 `categories` 和 `tags`。
 
-The following configuration options are supported:
+以下配置选项受支持：
 
 <!-- md:option rss.enabled -->
 
-:   <!-- md:default `true` --> This option specifies whether
-    the plugin is enabled when building your project. If you want to speed up
-    local builds, you can use an [environment variable]:
+:   <!-- md:default `true` --> 此选项指定构建项目时插件是否启用。如果您想加快本地构建速度，可以使用[环境变量]：
 
     ``` yaml
     plugins:
@@ -119,9 +106,7 @@ The following configuration options are supported:
 
 <!-- md:option rss.match_path -->
 
-:   <!-- md:default `.*` --> This option specifies which
-    pages should be included in the feed. For example, to only include blog
-    posts in the feed, use the following regular expression:
+:   <!-- md:default `.*` --> 此选项指定应包括在源中的页面。例如，要仅包括博客帖子，请使用以下正则表达式：
 
     ``` yaml
     plugins:
@@ -131,9 +116,7 @@ The following configuration options are supported:
 
 <!-- md:option rss.date_from_meta -->
 
-:   <!-- md:default none --> This option specifies which
-    front matter property should be used as a creation date of a page in the
-    feed. It's recommended to use the `date` property:
+:   <!-- md:default none --> 此选项指定应用作源中页面的创建日期的前置元素属性。建议使用 `date` 属性：
 
     ``` yaml
     plugins:
@@ -144,9 +127,7 @@ The following configuration options are supported:
 
 <!-- md:option rss.categories -->
 
-:   <!-- md:default none --> This option specifies which
-    front matter properties are used as categories as part of the feed. If you
-    use [categories] and [tags], add both with the following lines:
+:   <!-- md:default none --> 此选项指定用作源部分的分类的前置元素属性。如果您使用[分类]和[标签]，请使用以下行添加两者：
 
     ``` yaml
     plugins:
@@ -158,9 +139,7 @@ The following configuration options are supported:
 
 <!-- md:option rss.comments_path -->
 
-:   <!-- md:default none --> This option specifies the anchor
-    at which comments for a post or page can be found. If you've integrated a
-    [comment system], add the following lines:
+:   <!-- md:default none --> 此选项指定可找到帖子或页面评论的锚点。如果您集成了[评论系统]，请添加以下行：
 
     ``` yaml
     plugins:
@@ -168,23 +147,19 @@ The following configuration options are supported:
           comments_path: "#__comments"
     ```
 
-Material for MkDocs will automatically add the [necessary metadata] to your site
-which will make the RSS feed discoverable by browsers and feed readers. Note
-that the [RSS plugin][rss] comes with several other configuration options.
-For further information, see the [documentation].
+Material for MkDocs 将自动向您的网站添加[必要的元数据]，使浏览器和阅读器能够发现 RSS 源。请注意，[RSS 插件][rss] 还包含其他几个配置选项。有关详细信息，请参阅[文档]。
 
   [rss]: https://guts.github.io/mkdocs-rss-plugin/
   [categories]: ../plugins/blog.md#categories
-  [tags]: setting-up-tags.md#built-in-tags-plugin
-  [comment system]: adding-a-comment-system.md
-  [necessary metadata]: https://guts.github.io/mkdocs-rss-plugin/configuration/#integration
+  [标签]: setting-up-tags.md#built-in-tags-plugin
+  [评论系统]: adding-a-comment-system.md
+  [必要的元数据]: https://guts.github.io/mkdocs-rss-plugin/configuration/#integration
   [theme extension]: ../customization.md
-  [documentation]: https://guts.github.io/mkdocs-rss-plugin/configuration/
+  [文档]: https://guts.github.io/mkdocs-rss-plugin/configuration/
 
-### Blog only
+### 仅博客 {#blog-only}
 
-You might need to build a pure blog without any documentation.
-In this case, you can create a folder tree like this:
+您可能需要构建一个纯博客，没有任何文档。在这种情况下，您可以创建如下文件树：
 
 ``` { .sh .no-copy }
 .
@@ -195,10 +170,9 @@ In this case, you can create a folder tree like this:
 └─ mkdocs.yml
 ```
 
-1.  Notice that the `posts` directory is in the root of `docs` without
-    intermediate `blog` directory.
+1.  注意，`posts` 目录位于 `docs` 的根部，没有中间的 `blog` 目录。
 
-And add the following lines to `mkdocs.yml`:
+并在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 plugins:
@@ -206,19 +180,15 @@ plugins:
       blog_dir: . # (1)!
 ```
 
-1.  More info about [blog_dir](../plugins/blog.md#config.blog_dir)
+1.  更多关于 [blog_dir](../plugins/blog.md#config.blog_dir) 的信息
 
-With this configuration, the url of the blog post will be `/<post_slug>`
-instead of `/blog/<post_slug>`.
+有了这个配置，博客帖子的 URL 将是 `/<post_slug>`，而不是 `/blog/<post_slug>`。
 
-## Usage
+## 使用 {#usage}
 
-### Writing your first post
+### 写你的第一篇帖子 {#writing-your-first-post}
 
-After you've successfully set up the [built-in blog plugin], it's time to write
-your first post. The plugin doesn't assume any specific directory structure, so
-you're completely free in how you organize your posts, as long as they are all
-located inside the `posts` directory:
+在您成功设置[内置博客插件]后，是时候写下您的第一篇帖子了。该插件不假设任何特定的目录结构，因此您在组织帖子方面完全自由，只要它们都位于 `posts` 目录中：
 
 ``` { .sh .no-copy }
 .
@@ -230,12 +200,9 @@ located inside the `posts` directory:
 └─ mkdocs.yml
 ```
 
-1.  If you'd like to arrange posts differently, you're free to do so. The URLs
-    are built from the format specified in [`post_url_format`][post slugs] and
-    the titles and dates of posts, no matter how they are organized
-    inside the `posts` directory.
+1.  如果您想以不同的方式安排帖子，您可以自由这样做。URL 是根据[`文章网址格式`][文章短链接]以及帖子的标题和日期构建的，无论它们在 `posts` 目录中如何组织。
 
-Create a new file called `hello-world.md` and add the following lines:
+创建一个名为 `hello-world.md` 的新文件，并添加以下行：
 
 ``` yaml
 ---
@@ -250,14 +217,9 @@ categories:
 ...
 ```
 
-1.  If you mark a post as a [draft], a red marker appears next to the post date
-    on index pages. When the site is built, drafts are not included in the
-    output. [This behavior can be changed], e.g. for rendering drafts when
-    building deploy previews.
+1.  如果您将一篇帖子标记为[草稿]，则在索引页面的帖子日期旁边会出现红色标记。当网站构建时，草稿不会包含在输出中。[这种行为可以改变]，例如为构建部署预览时渲染草稿。
 
-2.  If you wish to provide multiple dates, you can use the following syntax,
-    allowing you to define a date when you last updated the blog post +
-    further custom dates you can add to the template:
+2.  如果您希望提供多个日期，可以使用以下语法，允许您定义上次更新博客帖子的日期 + 您可以添加到模板中的其他自定义日期：
 
     ``` yaml
     ---
@@ -269,22 +231,17 @@ categories:
     # Hello world!
     ```
 
-    Note that the creation date __must__ be set under `date.created`, as each
-    blog post must have a creation date set.
+    请注意，创建日期 __必须__ 设置在 `date.created` 下，因为每篇博客帖子必须设置创建日期。
 
-When you spin up the [live preview server], you should be greeted by your first
-post! You'll also realize, that [archive] and [category] indexes have been
-automatically generated for you.
+当您启动[实时预览服务]时，您应该会看到您的第一篇帖子！您还会意识到，[归档]和[分类]索引已为您自动生成。
 
-  [draft]: ../plugins/blog.md#drafts
-  [This behavior can be changed]: ../plugins/blog.md#config.draft
-  [live preview server]: ../creating-your-site.md#previewing-as-you-write
+  [草稿]: ../plugins/blog.md#drafts
+  [这种行为可以改变]: ../plugins/blog.md#config.draft
+  [实时预览服务]: ../creating-your-site.md#previewing-as-you-write
 
-#### Adding an excerpt
+#### 添加摘要 {#adding-an-excerpt}
 
-The blog index, as well as [archive] and [category] indexes can either list the
-entire content of each post, or excerpts of posts. An excerpt can be created by
-adding a `<!-- more -->` separator after the first few paragraphs of a post:
+博客索引以及[归档]和[分类]索引可以列出每篇帖子的全部内容，或者帖子的摘要。通过在帖子的前几段后添加 `<!-- more -->` 分隔符，可以创建摘要：
 
 ``` py
 # Hello world!
@@ -297,17 +254,13 @@ massa, nec semper lorem quam in massa.
 ...
 ```
 
-When the [built-in blog plugin] generates all indexes, the content before the
-[excerpt separator] is automatically extracted, allowing the user to start
-reading a post before deciding to jump in.
+当[内置博客插件]生成所有索引时，自动提取[摘要分隔符]前的内容，允许用户在决定跳进阅读前开始阅读帖子。
 
-  [excerpt separator]: ../plugins/blog.md#config.post_excerpt_separator
+  [摘要分隔符]: ../plugins/blog.md#config.post_excerpt_separator
 
-#### Adding authors
+#### 添加作者 {#adding-authors}
 
-In order to add a little more personality to your posts, you can associate each
-post with one or multiple [authors]. First, create the
-[`.authors.yml`][authors_file] file in your blog directory, and add an author:
+为了为您的帖子添加更多个性，您可以将每篇帖子与一个或多个[作者]关联。首先，在您的博客目录中创建[`.authors.yml`][authors_file]文件，并添加一个作者：
 
 ``` yaml
 authors:
@@ -317,15 +270,9 @@ authors:
     avatar: https://github.com/squidfunk.png
 ```
 
-The [`.authors.yml`][authors_file] file associates each author with an
-identifier (in this example `squidfunk`), which can then be used in posts.
-Different attributes can be configured. For a list of all possible attributes,
-please consult the [`authors_file`][authors_file] documentation.
+[`.authors.yml`][authors_file] 文件将每个作者与一个标识符（在此示例中为 `squidfunk`）关联起来，然后可以在帖子中使用。可以配置不同的属性。有关所有可能属性的列表，请查阅[`authors_file`][authors_file]文档。
 
-Now, you can assign one or more authors to a post by referencing their
-identifiers in the front matter of the Markdown file under the `authors`
-property. For each author, a small profile is rendered in the left sidebar of
-each post, as well as in post excerpts on index pages:
+现在，您可以通过在 Markdown 文件的前置元素中引用其标识符，将一个或多个`作者`分配给一篇帖子。对于每位作者，每篇帖子的左侧边栏以及索引页面上的帖子摘要中都会渲染一个小型个人资料：
 
 ``` yaml
 ---
@@ -339,18 +286,16 @@ authors:
 ...
 ```
 
-  [authors]: ../plugins/blog.md#authors
+  [作者]: ../plugins/blog.md#authors
   [authors_file]: ../plugins/blog.md#config.authors_file
 
-#### Adding author profiles
+#### 添加作者档案 {#adding-author-profiles}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.46.0 -->
 <!-- md:flag experimental -->
 
-If you wish to add a dedicated page for each author, you can enable author
-profiles by setting the [`authors_profiles`][authors_profiles] configuration
-option to `true`. Just add the following lines to `mkdocs.yml`:
+如果您希望为每位作者添加一个专 dedicated 页面，您可以通过将[`authors_profiles`][authors_profiles]配置选项设置为`true`来启用作者档案。只需将以下行添加到 `mkdocs.yml` 中：
 
 ``` yaml
 plugins:
@@ -358,20 +303,14 @@ plugins:
       authors_profiles: true
 ```
 
-If you combine this with [custom index pages], you can create a dedicated page
-for each author with a short description, social media links, etc. – basically
-anything you can write in Markdown. The list of posts is then appended after
-the content of the page.
+如果您将此与[自定义索引页面]结合使用，您可以为每位作者创建一个专属页面，包括简短描述、社交媒体链接等内容——基本上您可以用 Markdown 编写的任何内容。然后，帖子列表将附加在页面内容之后。
 
   [authors_profiles]: ../plugins/blog.md#config.authors_profiles
-  [custom index pages]: #custom-index-pages
+  [自定义索引页面]: #custom-index-pages
 
-#### Adding categories
+#### 添加分类 {#adding-categories}
 
-Categories are an excellent way for grouping your posts thematically on
-dedicated index pages. This way, a user interested in a specific topic can
-explore all of your posts on this topic. Make sure [categories] are enabled and
-add them to the front matter `categories` property:
+分类是在专门的索引页面上按主题分组您的帖子的绝佳方式。这样，对特定主题感兴趣的用户可以探索您关于该主题的所有帖子。确保[分类]已启用并将其添加到前置元素 `categories` 属性中：
 
 ``` yaml
 ---
@@ -385,19 +324,13 @@ categories:
 ...
 ```
 
-If you want to save yourself from typos when typing out categories, you can
-define your desired categories in `mkdocs.yml` as part of the
-[`categories_allowed`][categories_allowed] configuration option. The
-[built-in blog plugin] will stop the build if a category is not found within
-the list.
+如果您想避免在输入分类时打字错误，您可以在 `mkdocs.yml` 中定义您希望的分类，作为[`categories_allowed`][categories_allowed]配置选项的一部分。[内置博客插件]将在未在列表中找到分类时停止构建。
 
   [categories_allowed]: ../plugins/blog.md#config.categories_allowed
 
-#### Adding tags
+#### 添加标签 {#adding-tags}
 
-Besides [categories], the [built-in blog plugin] also integrates with the
-[built-in tags plugin]. If you add tags in the front matter `tags` property as
-part of a post, the post is linked from the [tags index]:
+除了[分类]，[内置博客插件]还与[内置标签插件]集成。如果您在帖子的前置元素 `tags` 属性中添加标签，则帖子将从[标签索引]中链接：
 
 ``` yaml
 ---
@@ -411,16 +344,14 @@ tags:
 ...
 ```
 
-As usual, the tags are rendered above the main headline and posts are linked
-on the tags index page, if configured. Note that posts are, as pages, only
-linked with their titles.
+像往常一样，标签渲染在主标题上方，并且帖子在标签索引页面上链接（如果配置）。请注意，帖子与页面一样，只能通过其标题链接。
 
-  [built-in tags plugin]: ../plugins/tags.md
+  [内置标签插件]: ../plugins/tags.md
   [tags index]: setting-up-tags.md#adding-a-tags-index
 
-#### Changing the slug
+#### 更改短链接 {#changing-the-slug}
 
-Slugs are the shortened description of your post used in the URL. They are automatically generated, but you can specify a custom slug for a page:
+短链接是用于 URL 中的帖子的缩写描述。它们是自动生成的，但您可以为页面指定自定义短链接：
 
 ``` yaml
 ---
@@ -431,16 +362,13 @@ slug: hello-world
 ...
 ```
 
-#### Adding related links
+#### 添加相关链接 {#adding-related-links}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.23.0 -->
 <!-- md:flag experimental -->
 
-Related links offer the perfect way to prominently add a _further reading_
-section to your post that is included in the left sidebar, guiding the user to
-other destinations of your documentation. Use the front matter `links` property
-to add related links to a post:
+相关链接提供了一种完美的方式，在左侧边栏中突出显示帖子的 _进一步阅读_ 部分，引导用户前往您文档的其他目的地。使用前置元素 `links` 属性为帖子添加相关链接：
 
 ``` yaml
 ---
@@ -454,9 +382,7 @@ links:
 ...
 ```
 
-You can use the exact same syntax as for the [`nav`][nav] section in
-`mkdocs.yml`, which means you can set explicit titles for links, add external
-links and even use nesting:
+您可以使用与`mkdocs.yml`中的[`nav`][nav]部分相同的语法，这意味着您可以为链接设置显式标题、添加外部链接甚至使用嵌套：
 
 ``` yaml
 ---
@@ -473,47 +399,35 @@ links:
 ...
 ```
 
-If you look closely, you'll realize that you can even use an anchor to link to
-a specific section of a document, extending the possibilities of the [`nav`][nav]
-syntax in `mkdocs.yml`. The [built-in blog plugin] resolves the anchor and sets
-the title of the anchor as a [subtitle] of the related link.
+如果您仔细观察，您会意识到您甚至可以使用锚点链接到文档的特定部分，扩展[`nav`][nav]在`mkdocs.yml`中的语法的可能性。[内置博客插件]解析锚点并将锚点的标题设置为相关链接的[副标题]。
 
-Note that all links must be relative to [`docs_dir`][docs_dir], as is also the
-case for the [`nav`][nav] setting.
+请注意，所有链接都必须相对于[`docs_dir`][docs_dir]，这也适用于[`nav`][nav]设置。
 
   [nav]: https://www.mkdocs.org/user-guide/configuration/#nav
-  [subtitle]: ../reference/index.md#setting-the-page-subtitle
+  [副标题]: ../reference/index.md#setting-the-page-subtitle
 
-#### Linking from and to posts
+#### 从帖子链接和到帖子链接 {#linking-from-and-to-posts}
 
-While [post URLs][post slugs] are dynamically computed, the [built-in blog
-plugin] ensures that all links from and to posts and a post's assets are
-correct. If you want to link to a post, just use the path to the Markdown file
-as a link reference (links must be relative):
+虽然[帖子 URL][文章短链接]是动态计算的，[内置博客插件]确保所有从帖子和帖子资产到帖子的链接都是正确的。如果您想链接到一个帖子，只需使用 Markdown 文件的路径作为链接引用（链接必须是相对的）：
 
 ``` markdown
 [Hello World!](blog/posts/hello-world.md)
 ```
 
-Linking from a post to a page, e.g. the index, follows the same method:
-
+从帖子链接到页面，例如索引，遵循相同的方法：
 ``` markdown
 [Blog](../index.md)
 ```
 
-All assets inside the `posts` directory are copied to the `blog/assets` folder
-when the site is being built. Of course, you can also reference assets from
-posts outside of the `posts` directory. The [built-in blog plugin] ensures that
-all links are correct.
+`posts`目录中的所有资产都会在站点构建时复制到`blog/assets`文件夹中。当然，您也可以从`posts`目录外的帖子引用资产。[内置博客插件]确保所有链接都是正确的。
 
-#### Pinning a post :material-alert-decagram:{ .mdx-pulse title="Added on February 24, 2024" }
+#### 固定帖子 :material-alert-decagram:{ .mdx-pulse title="2024年2月24日添加" } {#pinning-a-post}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.53.0 -->
 <!-- md:flag experimental -->
 
-If you want to pin a post to the top of the index page, as well as the archive
-and category indexes it is part of, you can use the front matter `pin` property:
+如果您想将一篇帖子固定在索引页面的顶部，以及它所属的归档和分类索引中，您可以使用前置元素 `pin` 属性：
 
 ``` yaml
 ---
@@ -525,21 +439,13 @@ pin: true
 ...
 ```
 
-If multiple posts are pinned, they are sorted by their creation date, with the
-most recent pinned post being shown first, followed by the other pinned posts in
-descending order.
+如果有多个帖子被固定，它们将按创建日期排序，最近的固定帖子将首先显示，其余固定帖子将按降序显示。
 
-#### Setting the reading time
+#### 设置阅读时间 {#setting-the-reading-time}
 
-When [enabled], the [readtime] package is used to compute the expected reading
-time of each post, which is rendered as part of the post and post excerpt.
-Nowadays, many blogs show reading times, which is why the [built-in blog plugin]
-offers this capability as well.
+当[启用]时，[readtime]包用于计算每篇帖子的预期阅读时间，该时间作为帖子和帖子摘要的一部分渲染。如今，许多博客显示阅读时间，这就是为什么[内置博客插件]也提供这个功能的原因。
 
-Sometimes, however, the computed reading time might not feel accurate, or
-result in odd and unpleasant numbers. For this reason, reading time can be
-overridden and explicitly set with the front matter `readtime` property for a
-post:
+然而，有时候，计算出的阅读时间可能感觉不准确，或者导致奇怪和不愉快的数字。因此，可以用前置元素 `readtime` 属性覆盖阅读时间并显式设置帖子的阅读时间：
 
 ``` yaml
 ---
@@ -551,22 +457,19 @@ readtime: 15
 ...
 ```
 
-This will disable automatic reading time computation.
+这将禁用自动阅读时间计算。
 
   [readtime]: https://pypi.org/project/readtime/
-  [enabled]: ../plugins/blog.md#config.post_readtime
+  [启用]: ../plugins/blog.md#config.post_readtime
 
-#### Setting defaults
+#### 设置默认值 {#setting-defaults}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.21.0 -->
 <!-- md:plugin [meta] – built-in -->
 <!-- md:flag experimental -->
 
-If you have a lot of posts, it might feel redundant to define all of the above
-for each post. Luckily, the [built-in meta plugin] allows to set default front
-matter properties per folder. You can group your posts by categories, or
-authors, and add a `.meta.yml` file to set common properties:
+如果您有很多帖子，为每篇帖子定义所有上述内容可能会感觉重复。幸运的是，[内置元数据插件]允许按文件夹设置默认前置元素属性。您可以按分类或作者对您的帖子进行分组，并添加一个 `.meta.yml` 文件来设置通用属性：
 
 ``` { .sh .no-copy }
 .
@@ -578,9 +481,7 @@ authors, and add a `.meta.yml` file to set common properties:
 └─ mkdocs.yml
 ```
 
-1.  As already noted, you can also place a `.meta.yml` file in nested folders
-    of the `posts` directory. This file then can define all front matter
-    properties that are valid in posts, e.g.:
+1.  如已经指出的，您也可以在 `posts` 目录的嵌套文件夹中放置一个 `.meta.yml` 文件。此文件可以定义在帖子中有效的所有前置元素属性，例如：
 
     ``` yaml
     authors:
@@ -590,9 +491,7 @@ authors, and add a `.meta.yml` file to set common properties:
       - World
     ```
 
-Note that order matters – the [built-in meta plugin] must be defined before the
-blog plugin in `mkdocs.yml`, so that all set defaults are correctly picked up
-by the [built-in blog plugin]:
+请注意顺序很重要——[内置元数据插件]必须在 `mkdocs.yml` 中定义在博客插件之前，以便[内置博客插件]正确捕获所有设置的默认值：
 
 ``` yaml
 plugins:
@@ -600,18 +499,13 @@ plugins:
   - blog
 ```
 
-Lists and dictionaries in `.meta.yml` files are merged and deduplicated with the
-values defined for a post, which means you can define common properties in
-`.meta.yml` and then add specific properties or overrides for each post.
+`.meta.yml` 文件中的列表和字典与为帖子定义的值合并和去重，这意味着您可以在 `.meta.yml` 中定义通用属性，然后为每篇帖子添加特定属性或覆盖。
 
-  [built-in meta plugin]: ../plugins/meta.md
+  [内置元数据插件]: ../plugins/meta.md
 
-### Adding pages
+### 添加页面 {#adding-pages}
 
-Besides posts, it's also possible to add static pages to your blog by listing
-the pages in the [`nav`][nav] section of `mkdocs.yml`. All generated indexes
-are included after the last specified page. For example, to add a page on the
-authors of the blog, add the following to `mkdocs.yml`:
+除了帖子，通过在 `mkdocs.yml` 的[`nav`][nav]部分列出页面，也可以向您的博客添加静态页面。所有生成的索引都包含在最后指定的页面之后。例如，要在博客中添加关于博客作者的页面，请添加以下内容到 `mkdocs.yml` 中：
 
 ``` yaml
 nav:
@@ -621,18 +515,15 @@ nav:
       ...
 ```
 
-## Customization
+## 自定义 {#customization}
 
-### Custom index pages
+### 自定义索引页面 {#custom-index-pages}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.24.0 -->
 <!-- md:flag experimental -->
 
-If you want to add custom content to automatically generated [archive] and
-[category] indexes, e.g. to add a category description prior to the list of
-posts, you can manually create the category page in the same location where
-the [built-in blog plugin] would create it:
+如果您想在自动生成的[归档]和[分类]索引中添加自定义内容，例如在帖子列表前添加分类描述，您可以手动创建[内置博客插件]将创建的类别页面的相同位置的文件：
 
 ``` { .sh .no-copy }
 .
@@ -645,20 +536,15 @@ the [built-in blog plugin] would create it:
 └─ mkdocs.yml
 ```
 
-1.  The easiest way is to first [add the category] to the blog post, then take
-    the URL generated by the [built-in blog plugin] and create the file at the
-    corresponding location in the [`blog_dir`][this is configurable] folder.
+1.  最简单的方法是首先[添加分类]到博客帖子，然后获取[内置博客插件]生成的 URL，并在[`blog_dir`][this is configurable]文件夹的相应位置创建文件。
 
-    Note that the shown directory listing is based on the default configuration.
-    If you specify different values for the following options, be sure to adjust
-    the path accordingly:
+    请注意，所示的目录列表基于默认配置。如果您为以下选项指定了不同的值，请确保相应调整路径：
 
     - [`blog_dir`][this is configurable]
     - [`categories_url_format`][categories_url_format]
     - [`categories_slugify`][categories_slugify]
 
-You can now add arbitrary content to the newly created file, or set specific
-front matter properties for this page, e.g. to change the [page description]:
+您现在可以向新创建的文件添加任意内容，或为此页面设置特定的前置元素属性，例如更改[页面描述]：
 
 ``` yaml
 ---
@@ -669,25 +555,23 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 ...
 ```
 
-All post excerpts belonging to the category are automatically appended.
+属于该分类的所有帖子摘要将自动附加。
 
-  [add the category]: #adding-categories
-  [page description]: ../reference/index.md#setting-the-page-description
+  [添加分类]: #adding-categories
+  [页面描述]: ../reference/index.md#setting-the-page-description
   [categories_url_format]: ../plugins/blog.md#config.categories_url_format
   [categories_slugify]: ../plugins/blog.md#config.categories_slugify
 
-### Overriding templates
+### 覆盖模板 {#overriding-templates}
 
-The [built-in blog plugin] is built on the same basis as Material for MkDocs,
-which means you can override all templates used for the blog by using
-[theme extension] as usual.
+[内置博客插件]建立在与 Material for MkDocs 相同的基础上，这意味着您可以使用[主题扩展]按照惯例覆盖博客使用的所有模板。
 
-The following templates are added by the [built-in blog plugin]:
+[内置博客插件]添加了以下模板：
 
-- [`blog.html`][blog.html] – Template for blog, archive and category index
-- [`blog-post.html`][blog-post.html] – Template for blog post
+- [`blog.html`][blog.html] – 博客、归档和分类索引的模板
+- [`blog-post.html`][blog-post.html] – 博客帖子的模板
 
-  [theme extension]: ../customization.md#extending-the-theme
+  [主题扩展]: ../customization.md#extending-the-theme
 
   [blog.html]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/blog.html
   [blog-post.html]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/blog-post.html

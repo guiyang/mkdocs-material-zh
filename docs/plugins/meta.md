@@ -1,40 +1,30 @@
 ---
-title: Built-in meta plugin
+title: 内置元数据插件
 icon: material/file-tree
 ---
 
-# Built-in meta plugin
+# 内置元数据插件 {#built-in-meta-plugin}
 
-The meta plugin solves the problem of setting metadata (front matter) for all
-pages in a folder, i.e., a subsection of your project, which is particularly
-useful to ensure that a certain subset of pages features specific tags, uses a
-custom template, or is attributed to an author.
+元数据插件解决了为文件夹中的所有页面（即您项目的一个子部分）设置元数据（前言）的问题，这对于确保某些页面子集具有特定标签、使用自定义模板或归属于某个作者特别有用。
 
 ---
 
-<!-- md:sponsors --> __Sponsors only__ – this plugin is currently reserved to
-[our awesome sponsors].
+<!-- md:sponsors --> __仅限赞助者__ — 此插件目前仅供[我们的优秀赞助者]使用。
 
-  [our awesome sponsors]: ../insiders/index.md
+  [我们的优秀赞助者]: ../insiders/index.md
 
-## Objective
+## 目标 {#objective}
 
-### How it works
+### 它是如何工作的 {#how-it-works}
 
-The plugin scans the [`docs` directory][mkdocs.docs_dir] for `.meta.yml` files,
-and recursively merges the contents of those files with the metadata (front
-matter) of all pages that are contained in the same folder and all subfolders.
-For example, if you want to add the tag <span class="md-tag">Example</span> to
-multiple pages, use:
+该插件扫描[`docs`目录][mkdocs.docs_dir]中的`.meta.yml`文件，并递归地将这些文件的内容与同一文件夹及所有子文件夹中包含的所有页面的元数据（前言）合并。例如，如果您想向多个页面添加标签 <span class="md-tag">示例</span>，请使用：
 
 ``` yaml title=".meta.yml"
 tags:
   - Example
 ```
 
-Now, given the following directory layout, if you store the file in the folder
-named `example`, all pages in that folder receive the tag, while all pages
-outside of the folder remain unaffected:
+现在，根据以下目录布局，如果您将文件存储在名为`example`的文件夹中，则该文件夹中的所有页面都会接收到标签，而文件夹外的所有页面则不受影响：
 
 ``` { .sh .no-copy hl_lines="4-8" }
 .
@@ -49,65 +39,52 @@ outside of the folder remain unaffected:
 └─ mkdocs.yml
 ```
 
-When combining metadata, lists and dictionaries are recursively merged, which
-means you can append values to a list and add or set specific properties in a
-dictionary on arbitrary levels.
+在合并元数据时，列表和字典会递归合并，这意味着您可以向列表中追加值，并在字典中的任意级别上添加或设置特定属性。
 
-### When to use it
+### 何时使用它 {#when-to-use-it}
 
-While the plugin itself doesn't offer much functionality beyond adding and
-merging metadata, it is a perfect companion for many of the other built-in
-plugins that Material for MkDocs offers. Some of the most powerful combinations
-of the meta plugin and other built-in plugins are:
+虽然插件本身除了添加和合并元数据外并没有提供太多功能，但它是许多其他内置插件的完美伴侣，这些插件是Material for MkDocs提供的。元数据插件与其他内置插件的一些最强大组合包括：
 
 <div class="grid cards" markdown>
 
--   :material-share-circle: &nbsp; __[Built-in social plugin][social]__
+-   :material-share-circle: &nbsp; __[内置社交插件][social]__
 
     ---
 
-    The meta plugin can be used to [change the layout] for social cards or
-    [change specific layout options] like [background] or [color]
-    for a subset of pages.
+    元数据插件可用于[更改布局]以用于社交卡片或[更改特定布局选项]，例如[背景]或[颜色]，以适用于页面的子集。
 
     ``` yaml title=".meta.yml"
     social:
       cards_layout: default/variant
     ```
 
--   :material-newspaper-variant-outline: &nbsp; __[Built-in blog plugin][blog]__
+-   :material-newspaper-variant-outline: &nbsp; __[内置博客插件][blog]__
 
     ---
 
-    The meta plugin allows to automatically associate blog posts with specific
-    [authors] and [categories], ensuring that blog posts are always correctly
-    annotated.
+    元数据插件允许自动将博客帖子与特定[作者]和[类别]关联，确保博客帖子始终正确注释。
 
     ``` yaml title=".meta.yml"
     authors:
       - squidfunk
     ```
 
--   :material-tag-text: &nbsp; __[Built-in tags plugin][tags]__
+-   :material-tag-text: &nbsp; __[内置标签插件][tags]__
 
     ---
 
-    The meta plugin makes it possible to ensure that subsections of your
-    project are annotated with [specific tags], so they can't be forgotten when
-    adding pages.
+    元数据插件使得确保您的项目的子部分用[特定标签]注释成为可能，这样在添加页面时就不会忘记。
 
     ``` yaml title=".meta.yml"
     tags:
       - Example
     ```
 
--   :material-magnify: &nbsp; __[Built-in search plugin][search]__
+-   :material-magnify: &nbsp; __[内置搜索插件][search]__
 
     ---
 
-    The meta plugin makes it easy to [boost] specific sections in search results
-    or to [exclude] them entirely from being indexed, giving more granular
-    control over search.
+    元数据插件使得在搜索结果中[提升]特定部分或完全[排除]它们被索引变得简单，从而提供更细致的搜索控制。
 
     ``` yaml title=".meta.yml"
     search:
@@ -117,44 +94,41 @@ of the meta plugin and other built-in plugins are:
 </div>
 
   [social]: social.md
-  [change the layout]: social.md#meta.social.cards_layout
-  [change specific layout options]: social.md#meta.social.cards_layout_options
-  [background]: social.md#option.background_color
-  [color]: social.md#option.color
+  [更改布局]: social.md#meta.social.cards_layout
+  [更改特定布局选项]: social.md#meta.social.cards_layout_options
+  [背景]: social.md#option.background_color
+  [颜色]: social.md#option.color
   [blog]: blog.md
-  [authors]: blog.md#meta.authors
-  [categories]: blog.md#meta.categories
+  [作者]: blog.md#meta.authors
+  [类别]: blog.md#meta.categories
   [tags]: tags.md
-  [specific tags]: tags.md#meta.tags
+  [特定标签]: tags.md#meta.tags
   [search]: search.md
-  [exclude]: search.md#meta.search.exclude
-  [boost]: search.md#meta.search.boost
+  [排除]: search.md#meta.search.exclude
+  [提升]: search.md#meta.search.boost
 
-## Configuration
+## 配置 {#configuration}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.21.0 -->
 <!-- md:plugin [meta] – built-in -->
 <!-- md:flag experimental -->
 
-As with all [built-in plugins], getting started with the meta plugin is
-straightforward. Just add the following lines to `mkdocs.yml`, and start
-applying metadata for multiple pages at once:
+与所有[内置插件]一样，开始使用元数据插件非常简单。只需将以下行添加到`mkdocs.yml`，并开始一次性应用多个页面的元数据：
 
 ``` yaml
 plugins:
   - meta
 ```
 
-The meta plugin is included with Material for MkDocs and doesn't need to be
-installed.
+元数据插件已包含在Material for MkDocs中，无需安装。
 
   [meta]: meta.md
-  [built-in plugins]: index.md
+  [内置插件]: index.md
 
-### General
+### 通用 {#general}
 
-The following settings are available:
+以下设置可用：
 
 ---
 
@@ -164,9 +138,7 @@ The following settings are available:
 <!-- md:version insiders-4.38.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable the plugin when [building your project].
-It's normally not necessary to specify this setting, but if you want to disable
-the plugin, use:
+使用此设置在[构建您的项目]时启用或禁用插件。通常不需要指定此设置，但如果您想要禁用插件，请使用：
 
 ``` yaml
 plugins:
@@ -174,11 +146,11 @@ plugins:
       enabled: false
 ```
 
-  [building your project]: ../creating-your-site.md#building-your-site
+  [构建您的项目]: ../creating-your-site.md#building-your-site
 
-### Meta file
+### 元文件 {#meta-file}
 
-The following settings are available for meta files:
+以下设置适用于元文件：
 
 ---
 
@@ -188,9 +160,7 @@ The following settings are available for meta files:
 <!-- md:version insiders-4.21.0 -->
 <!-- md:default `.meta.yml` -->
 
-Use this setting to change the meta file name the plugin will look for when
-scanning the [`docs` directory][mkdocs.docs_dir]. It's normally not necessary to
-change this setting, but if you want to change it, use:
+使用此设置更改插件在扫描[`docs`目录][mkdocs.docs_dir]时寻找的元文件名称。通常不需要更改此设置，但如果您想更改它，请使用：
 
 ``` yaml
 plugins:
@@ -198,5 +168,4 @@ plugins:
       meta_file: .meta.yml
 ```
 
-The provided path is resolved from the [`docs` directory][mkdocs.docs_dir]
-recursively.
+提供的路径从[`docs`目录][mkdocs.docs_dir]递归解析。

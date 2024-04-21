@@ -1,64 +1,41 @@
-# Pull Requests
+# 拉取请求 {#pull-requests}
 
-You can contribute to Material for MkDocs by making a [pull request] that
-will be reviewed by maintainers and integrated into the main repository when
-the changes made are approved. You can contribute bug fixes, changes to the
-documentation, or new functionality you have developed.
+您可以通过提交[拉取请求][pull request]来为 MkDocs 的 Material 做出贡献，维护者将审查这些请求，并在更改被批准后将其整合到主仓库中。您可以贡献错误修复、文档更改或您开发的新功能。
 
 [pull request]: https://docs.github.com/en/pull-requests
 
-!!! note "Considering a pull request"
+!!! note "考虑一个拉取请求"
 
-    Before deciding to spend effort on making changes and creating a pull
-    request, please discuss what you intend to do. If you are responding to
-    what you think might be a bug, please issue a [bug report] first. If you
-    indend to work on documentation, create a [documentation issue]. If you
-    want to work on a new feature, please create a [change request].
+    在决定投入精力进行更改并创建拉取请求之前，请讨论您打算做什么。如果您认为可能遇到了一个错误，请首先提交一个[错误报告][bug report]。如果您打算处理文档，创建一个[文档问题][documentation issue]。如果您想开发新功能，请创建一个[变更请求][change request]。
 
-    Keep in mind the guidance given and let people advise you. It might be that
-    there are easier solutions to the problem you perceive and want to address.
-    It might be that what you want to achieve can already be done by
-    configuration or [customization].
+    请注意给出的指导并让人们为您提供建议。可能有更简单的解决方案可以解决您所认为的问题。也可能您想要实现的功能通过配置或[自定义][customization]已经可以完成。
 
 [bug report]: reporting-a-bug.md
 [documentation issue]: reporting-a-docs-issue.md
 [change request]: requesting-a-change.md
 [customization]: ../customization.md
 
-## Learning about pull requests
+## 关于拉取请求的学习 {#learning-about-pull-requests}
 
-Pull requests are a concept layered on top of Git by services that provide Git
-hosting. Before you consider making a pull request, you should familiarize
-yourself with the documentation on GitHub, the service we are using. The
-following articles are of particular importance:
+拉取请求是基于 Git 的概念，由提供 Git 托管服务的服务层提供。在您考虑发起拉取请求之前，您应该熟悉 GitHub 的文档，我们正在使用这个服务。以下文章尤为重要：
 
 1. [Forking a repository]
 2. [Creating a pull request from a fork]
 3. [Creating a pull request]
 
-Note that they provide tailored documentation for different operating systems
-and different ways of interacting with GitHub. We do our best in the
-documentation here to describe the process as it applies to Material for MkDocs
-but cannot cover all possible combinations of tools and ways of doing things.
-It is also important that you understand the concept of a pull-request in
-general before continuing.
+请注意，他们为不同的操作系统和与 GitHub 交互的不同方式提供了定制化的文档。我们在这里的文档中尽力描述了这一过程如何适用于 MkDocs 的 Material，但不能覆盖所有可能的工具组合和做事方式。在继续之前了解拉取请求的一般概念也很重要。
 
 [Forking a repository]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
 [Creating a pull request from a fork]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
 [Creating a pull request]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 
-## Pull request process
+## 拉取请求流程 {#pull-request-process}
 
-In the following, we describe the general process for making pull requests. The
-aim here is to provide the 30k ft overview before describing details later on.
+以下描述了发起拉取请求的一般流程。这里的目标是提供一个高层次的概览，然后再详细描述。
 
-### Preparing changes and draft PR
+### 准备更改和草稿PR {#preparing-changes-and-draft-pr}
 
-The diagram below describes what typically happens to repositories in the
-process or preparing a pull request. We will be discussing the review-revise
-process below. It is important that you understand the overall process first
-before you worry about specific commands. This is why we cover this first before
-providing instructions below.
+下面的图表描述了在准备拉取请求过程中通常会发生的事情。我们将讨论下面的审查修改过程。在担心具体命令之前，首先了解整个流程是很重要的。这就是为什么我们首先介绍这个，然后再提供下面的指令。
 
 ``` mermaid
 sequenceDiagram
@@ -85,70 +62,33 @@ sequenceDiagram
   end
 ```
 
-1. The first step is that you create a fork of the Material for MkDocs
-   repository, either [mkdocs-material] or [mkdocs-material-insiders]
-   (only accessible to sponsors). This provides you with a repository that you
-   can push changes to. Note that it is not possible to have more than one fork
-   of a given repository at any point in time. So, the fork you create will be
-   *the* fork you have.
+1. 第一步是创建 Material for MkDocs 仓库的一个分支，你可以选择 [mkdocs-material] 或 [mkdocs-material-insiders] （仅对赞助者开放）。这样你就拥有了一个可以提交更改的仓库。注意，任何时候你都无法拥有一个给定仓库的多个分支。因此，你创建的分支将是 *你拥有的* 分支。
 
-2. Once it is made, clone it to your local machine so you can start working on
-   your changes.
+2. 分支创建后，将其克隆到你的本地机器上，开始你的修改工作。
 
-3. All contributions should be made through a 'topic branch' with a name that
-   describes the work being done. This allows you to have more than one piece
-   of work in progress and, if you are working with the public version, also
-   shows others clearly that the code contained is work in progress. The topic
-   branch will be relatively short-lived and will disappear at the end, when
-   your changes have been incorporated into the codebase.
+3. 所有贡献都应通过一个名为“主题分支”的分支进行，分支名应描述正在进行的工作。这使你能够同时进行多个工作，并且，如果你使用的是公共版本，还能清晰地向他人展示代码处于进行中状态。主题分支的生命周期相对较短，在最终将你的更改并入代码库时会消失。
 
-4.  Next comes the iterative process of making edits, committing them to your
-    clone. Please commit in sensible chunks that constitute a piece of work
-    instead of committing everything in one go.
+4. 接下来是反复编辑、提交到你的克隆库的过程。请分段提交，每次提交应代表一项完整的工作，而不是一次性提交所有更改。
 
-    Remember that fine-grained, incremental commits are much easier to
-    review in than large changes all over the place and with many files involved.
-    Try to keep your changes as small and localized as possible and keep the
-    reviewer in mind when committing. In particular, make sure to write
-    meaningful commit messages.
+    请记住，细粒度的增量提交比大范围的大修改更容易审核。尽量保持你的更改尽可能小和局部，提交时要考虑审阅者。特别是要确保写下有意义的提交信息。
 
-5. Push your work up to your fork regularly.
+5. 定期将你的工作推送到你的分支。
 
-6. You should also keep an eye on changes in the Material for MkDocs repository
-   you cloned. This is especially important if you work takes a while. Please
-   try and merge any concurrent changes into your fork and into your branch
-   regularly. You *must* do this at least once before creating a pull request,
-   so make your life easier and do it more often so as to minimize the risk of
-   conflicting changes.
+6. 你还应该关注你克隆的 Material for MkDocs 仓库中的变化。如果你的工作花费了一些时间，这一点尤其重要。请尝试定期将任何同时发生的更改合并到你的分支和分支中。在创建拉取请求之前，你*必须*至少做一次合并，因此请更频繁地这样做，以尽量减少冲突更改的风险。
 
-7. Once you are happy that your changes are in a state that you can describe
-   them in a *draft* pull request, you should create this. Make sure to
-   reference any previous discussions or issues that gave rise to your work.
-   Creating a draft is a good way to get *early* feedback on your work from the
-   maintainer or others. You can explicitly request reviews at points where you
-   think this would be important.
+7. 一旦你对你的更改感到满意，认为它们已经可以在*草稿*拉取请求中描述了，你应该创建它。确保引用任何之前的讨论或问题，这些讨论或问题引发了你的工作。创建草稿是从维护者或其他人那里获得*早期*反馈的好方法。你可以在认为这很重要的时候明确要求审查。
 
-8.  Review your work as if you were the reviewer and fix any issues with your
-    work so far. Look critically at the diffs of the files that you have changed.
-    In particular, pay attention to whether the changes are as small as possible
-    and whether you have follow the general coding style used in the project.
-    If you received feedback, iterate over the process so far as necessary.
+8. 如同你是审查者一样审查你的工作，修复到目前为止你的工作中的任何问题。仔细查看你所改变的文件的差异。特别注意更改是否尽可能小，以及你是否遵循了项目中使用的一般编码风格。如果你收到了反馈，根据需要重复到目前为止的过程。
 
-    You should choose a number of projects to test your changes with. You should
-    definitely make sure that the changes do not break the building of the
-    documentation for Material for MkDocs, which you can find in the `docs`
-    folder. You may also want to make sure that relevant examples from the
-    [examples repository] still build fine.
+    你应该选择一些项目来测试你的更改。你应该确保更改不会破坏 Material for MkDocs 的文档构建，你可以在 `docs` 文件夹中找到它。你可能还想确保[示例仓库]中的相关示例仍然可以正常构建。
 
 [mkdocs-material]: https://github.com/squidfunk/mkdocs-material
 [mkdocs-material-insiders]: https://github.com/squidfunk/mkdocs-material-insiders/
 [examples repository]: https://github.com/mkdocs-material/examples
 
-### Finalizing
+### 完成 {#finalizing}
 
-Once you are happy with your changes, you can move to the next step, finalizing
-your pull request and asking for a more formal and detailed review. The diagram
-below shows the process:
+一旦你对更改感到满意，你可以转到下一步，完成你的拉取请求，并要求进行更正式和详细的审查。下面的图表显示了过程：
 
 ``` mermaid
 sequenceDiagram
@@ -175,128 +115,66 @@ sequenceDiagram
   end
 ```
 
-1. When you are happy that the changes you made amount to a contribution that
-   the maintainer(s) could integrate into the codebase, finalize the pull
-   request. This signals to everyone that consider the work 'done' and that it
-   can be reviewed with a view to accepting and integrating it.
+1. 当你对所做的更改满意，并认为维护者可以将其整合到代码库时，完成拉取请求。这向所有人表明你认为工作已经‘完成’，并且可以进行审查以便接受和整合。
 
-2. Request a review from the maintainer, `@squidfunk`.
+2. 向维护者 `@squidfunk` 请求审查。
 
-3.  The maintainer may make comments on your code, which you should discuss with
-    them. Bear in mind when doing this that the maintainer may have a different
-    point of view compared to yours. They will often take a more long-term
-    perspective of maintaining the project in the years to come while you may be
-    more focused on the specific issue or feature that you worked on. Please keep
-    the discussion respectful at all times.
+3. 维护者可能会对你的代码发表评论，你应该与他们讨论。在此过程中，请记住维护者可能与你的观点不同。他们通常会从长远维护项目的角度考虑，而你可能更专注于你所工作的特定问题或功能。请始终保持讨论的尊重。
 
-    It is important to note that not all pull requests get incorporated int the
-    codebase. The reasons can vary. The work may bring to light other issues that
-    block integration of the pull request. Sometimes it helps uncover better ways of
-    doing things or shows that a more general approach is needed. All of this is
-    fine and helps the project progress, even if specific changes are not,
-    ultimately, accepted.
+    重要的是要注意，并非所有拉取请求都会并入代码库。原因可能各不相同。工作可能揭示了阻碍拉取请求整合的其他问题。有时候，它有助于发现更好的做事方法，或者显示需要更通用的方法。所有这些都有助于项目的进展，即使特定的更改最终可能不被接受也是如此。
 
-4. Make any requested changes by committing them to your local clone and
-   pushing them up to your fork. This will automatically update the pull request.
-   It may well take a few iterations to get your contributions to an acceptable
-   state. You can help the process along by carefully reading comments made and
-   making changes with care.
+4. 根据请求，将任何要求的更改提交到你的本地克隆，并将它们推送到你的分支。这将自动更新拉取请求。这可能需要几次迭代才能将你的贡献达到可接受的状态。通过仔细阅读评论并小心地进行更改，你可以帮助这一过程。
 
-5. Once the reviewer is fully satisfied with the changes, they can merge them
-   into the main branch (or 'master'). In the process, they may 'squash' your
-   commits together into a smaller number of commits and may edit the messages
-   that describe them. Congratulations, you have now contributed to this project
-   and should see the changes in the main branch under your name.
+5. 一旦审查者对更改完全满意，他们可以将其合并到主分支（或‘master’）。在此过程中，他们可能会将你的提交合并成较少的提交，并可能编辑描述它们的消息。恭喜，你现在已经为这个项目做出了贡献，并且应该在主分支下看到你的名字。
 
-6. You can now delete the fork and your local repository and start afresh again
-   next time around. Alternatively, you can keep the repository and local clone
-   around but it is important that you keep them in sync with the upstream
-   repository for any subsequent work. We recommend that you start by deleting
-   the branch you used on your fork.
+6. 现在你可以删除分支和你的本地仓库，并在下次再次开始时从头开始。或者，你可以保留仓库和本地克隆，但重要的是，你需要将它们与上游仓库同步，以便进行任何后续工作。我们建议你首先删除你在分支上使用的分支。
 
-7. To make sure you have the changes you produced, pull them from the main
-   repository into the main branch of your fork.
+7. 为确保你拥有你生成的更改，请从主仓库将更改拉取到你的分支的主分支。
 
-8. Similarly, delete the topic branch from your local clone and...
+8. 同样，从你的本地克隆中删除主题分支并...
 
-9. pull the changes to its master branch.
+9. 拉取更改到其主分支。
 
-## Steps
+## 步骤 {#steps}
 
-Now that the overall process is outlined, here are specific instructions and
-tips. There are many choices to be made when describing a process for
-contributing to a project via a pull request. In the following, we assume that
-you are working with the Git command-line tools. For most alternatives (such as
-using IDEs or using functionality provided through the GitHub web interface),
-the translation from the command-line instructions should be simple enough.  We
-will add notes only where really necessary to keep the complexity of this to a
-reasonable level.
+现在整个过程已经概述，以下是具体的指导和提示。在描述通过拉取请求为项目做出贡献的过程时，有许多选择需要做出。在接下来的内容中，我们假设你正在使用 Git 命令行工具。对于大多数其他选择（如使用 IDE 或通过 GitHub 网页界面提供的功能），将命令行指令转换应该足够简单。我们将仅在真正必要时添加注释，以保持这一点的复杂性处于合理水平。
 
-### Forking the repository
+### 分支仓库 {#forking-the-repository}
 
-To make changes to Material for MkDocs, you would first fork one of its
-repositories on GitHub. This is so that you have a repository on GitHub that
-you can push changes to (only maintainers and collaborators have write access
-to the original repositories).
+要对 Material for MkDocs 进行更改，你首先需要在 GitHub 上分支其仓库之一。这样你就有了一个可以推送更改的 GitHub 仓库（只有维护者和合作者才有权限访问原始仓库）。
 
-Fork the [repository for the public version] if you want to make changes to
-code that is in the public version or if you want to make changes to the
-documentation. It is a good idea to change the name of the repository by
-appending `-fork` so that people who come across it know that they have found a
-temporary fork rather then the original or a permanent fork of the project.
-You may also want to add a description that clarifies what the repository is for.
+如果你想对公共版本的代码或文档进行更改，请分支[公共版本的仓库][repository for the public version]。更改仓库名称，通过添加 `-fork` 来让发现它的人知道他们找到的是项目的临时分支而不是原始或永久分支是一个好主意。你也可能想添加一个说明仓库用途的描述。
 
 [repository for the public version]: https://github.com/squidfunk/mkdocs-material
 
-To make changes to functionality available only within the Insiders version,
-fork [the Insiders repository]. Note that the fork will be a private repository.
-Please respect the [terms of the Insiders program] and the spirit of the
-Sponsorware approach used to maintain and develop Material for MkDocs.
+要对只在内部版本中可用的功能进行更改，请分支[内部版本仓库][the Insiders repository]。请注意，分支将是一个私有仓库。请遵守[内部计划条款][terms of the Insiders program]和用于维护和开发 Material for MkDocs 的 Sponsorware 方法的精神。
 
 [the Insiders repository]: https://github.com/squidfunk/mkdocs-material-insiders/
 [terms of the Insiders program]: http://localhost:8000/mkdocs-material/insiders/faq/sponsoring/#licensing
 
-### Setting up a development environment
+### 设置开发环境 {#setting-up-a-development-environment}
 
-From this point onwards, please follow the [instructions for setting up the
-development environment]. They will take you through the process of setting up
-an environment in which you can make changes and review/test them.
+从这一点开始，请遵循[设置开发环境的指导][instructions for setting up the development environment]。这些指导将带你完成设置一个可以进行更改和审查/测试的环境的过程。
 
 [instructions for setting up the development environment]: ../customization.md#environment-setup
 
-### Making changes
+### 进行更改 {#making-changes}
 
-When you make changes to the code or the documentation please follow the
-established style used in the project. Doing so increases readability and
-also helps with making diffs easier to read for those who will review the pull
-request. Avoid making any large-scale style changes such as asking your IDE
-to re-format all code.
+当你对代码或文档进行更改时，请遵循项目中使用的既定风格。这样做可以提高可读性，并帮助审查拉取请求的人更容易阅读差异。避免进行任何大规模的风格更改，如让你的 IDE 重新格式化所有代码。
 
-Study the code that you are modifying well to ensure that you fully understand
-how it works before you try to change it. This will not only help you solve the
-problem you are trying to address but also minimize the risks of creating
-unintended side effects.
+请仔细研究你正在修改的代码，以确保在尝试更改之前你已完全理解其工作原理。这不仅可以帮助你解决你试图解决的问题，还可以最小化创建意外副作用的风险。
 
-### Committing to a branch
+### 提交到分支
 
-Development for pull requests is best done in a topic branch separate from the
-`master` branch. Create a new local branch with `git switch -c <name>` and
-commit your changes to this branch.
+拉取请求的开发最好在与 `master` 分支分开的主题分支上进行。使用 `git switch -c <name>` 创建一个新的本地分支，并将你的更改提交到这个分支。
 
-When you want to push commits to your fork, you can do so with
-`git push -u origin <name>`. The `-u` argument is the short version of
-`--set-upstream`, which makes the newly created branch 'track' the branch with
-the same `<name>` in your fork. This means that then `pull` and `push` commands
-will work against that branch in your fork by default.
+当你想将提交推送到你的分支时，你可以使用 `git push -u origin <name>`。`-u` 参数是 `--set-upstream` 的简写，这使得新创建的分支 '跟踪' 你分支中同名的分支。这意味着之后的 `pull` 和 `push` 命令将默认针对你分支中的那个分支。
 
-### Merging concurrent changes
+### 合并同时发生的更改 {#merging-concurrent-changes}
 
-If the work you do takes some time then the chances increase that changes will
-be made to the main repository while you work.It is probably a good idea to set
-up the original Material for MkDocs repository as an `upstream` repository for
-your local clone.
+如果你的工作需要一些时间，那么主仓库在你工作期间进行更改的可能性就会增加。将原始的 Material for MkDocs 仓库设置为你本地克隆的 `upstream` 仓库可能是个好主意。
 
-This is what it might look like:
+这可能是这样的：
 
 ```bash hl_lines="4"
 $ git remote -v
@@ -310,110 +188,66 @@ upstream	https://github.com/squidfunk/mkdocs-material.git (fetch)
 upstream	https://github.com/squidfunk/mkdocs-material.git (push)
 ```
 
-After you have done this, you can pull any concurrent changes from the upstream
-repository directly into your clone and do any necessary merges there, then push
-them up to your fork. You will need to be explicit about which remote repository
-you want to use when you are doing a `pull`:
+完成此操作后，你可以直接从上游仓库将任何同时发生的更改拉取到你的克隆中，并在那里进行必要的合并，然后将它们推送到你的分支。当你执行 `pull` 时，你需要明确指定你想要使用的远程仓库：
 
 ```bash
 # making and committing some local changes
 push pull upstream master
 ```
 
-This fetches changes from the `master` branch into your topic branch and merges
-them.
+这会将更改从 `master` 分支拉取到你的主题分支并合并它们。
 
-### Testing and reviewing changes
+### 测试和审查更改 {#testing-and-reviewing-changes}
 
-Before you commit any changes, you should make sure that they work as expected
-and do not create any unintended side effects. You should test them on at least
-these three [smoke tests]:
+在你提交任何更改之前，你应该确保它们按预期工作，并且不会创建任何意外的副作用。你应该至少在这三个[烟雾测试][smoke tests]上测试它们：
 
-- The documentation of Material for MkDocs itself. If you set up and run the
-development environment as outlined in the [instructions for setting up the
-development environment], `mkdocs serve` should be running and continuously
-building the documentation. Check that there are no error messages and, ideally,
-no (new) warnings.
+- Material for MkDocs 本身的文档。如果你按照[设置开发环境的指导][instructions for setting up the development environment]建立并运行开发环境，`mkdocs serve` 应该正在运行并连续构建文档。检查是否没有错误消息，并且理想情况下没有（新的）警告。
 
-- Test on a project that represents the problem or a test for a newly developed
-feature. You may already have this if you have filed a bug report and created
-a [minimal reproduction]. If you are working on a new feature then you may need
-to build a project to serve as a test suite. It can double as documentation that
-shows how your new feature is meant to work.
+- 在代表问题的项目上测试，或为新开发的功能测试。如果你已经提交了错误报告并创建了一个[最小再现][minimal reproduction]，你可能已经拥有了这个。如果你正在开发一个新功能，你可能需要构建一个项目作为测试套件。它还可以作为文档，展示你的新功能应该如何工作。
 
-- Test with relevant examples from the [Material for MkDocs Examples]
-  repository. Note that to build all examples in one go you need the projects
-  plugin from Insiders but you can always build the examples individually
-  using the public version.
+- 使用[Material for MkDocs 示例][Material for MkDocs Examples]仓库中的相关示例进行测试。请注意，要一次构建所有示例，你需要 Insiders 的项目插件，但你总是可以使用公共版本单独构建示例。
 
 [smoke tests]: https://en.wikipedia.org/wiki/Smoke_testing_(software)
 [minimal reproduction]: https://squidfunk.github.io/mkdocs-material/guides/creating-a-reproduction/
 [Material for MkDocs Examples]: https://github.com/mkdocs-material/examples
 
-- Ideally, also test the examples in the [examples repository]. If you are
-working on the Insiders edition of Material for MkDocs, you can simply start a
-build at the top level and the [projects plugin] will build all of the examples
-for you. If you are on the public version, you will need to build each
-sub-project individually. We appreciate that this is a growing collection of
-examples and you may want to prioritize those that are most relevant to the
-functionality you change.
+- 理想情况下，还应在[示例仓库][examples repository]中测试示例。如果你正在使用 Material for MkDocs 的 Insiders 版本，你可以简单地在顶层开始构建，[项目插件][projects plugin]将为你构建所有示例。如果你在公共版本中，你需要单独构建每个子项目。我们理解这是一个不断增长的示例集合，你可能想优先考虑那些与你更改的功能最相关的示例。
 
 [examples repository]: https://github.com/mkdocs-material/examples
 [projects plugin]: https://squidfunk.github.io/mkdocs-material/plugins/projects/
 
-### Creating the pull request
+### 创建拉取请求 {#creating-the-pull-request}
 
-Initially, create the pull request **as a draft**. You do this [through the
-various interfaces that GitHub provides]. Which one you use is entirely up to
-you. We do not provide specific instructions for using the interfaces as GitHub
-provide all the information that should be necessary.
+最初，**作为草稿**创建拉取请求。你可以[通过 GitHub 提供的各种界面][through the various interfaces that GitHub provides]来完成这一点。你使用哪一个完全取决于你。我们不提供使用界面的具体指导，因为 GitHub 提供的信息应该足够。
 
 [through the various interfaces that GitHub provides]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 
-### Commits, messages, mistakes and 'squash'
+### 提交、信息、错误和 '压缩' {#commits-messages-mistakes-and-squash}
 
-### Deleting branches
+### 删除分支 {#deleting-branches}
 
-Once the pull request has been merged into the master branch of the Material
-for MkDocs repository, you should remove the branch both from the fork on
-GitHub and from the local clone on your computer. This avoids possible
-confusion about the state of development.
+一旦拉取请求合并到 Material for MkDocs 仓库的主分支，你应该从 GitHub 上的分支和你的本地克隆中删除分支。这避免了可能对开发状态的混淆。
 
-First, switch back to the `master` branch with `git switch master` and then
-delete the branch used for the PR using `git branch -d <name>`.
+首先，使用 `git switch master` 切换回 `master` 分支，然后使用 `git branch -d <name>` 删除用于 PR 的分支。
 
-### Subsequent Pull Requests
+### 后续拉取请求 {#subsequent-pull-requests}
 
-It is important that subsequent pull requests are started from an up-to-date
-history of the `master` branch. One way to achieve this is to delete the fork
-and start with an entirely new one next time round.
+重要的是，后续拉取请求应从 `master` 分支的最新历史开始。一种实现这一点的方法是删除分支，并在下一次开始时使用全新的分支。
 
-If you contribute to Material for MkDocs more often or just happen to be
-doing two or more pull requests in succession, you can also just make sure
-to sync your fork (using the GitHub UI) and pull from it into your local
-repository. So, just delete the topic branch you created (both locally and in
-your fork) and pull from the main repository's `master` branch into your
-`master` branch before starting work on a new pull request.
+如果你经常为 Material for MkDocs 做出贡献，或者只是恰好连续进行两个或更多的拉取请求，你也可以确保同步你的分支（使用 GitHub UI），并从中拉取到你的本地仓库。因此，只需删除你创建的主题分支（本地和在你的分支中都要删除），然后在开始新的拉取请求之前，从主仓库的 `master` 分支拉取到你的 `master` 分支。
 
-## Dos and Don'ts
+### 注意事项 {#dos-and-donts}
 
-1. **Don't** just create a pull request with changes that are not explained.
+1. **不要** 仅创建未说明更改的拉取请求。
 
-2. **Do** discuss what you intend to do with people in the discussions so that the
-   rational for any changes is clear before you write or modify code.
+2. **要** 在讨论中讨论你打算做什么，以便在你编写或修改代码之前清楚任何更改的理由。
 
-3. **Do** link to the discussion or any issues to provide the context for a pull
-   request.
+3. **要** 链接到讨论或任何问题以提供拉取请求的上下文。
 
-4. **Do** ask questions if you are uncertain about anything.
+4. **要** 如果你对任何事情感到不确定，就提问。
 
-5. **Do** ask yourself if what you are doing benefits the wider community and
-   makes Material for MkDocs a better product.
+5. **要** 问自己你所做的是否有益于更广泛的社区，并使 Material for MkDocs 成为更好的产品。
 
-6. **Do** ask yourself if the cost of making the changes stands in a good
-   relation to the benefits they will bring. Some otherwise sensible changes can
-   add complexity for comparatively little gain, might break existing behaviour
-   or might be brittle when other changes need to be made.
+6. **要** 问自己，进行更改的成本是否与它们带来的好处成正比。一些其他明智的更改可能会增加复杂性，相对于它们带来的收益较小，可能会破坏现有行为，或在需要进行其他更改时可能会变得脆弱。
 
-7. **Do** merge in concurrent changes frequently to minimize the chance of
-   conflicting changes that may be difficult to resolve.
+7. **要** 频繁合并同时发生的更改，以最小化可能难以解决的冲突更改的机会。

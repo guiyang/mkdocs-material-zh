@@ -1,30 +1,23 @@
 ---
-title: Built-in projects plugin
+title: 内置项目插件
 icon: material/folder-open
 ---
 
-# Built-in projects plugin
+# 内置项目插件 {#built-in-projects-plugin}
 
-The projects plugin adds the ability to split your main project into multiple
-distinct projects, build them concurrently and preview them together as one.
-This is particularly useful when creating a multi-language project, but can also
-be used to split very large projects into smaller parts.
+项目插件增加了将主项目拆分为多个独立项目、并行构建并作为一个整体预览的能力。这在创建多语言项目时特别有用，也可以用于将非常大的项目拆分为较小的部分。
 
 ---
 
-<!-- md:sponsors --> __Sponsors only__ – this plugin is currently reserved to
-[our awesome sponsors].
+<!-- md:sponsors --> <!-- md:sponsors --> __仅限赞助者__ — 此插件目前仅供[我们的优秀赞助者]使用。
 
-  [our awesome sponsors]: ../insiders/index.md
+  [我们的优秀赞助者]: ../insiders/index.md
 
-## Objective
+## 目标 {#objective}
 
-### How it works
+### 它是如何工作的 {#how-it-works}
 
-The plugin scans the configured [`projects` directory][config.projects_dir] for
-`mkdocs.yml` files, identifies all nested projects and builds them concurrently.
-If not configured otherwise, the plugin expects that your project has
-the following directory layout, e.g. for a multi-language project:
+该插件扫描配置的[`projects`目录][config.projects_dir]以查找`mkdocs.yml`文件，识别所有嵌套项目，并并行构建它们。如果没有另行配置，该插件预期您的项目具有以下目录布局，例如用于多语言项目：
 
 ``` { .sh .no-copy }
 .
@@ -39,59 +32,45 @@ the following directory layout, e.g. for a multi-language project:
 └─ mkdocs.yml
 ```
 
-One of the most useful and interesting features of the plugin is that it allows
-[previewing your site] from the main project, while still being able to preview
-and build each project individually. This is especially useful for
-multi-language projects.
+该插件最有用和有趣的特性之一是它允许从主项目[预览您的站点]，同时仍能预览并单独构建每个项目。这对多语言项目特别有用。
 
-If, when [previewing your site], you change a file in one of the projects, the
-plugin only rebuilds this project and makes sure that MkDocs will also reload
-the associated files. This also creates the opportunity for splitting your
-main project into several projects for a better editing experience.
+如果在[预览您的站点]时，您更改了某个项目中的文件，插件只会重建此项目，并确保MkDocs也会重新加载相关文件。这也为将您的主项目拆分为几个项目创造了更好的编辑体验的机会。
 
-There are some [limitations], but we're working hard to remove them.
+有一些[限制]，但我们正在努力消除它们。
 
-  [previewing your site]: ../creating-your-site.md#previewing-as-you-write
+  [预览您的站点]: ../creating-your-site.md#previewing-as-you-write
   [limitations]: #limitations
 
-### When to use it
+### 何时使用它 {#when-to-use-it}
 
-The plugin came into existence because we needed a convenient and scalable
-method to build our [examples] repository, which features many self-contained
-and runnable projects that users can download and use as a basis when
-bootstrapping a new project or [creating a reproduction].
+该插件的诞生是因为我们需要一种方便且可扩展的方法来构建我们的[示例]存储库，该存储库包含许多独立且可运行的项目，用户可以下载并用作启动新项目或[创建复现]时的基础。
 
-When you want to create a multi-language project, or have a very large existing
-project, you might consider using the plugin, as it makes managing, editing
-and building more comfortable.
+当您想创建一个多语言项目，或者有一个非常大的现有项目时，您可能会考虑使用该插件，因为它使管理、编辑和构建变得更加舒适。
 
-  [examples]: https://github.com/mkdocs-material/examples
-  [creating a reproduction]: ../guides/creating-a-reproduction.md
+  [示例]: https://github.com/mkdocs-material/examples
+  [创建复现]: ../guides/creating-a-reproduction.md
 
-## Configuration
+## 配置 {#configuration}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.38.0 -->
 <!-- md:plugin [projects] – built-in -->
 <!-- md:flag experimental -->
 
-In order to get started with the projects plugin, just add the following lines
-to `mkdocs.yml`, and split your main project into several distinct projects that
-can be built concurrently:
+要开始使用项目插件，只需将以下行添加到`mkdocs.yml`中，并将您的主项目拆分为几个可以并行构建的独立项目：
 
 ``` yaml
 plugins:
   - projects
 ```
 
-The projects plugin is built into Material for MkDocs and doesn't need to be
-installed.
+项目插件已内置于Material for MkDocs中，无需安装。
 
   [projects]: projects.md
 
-### General
+### 通用 {#general}
 
-The following settings are available:
+以下设置可用：
 
 ---
 
@@ -101,9 +80,7 @@ The following settings are available:
 <!-- md:version insiders-4.38.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable the plugin when [building your project].
-If you want to disable the plugin, e.g., for local builds, you can use an
-[environment variable][mkdocs.env] in `mkdocs.yml`:
+使用此设置在[构建您的项目]时启用或禁用插件。如果您想禁用插件，例如，对于本地构建，您可以在`mkdocs.yml`中使用[环境变量][mkdocs.env]：
 
 ``` yaml
 plugins:
@@ -111,9 +88,9 @@ plugins:
       enabled: !ENV [CI, false]
 ```
 
-This configuration enables the plugin only during continuous integration (CI).
+此配置仅在持续集成（CI）期间启用插件。
 
-  [building your project]: ../creating-your-site.md#building-your-site
+  [构建您的项目]: ../creating-your-site.md#building-your-site
 
 ---
 
@@ -123,9 +100,7 @@ This configuration enables the plugin only during continuous integration (CI).
 <!-- md:version insiders-4.38.0 -->
 <!-- md:default available CPUs - 1 -->
 
-With more CPUs available, the plugin can do more work in parallel, and thus
-build projects faster. If you want to disable concurrent processing completely,
-use:
+有更多的CPU可用时，插件可以并行处理更多工作，从而更快地构建项目。如果您想完全禁用并发处理，请使用：
 
 ``` yaml
 plugins:
@@ -133,18 +108,15 @@ plugins:
       concurrency: 1
 ```
 
-By default, the plugin uses all available CPUs - 1 with a minimum of 1.
+默认情况下，插件使用所有可用的CPU - 1，最少为1。
 
-### Caching
+### 缓存 {#caching}
 
-The plugin implements an [intelligent caching] mechanism, ensuring that a
-project is only rebuilt when its contents change. While the initial build might
-take some time, it's a good idea to use caching, as it will speed up consecutive
-builds.
+插件实现了一个[智能缓存]机制，确保只有在其内容发生变化时才重新构建项目。虽然初始构建可能需要一些时间，但使用缓存是个好主意，因为它会加快连续构建的速度。
 
-The following settings are available for caching:
+以下设置可用于缓存：
 
-  [intelligent caching]: requirements/caching.md
+  [智能缓存]: requirements/caching.md
 
 ---
 
@@ -154,10 +126,7 @@ The following settings are available for caching:
 <!-- md:version insiders-4.38.0 -->
 <!-- md:default `true` -->
 
-Use this setting to instruct the plugin to bypass the cache, in order to
-rebuild all projects, even though the cache may not be stale. It's normally not
-necessary to specify this setting, except for when debugging the plugin itself.
-Caching can be disabled with:
+使用此设置指示插件绕过缓存，以重建所有项目，即使缓存可能并未过期。通常不需要指定此设置，除非在调试插件本身时。可以使用以下方法禁用缓存：
 
 ``` yaml
 plugins:
@@ -173,9 +142,7 @@ plugins:
 <!-- md:version insiders-4.38.0 -->
 <!-- md:default `.cache/plugin/projects` -->
 
-It is normally not necessary to specify this setting, except for when you want
-to change the path within your root directory where the metadata is cached.
-If you want to change it, use:
+通常不需要指定此设置，除非您想更改根目录内元数据缓存的路径。如果您想更改它，请使用：
 
 ``` yaml
 plugins:
@@ -183,9 +150,9 @@ plugins:
       cache_dir: my/custom/dir
 ```
 
-### Logging
+### 日志记录 {#logging}
 
-The following settings are available for logging:
+以下设置可用于日志记录：
 
 ---
 
@@ -195,9 +162,7 @@ The following settings are available for logging:
 <!-- md:version insiders-4.47.0 -->
 <!-- md:default `true` -->
 
-Use this setting to control whether the plugin should display log messages from
-projects when building your site. While not being recommended, you can disable
-logging with:
+使用此设置控制插件在构建站点时是否应显示项目的日志消息。虽然不推荐，但您可以禁用日志记录：
 
 ``` yaml
 plugins:
@@ -213,9 +178,7 @@ plugins:
 <!-- md:version insiders-4.47.0 -->
 <!-- md:default `info` -->
 
-Use this setting to control the log level that the plugin should employ when
-encountering errors, which requires that the [`log`][config.log] setting is
-enabled. The following log levels are available:
+使用此设置控制插件在遇到错误时应使用的日志级别，这要求启用[`log`][config.log]设置。以下日志级别可用：
 
 === "`error`"
 
@@ -225,7 +188,7 @@ enabled. The following log levels are available:
           log_level: error
     ```
 
-    Only errors are reported.
+    仅报告错误。
 
 === "`warn`"
 
@@ -235,8 +198,7 @@ enabled. The following log levels are available:
           log_level: warn
     ```
 
-    Errors and warnings are reported, terminating the build in
-    [`strict`][mkdocs.strict] mode.
+    报告错误和警告，在[`strict`][mkdocs.strict]模式下终止构建。
 
 === "`info`"
 
@@ -246,7 +208,7 @@ enabled. The following log levels are available:
           log_level: info
     ```
 
-    Errors, warnings and informational messages are reported.
+    报告错误、警告和信息性消息。
 
 === "`debug`"
 
@@ -256,11 +218,11 @@ enabled. The following log levels are available:
           log_level: debug
     ```
 
-    All messages are reported, including debug messages.
+    报告所有消息，包括调试消息。
 
-### Projects
+### 项目 {#projects}
 
-The following settings are available for projects:
+以下设置可用于项目：
 
 ---
 
@@ -270,10 +232,7 @@ The following settings are available for projects:
 <!-- md:version insiders-4.38.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable building of projects. Currently, the
-plugin's sole purpose is to build projects, so it's equivalent to the
-[`enabled`][config.enabled] setting, but in the future, other features might be
-added. If you want to disable building of projects, use:
+使用此设置启用或禁用项目的构建。目前，插件的唯一目的是构建项目，因此等同于[`enabled`][config.enabled]设置，但未来可能会添加其他功能。如果您想禁用项目的构建，请使用：
 
 ``` yaml
 plugins:
@@ -289,9 +248,7 @@ plugins:
 <!-- md:version insiders-4.38.0 -->
 <!-- md:default `projects` -->
 
-Use this setting to change the folder where your projects are located. It's
-normally not necessary to change this setting, but if you want to rename the
-folder or change its file system location, use:
+使用此设置更改项目所在的文件夹。通常不需要更改此设置，但如果您想重命名文件夹或更改其文件系统位置，请使用：
 
 ``` yaml
 plugins:
@@ -299,11 +256,9 @@ plugins:
       projects_dir: projects
 ```
 
-Note that the [`projects` directory][config.projects_dir] is solely used for
-project organization – it is not included in project URLs, since projects are
-automatically hoisted by the plugin.
+请注意，[`projects`目录][config.projects_dir]仅用于项目组织 - 它不包括在项目URL中，因为项目会由插件自动提升。
 
-The provided path is resolved from the root directory.
+提供的路径从根目录解析。
 
 ---
 
@@ -313,11 +268,7 @@ The provided path is resolved from the root directory.
 <!-- md:version insiders-4.42.0 -->
 <!-- md:default `*/mkdocs.yml` -->
 
-Use this setting to change the location or name of configuration files the
-plugin will look for when scanning the [`projects` directory]
-[config.projects_dir]. Adjusting this setting can be necessary when the
-configuration files are located in subdirectories of projects, e.g.
-`docs/mkdocs.yml`:
+使用此设置更改插件在扫描[`projects`目录][config.projects_dir]时查找的配置文件的位置或名称。调整此设置可能是必要的，当配置文件位于项目的子目录中，例如`docs/mkdocs.yml`：
 
 ``` yaml
 plugins:
@@ -325,9 +276,7 @@ plugins:
       projects_config_files: "**/mkdocs.yml" # (1)!
 ```
 
-1.  If all projects share the same location for their configuration files, e.g.,
-    `docs/mkdocs.yml`, it's advisable to fully qualify the path, as it's faster
-    to resolve than a `**` glob pattern.
+1.  如果所有项目的配置文件都位于同一位置，例如，`docs/mkdocs.yml`，建议完全限定路径，因为它比`**`通配符模式解析得更快。
 
     ``` yaml
     plugins:
@@ -335,8 +284,7 @@ plugins:
           projects_config_files: "*/docs/mkdocs.yml"
     ```
 
-    This configuration fits the following directory structure, which is quite
-    common for projects using git submodules:
+    此配置适用于以下目录结构，这对于使用git子模块的项目而言相当常见：
 
     ``` { .sh .no-copy }
     .
@@ -351,8 +299,7 @@ plugins:
     └─ mkdocs.yml
     ```
 
-The provided path is resolved from the [`projects` directory]
-[config.projects_dir].
+提供的路径从[`projects`目录][config.projects_dir]解析。
 
 ---
 
@@ -362,10 +309,7 @@ The provided path is resolved from the [`projects` directory]
 <!-- md:version insiders-4.42.0 -->
 <!-- md:default none -->
 
-Use this setting to transform the configuration of each project as read from
-`mkdocs.yml` before it is built, which allows for adjusting the configuration
-of each project when building them together, but leave them untouched when
-building them individually:
+使用此设置在构建之前转换从`mkdocs.yml`读取的每个项目的配置，这允许在一起构建时调整每个项目的配置，但在单独构建时保持不变：
 
 ``` yaml
 plugins:
@@ -373,25 +317,17 @@ plugins:
       projects_config_transform: !!python/name:projects.transform
 ```
 
-The provided module and function name are looked up in Python's [module search
-path]. You need to add your root directory to the search path when building
-your site, so Python can resolve it. The easiest way is to add the working
-directory to the [`PYTHONPATH`][PYTHONPATH] environment variable:
+提供的模块和函数名称在Python的[模块搜索路径]中查找。您需要在构建站点时将根目录添加到搜索路径中，以便Python可以解析它。最简单的方法是将工作目录添加到[`PYTHONPATH`][PYTHONPATH]环境变量中：
 
 ``` .sh
 export PYTHONPATH=.
 ```
 
-!!! tip "How to define a configuration transformation function"
+!!! tip "如何定义配置转换函数"
 
-    The [`python/name`][python-name] tag is provided by [PyYAML] and must point
-    to a valid module and function name within Python's [module search path].
-    The plugin passes the `project` and top-level `config` objects to the
-    function.
+    [`python/name`][python-name]标签由[PyYAML]提供，并必须指向Python的[模块搜索路径]中的有效模块和函数名称。插件将`project`和顶级`config`对象传递给函数。
 
-    As an example, we can inherit the [`use_directory_urls`]
-    [mkdocs.use_directory_urls] setting for all projects from the top-level
-    configuration:
+    例如，我们可以从顶级配置继承[`use_directory_urls`][mkdocs.use_directory_urls]设置，适用于所有项目：
 
     ``` py title="projects/__init__.py"
     from mkdocs.config.defaults import MkDocsConfig
@@ -401,14 +337,14 @@ export PYTHONPATH=.
         project.use_directory_urls = config.use_directory_urls
     ```
 
-  [module search path]: https://docs.python.org/3/library/sys_path_init.html
+  [模块搜索路径]: https://docs.python.org/3/library/sys_path_init.html
   [PYTHONPATH]: https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH
   [python-name]: https://pyyaml.org/wiki/PyYAMLDocumentation#yaml-tags-and-python-types
   [PyYAML]: https://pyyaml.org/
 
-### Hoisting
+### 提升 {#hoisting}
 
-The following settings are available for hoisting:
+以下设置可用于提升：
 
 ---
 
@@ -418,9 +354,7 @@ The following settings are available for hoisting:
 <!-- md:version insiders-4.39.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable hoisting of themes files to the main
-project. If you disable this setting, each project receives a copy of the
-theme's files, which can be considered redundant:
+使用此设置启用或禁用将主题文件提升到主项目的能力。如果您禁用此设置，则每个项目将收到主题文件的副本，这可能被视为多余的：
 
 ``` yaml
 plugins:
@@ -428,20 +362,12 @@ plugins:
       hoisting: false
 ```
 
-It's generally advisable to enable hoisting, as it yields faster deployments
-and faster loading of your project's sites, because the files are the same for
-all projects and can be deduplicated.
+通常建议启用提升，因为它可以加快项目站点的部署和加载速度，因为所有项目的文件都是相同的，可以去重。
 
-### Limitations
+### 限制 {#limitations}
 
-The plugin is one of the latest additions to Material for MkDocs, which means it
-is rather young and has some limitations. We're working hard to remove them, and
-we're happy to receive feedback and learn about your requirements in ?5800.
-Current limitations are:
+该插件是Material for MkDocs的最新添加之一，这意味着它相对年轻，并且有一些限制。我们正在努力消除这些限制，并且我们很乐意收到反馈并了解您的需求，以便?5800。当前的限制包括：
 
-- __Basic multi-language support only__: we'll be investigating how to provide
-  better support for multi-language projects, allowing to easier interlink
-  projects and switch between them.
+- __仅基本多语言支持__：我们将研究如何为多语言项目提供更好的支持，使得项目之间的互联和切换变得更容易。
 
-- __Separate search indexes and sitemaps__: currently, the projects are entirely
-  separate, which means they will have separate search indexes and sitemaps.
+- __独立的搜索索引和站点地图__：当前，项目是完全独立的，这意味着它们将有独立的搜索索引和站点地图。

@@ -1,71 +1,54 @@
 ---
-title: Built-in info plugin
+title: 内置信息插件
 icon: material/information
 ---
 
 # Built-in info plugin
 
-The info plugin is a utility that is solely intended to create self-contained
-[minimal reproductions] as `.zip` files when [reporting bugs] or proposing
-[change requests], making communication between us maintainers and you much
-easier, as we have a common ground to work on.
+信息插件是一个专门用于创建独立的 [最小化复现] 作为 `.zip` 文件的实用工具，当 [报告缺陷] 或提出 [更改请求] 时，使我们维护者与您的沟通变得更加容易，因为我们有一个共同的基础来合作。
 
-  [minimal reproductions]: ../guides/creating-a-reproduction.md
-  [reporting bugs]: ../contributing/reporting-a-bug.md
-  [change requests]: ../contributing/requesting-a-change.md
+  [最小化复现]: ../guides/creating-a-reproduction.md
+  [报告缺陷]: ../contributing/reporting-a-bug.md
+  [更改请求]: ../contributing/requesting-a-change.md
 
-## Objective
+## 目标 {#objective}
 
-### How it works
+### 它是如何工作的 {#how-it-works}
 
-The plugin helps you to prepare a minimal reproduction by collecting the
-necessary information about the environment and configuration of your project.
-This makes it easier for us to fix bugs, as it requires that you
-[upgrade to the latest version] and [remove your customizations].
+该插件通过收集有关您项目的环境和配置的必要信息，帮助您准备一个最小化复现。这使我们更容易修复错误，因为它要求您[升级到最新版本]并[移除您的自定义设置]。
 
-When following these principles, you can be confident that you don't report a
-bug that has already been fixed in a subsequent release, or which is caused by
-one of your customizations. Even more importantly, you actively help
-us to fix the bug as quickly as possible.
+遵循这些原则，您可以确信您不会报告一个在后续发布中已经修复的错误，或者由您的某些自定义设置所导致的错误。更重要的是，您积极帮助我们尽可能快地修复错误。
 
-The output of the plugin is a `.zip` file that you can share with us maintainers.
+插件的输出是一个`.zip`文件，您可以与我们维护者共享。
 
-  [Upgrade to the latest version]: ../contributing/reporting-a-bug.md#upgrade-to-latest-version
-  [Remove your customizations]: ../contributing/reporting-a-bug.md#remove-customizations
+  [升级到最新版本]: ../contributing/reporting-a-bug.md#upgrade-to-latest-version
+  [移除您的自定义设置]: ../contributing/reporting-a-bug.md#remove-customizations
 
 
-### When to use it
+### 何时使用它 {#when-to-use-it}
 
-Whenever you're [reporting a bug][reporting bugs] or have something to discuss,
-like a question or [change request][change requests], you should attach
-a small, self-contained minimal reproduction. Runnable examples help to make
-communication much more efficient, giving us maintainers more time to benefit
-more users by pushing the project forward. Minimal reproductions are mandatory
-for bug reports.
+每当您[报告一个错误][报告缺陷]或有一些要讨论的事情，如一个问题或[更改请求][更改请求]，您都应该附上一个小的、独立的最小化复现。可运行的示例有助于使沟通更有效率，给我们维护者更多时间来推动项目向前发展。对于错误报告，最小化复现是必须的
 
-## Configuration
+## 配置 {#configuration}
 
 <!-- md:version 9.0.0 -->
 <!-- md:plugin [info] – built-in -->
 
-In order to get started with the built-in info plugin, just add the following
-lines to `mkdocs.yml`, and quickly [create a minimal reproduction] to share
-with us maintainers:
+要开始使用内置信息插件，只需添加以下行到`mkdocs.yml`，并快速[创建一个最小化复现]与我们维护者共享：
 
 ``` yaml
 plugins:
   - info
 ```
 
-The info plugin is built into Material for MkDocs and doesn't need to be
-installed.
+信息插件内置于Material for MkDocs中，无需安装。
 
   [info]: info.md
-  [create a minimal reproduction]: ../guides/creating-a-reproduction.md
+  [创建一个最小化复现]: ../guides/creating-a-reproduction.md
 
-### General
+### 通用 {#general}
 
-The following settings are available:
+以下设置可用：
 
 ---
 
@@ -74,9 +57,7 @@ The following settings are available:
 <!-- md:version 9.0.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable the plugin when [building your project].
-It's normally not necessary to specify this setting, but if you want to disable
-the plugin, use:
+使用此设置在[构建您的项目]时启用或禁用插件。通常不需要指定此设置，但如果您想要禁用插件，请使用：
 
 ``` yaml
 plugins:
@@ -84,7 +65,7 @@ plugins:
       enabled: false
 ```
 
-  [building your project]: ../creating-your-site.md#building-your-site
+  [构建您的项目]: ../creating-your-site.md#building-your-site
 
 ---
 
@@ -93,9 +74,7 @@ plugins:
 <!-- md:version 9.0.6 -->
 <!-- md:default `false` -->
 
-Use this setting to control whether the plugin should be enabled when
-[previewing your site]. It's normally not necessary to specify this setting,
-but if you want to change this behavior, use:
+使用此设置控制在[预览您的网站]时是否应启用插件。通常不需要指定此设置，但如果您想更改此行为，请使用：
 
 ``` yaml
 plugins:
@@ -103,13 +82,11 @@ plugins:
       enabled_on_serve: true
 ```
 
-This setting streamlines the process of creating and inspecting minimal
-reproductions, as it allows to quickly iterate on the reproduction without
-having to disable the plugin first.
+此设置简化了创建和检查最小化复现的过程，因为它允许在不必先禁用插件的情况下快速迭代复现。
 
-  [previewing your site]: ../creating-your-site.md#previewing-as-you-write
+  [预览您的网站]: ../creating-your-site.md#previewing-as-you-write
 
-### Archive
+### 归档 {#archive}
 
 ---
 
@@ -118,9 +95,7 @@ having to disable the plugin first.
 <!-- md:version 9.0.0 -->
 <!-- md:default `true` -->
 
-Use this setting to control whether the plugin should create a `.zip` file
-from the project or exit after the version check. This setting is solely
-intended for debugging the plugin itself:
+使用此设置控制插件是否应从项目创建`.zip`文件或在版本检查后退出。此设置仅用于调试插件本身：
 
 ``` yaml
 plugins:
@@ -135,10 +110,7 @@ plugins:
 <!-- md:version 9.0.0 -->
 <!-- md:default `true` -->
 
-Use this setting to control whether the plugin should stop creating the `.zip`
-file when one of the [requirements] is not satisfied. This setting must only be
-used when [reporting a bug][reporting bugs] that is related to a customization
-[explicitly mentioned in our documentation]. You can change it with:
+使用此设置控制插件在未满足[要求]时是否应停止创建`.zip`文件。此设置只能在[报告错误][报告缺陷]时使用，该错误与我们文档中[明确提到的自定义]相关。您可以更改它：
 
 ``` yaml
 plugins:
@@ -146,10 +118,8 @@ plugins:
       archive_stop_on_violation: false
 ```
 
-If you're using this setting when [reporting a bug][reporting bugs], please
-explain why you think it is necessary to include customizations. If you're
-unsure, please ask us first by [creating a discussion].
+如果您在[报告一个错误][报告缺陷]时使用此设置，请解释为什么认为包含自定义设置是必要的。如果您不确定，请先通过[创建讨论]向我们咨询。
 
-  [requirements]: #how-it-works
-  [explicitly mentioned in our documentation]: ?q=%22extends+base%22
-  [creating a discussion]: https://github.com/squidfunk/mkdocs-material/discussions
+  [要求]: #how-it-works
+  [明确提到的自定义]: ?q=%22extends+base%22
+  [创建讨论]: https://github.com/squidfunk/mkdocs-material/discussions

@@ -1,127 +1,100 @@
 ---
-title: Built-in privacy plugin
+title: 内置隐私插件
 icon: material/shield-account
 ---
 
+# 内置隐私插件 {#built-in-privacy-plugin}
 
-# Built-in privacy plugin
+隐私插件提供了一个流畅的解决方案，用于自动托管外部资源。仅通过一行配置，插件就可以自动识别并下载外部资源，使得遵守GDPR（通用数据保护条例）变得尽可能简单。
 
-The privacy plugin offers a streamlined solution for automatically self-hosting
-external assets. With just a single line of configuration, the plugin can
-automatically identify and download external assets, making GDPR compliance
-as effortless as it can possibly be.
+## 目标 {#objective}
 
-## Objective
+### 它是如何工作的 {#how-it-works}
 
-### How it works
-
-The plugin scans the generated HTML for external assets, i.e., scripts, style
-sheets, images, and web fonts, downloads them, stores them in the
-[`site` directory][mkdocs.site_dir] and replaces all references with links to
-the downloaded copies for effortless self-hosting. For example:
+该插件扫描生成的HTML以寻找外部资源，即脚本、样式表、图片和网络字体，下载它们，将它们存储在[`site`目录][mkdocs.site_dir]中，并替换所有引用为指向下载副本的链接，从而轻松自托管。例如：
 
 ``` html
 <script src="https://example.com/script.js"></script>
 ```
 
-This external script is downloaded, and the link is replaced with:
+这个外部脚本被下载，链接被替换为：
 
 ``` html
 <script src="assets/external/example.com/script.js"></script>
 ```
 
-Of course, scripts and style sheets can reference further external assets,
-which is why this process is repeated recursively until no further external
-assets are detected:
+当然，脚本和样式表可以引用更多外部资源，这就是为什么这个过程会递归重复，直到不再检测到外部资源为止：
 
-- Scripts are scanned for further scripts, style sheets and JSON files
-- Style sheets are scanned for images and web fonts
+- 脚本会被扫描以寻找更多的脚本、样式表和JSON文件
+- 样式表会被扫描以寻找图片和网络字体
 
-Additionally, hints like [`preconnect`][preconnect], used to reduce latency when
-requesting external assets, are removed from the output, as they're not
-necessary when self-hosting. After the plugin has done it's work, your project
-will be free of requests to external services.
+此外，像[`preconnect`][preconnect]这样的提示，用于减少请求外部资源的延迟，也会从输出中删除，因为在自托管时不需要它们。插件完成工作后，您的项目将不会请求外部服务。
 
-There are some [limitations].
+有一些[限制]。
 
   [preconnect]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preconnect
-  [limitations]: #limitations
+  [限制]: #limitations
 
-### When to use it
+### 何时使用它 {#when-to-use-it}
 
-The plugin was developed to make compliance with the 2018 European
-__General Data Protection Regulation__ (GDPR) as simple as possible, while
-retaining the flexibility and power that Material for MkDocs offers, like for
-example its tight integration with [Google Fonts].
+该插件的开发是为了使遵守2018年欧洲 __通用数据保护条例__（GDPR）尽可能简单，同时保留Material for MkDocs提供的灵活性和功能，例如其与[Google Fonts]的紧密集成。
 
-But, that's only the start. For example, if your project includes a lot of
-images, enabling the plugin allows to move them outside of your repository, as
-the plugin will automatically download and store them in the [`site` directory]
-[mkdocs.site_dir] when [building your project].
+但这只是开始。例如，如果您的项目包含许多图片，启用插件可以将它们从您的存储库中移出，因为插件将在[构建您的项目]时自动下载并存储它们在[`site`目录][mkdocs.site_dir]中。
 
-Even more interestingly, the plugin can be combined with other built-in plugins
-that Material for MkDocs offers, in order to create sophisticated build
-pipelines tailored to your project:
+更有趣的是，该插件可以与Material for MkDocs提供的其他内置插件组合使用，以创建针对您的项目的复杂构建管道：
 
 <div class="grid cards" markdown>
 
--   :material-rabbit: &nbsp; __[Built-in optimize plugin][optimize]__
+-   :material-rabbit: &nbsp; __[内置优化插件][optimize]__
 
     ---
 
-    The optimize plugin allows to optimize all downloaded external assets
-    detected by the privacy plugin by using compression and conversion
-    techniques.
+    优化插件允许优化隐私插件检测到的所有下载的外部资源，使用压缩和转换技术。
 
     ---
 
-    __External media files are automatically downloaded and optimized__
+    __外部媒体文件自动下载并优化__
 
--   :material-connection: &nbsp; __[Built-in offline plugin][offline]__
-
-    ---
-
-    The offline plugin adds support for building [offline-capable documentation],
-    so you can distribute the [`site` directory][mkdocs.site_dir] as a `.zip`
-    file that can be downloaded.
+-   :material-connection: &nbsp; __[内置离线插件][offline]__
 
     ---
 
-    __Your documentation can work without connectivity to the internet__
+    离线插件增加了构建[离线可用文档]的支持，因此您可以将[`site`目录][mkdocs.site_dir]作为可下载的`.zip`文件分发。
+
+    ---
+
+    __您的文档可以在没有互联网连接的情况下工作__
 
 </div>
 
   [Google Fonts]: ../setup/changing-the-fonts.md
-  [building your project]: ../creating-your-site.md#building-your-site
+  [构建您的项目]: ../creating-your-site.md#building-your-site
   [optimize]: optimize.md
   [offline]: offline.md
-  [offline-capable documentation]: ../setup/building-for-offline-usage.md
+  [离线可用文档]: ../setup/building-for-offline-usage.md
 
-## Configuration
+## 配置 {#configuration}
 
 <!-- md:version 9.5.0 -->
 <!-- md:plugin [privacy] – built-in -->
 <!-- md:flag multiple -->
 <!-- md:flag experimental -->
 
-As with all [built-in plugins], getting started with the privacy plugin is
-straightforward. Just add the following lines to `mkdocs.yml`, and start
-effortlessly self-hosting external assets:
+与所有[内置插件]一样，开始使用隐私插件非常简单。只需将以下行添加到`mkdocs.yml`，并开始轻松自托管外部资源：
 
 ``` yaml
 plugins:
   - privacy
 ```
 
-The privacy plugin is built into Material for MkDocs and doesn't need to be
-installed.
+隐私插件已内置于Material for MkDocs中，无需安装。
 
   [privacy]: privacy.md
-  [built-in plugins]: index.md
+  [内置插件]: index.md
 
-### General
+### 通用 {#general}
 
-The following settings are available:
+以下设置可用：
 
 ---
 
@@ -130,9 +103,7 @@ The following settings are available:
 <!-- md:version 9.5.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable the plugin when [building your project].
-If you want to disable the plugin, e.g., for local builds, you can use an
-[environment variable][mkdocs.env] in `mkdocs.yml`:
+使用此设置在[构建您的项目]时启用或禁用插件。如果您想禁用插件，例如，对于本地构建，您可以在`mkdocs.yml`中使用[环境变量][mkdocs.env]：
 
 ``` yaml
 plugins:
@@ -140,7 +111,7 @@ plugins:
       enabled: !ENV [CI, false]
 ```
 
-This configuration enables the plugin only during continuous integration (CI).
+此配置仅在持续集成（CI）期间启用插件。
 
 ---
 
@@ -149,9 +120,7 @@ This configuration enables the plugin only during continuous integration (CI).
 <!-- md:version 9.5.0 -->
 <!-- md:default available CPUs - 1 -->
 
-With more CPUs available, the plugin can do more work in parallel, and thus
-complete handling of external assets faster. If you want to disable concurrent
-processing completely, use:
+有更多的CPU可用时，插件可以并行处理更多工作，从而更快地完成外部资产的处理。如果您想完全禁用并发处理，请使用：
 
 ``` yaml
 plugins:
@@ -159,18 +128,15 @@ plugins:
       concurrency: 1
 ```
 
-By default, the plugin uses all available CPUs - 1 with a minimum of 1.
+默认情况下，插件使用所有可用的CPU - 1，最少为1。
 
-### Caching
+### 缓存 {#caching}
 
-The plugin implements an [intelligent caching] mechanism, ensuring that external
-assets are only downloaded when they're not already contained in the cache.
-While the initial build might take some time, it's a good idea to use caching,
-as it will speed up consecutive builds.
+插件实现了一个[智能缓存]机制，确保只有在缓存中不存在时才下载外部资产。虽然初始构建可能需要一些时间，但使用缓存是个好主意，因为它会加快连续构建的速度。
 
-The following settings are available for caching:
+以下设置可用于缓存：
 
-  [intelligent caching]: requirements/caching.md
+  [智能缓存]: requirements/caching.md
 
 ---
 
@@ -179,10 +145,7 @@ The following settings are available for caching:
 <!-- md:version 9.5.0 -->
 <!-- md:default `true` -->
 
-Use this setting to instruct the plugin to bypass the cache, in order to
-re-schedule downloads for all external assets, even though the cache may not be
-stale. It's normally not necessary to specify this setting, except for when
-debugging the plugin itself. Caching can be disabled with:
+使用此设置指示插件绕过缓存，以重新安排所有外部资产的下载，即使缓存可能并未过期。通常不需要指定此设置，除非在调试插件本身时。可以使用以下方法禁用缓存：
 
 ``` yaml
 plugins:
@@ -197,9 +160,7 @@ plugins:
 <!-- md:version 9.5.0 -->
 <!-- md:default `.cache/plugin/privacy` -->
 
-It is normally not necessary to specify this setting, except for when you want
-to change the path within your root directory where downloaded copies are
-cached. If you want to change it, use:
+通常不需要指定此设置，除非您想更改根目录内下载副本缓存的路径。如果您想更改它，请使用：
 
 ``` yaml
 plugins:
@@ -207,15 +168,13 @@ plugins:
       cache_dir: my/custom/dir
 ```
 
-If you're using [multiple instances] of the plugin, it can be a good idea to
-set different cache directories for both instances, so that they don't interfere
-with each other.
+如果您正在使用插件的[多个实例]，为每个实例设置不同的缓存目录可能是个好主意，这样它们就不会相互干扰。
 
-  [multiple instances]: index.md#multiple-instances
+  [多个实例]: index.md#multiple-instances
 
-### Logging
+### 日志记录 {#logging}
 
-The following settings are available for logging:
+以下设置可用于日志记录：
 
 ---
 
@@ -225,8 +184,7 @@ The following settings are available for logging:
 <!-- md:version insiders-4.50.0 -->
 <!-- md:default `true` -->
 
-Use this setting to control whether the plugin should display log messages when
-building your site. While not being recommended, you can disable logging with:
+使用此设置控制插件在构建站点时是否显示日志消息。虽然不推荐，但您可以禁用日志记录：
 
 ``` yaml
 plugins:
@@ -242,9 +200,7 @@ plugins:
 <!-- md:version insiders-4.50.0 -->
 <!-- md:default `info` -->
 
-Use this setting to control the log level that the plugin should employ when
-encountering errors, which requires that the [`log`][config.log] setting is
-enabled. The following log levels are available:
+使用此设置控制插件在遇到错误时应使用的日志级别，这要求启用[`log`][config.log]设置。以下日志级别可用：
 
 === "`error`"
 
@@ -254,7 +210,7 @@ enabled. The following log levels are available:
           log_level: error
     ```
 
-    Only errors are reported.
+    仅报告错误。
 
 === "`warn`"
 
@@ -264,9 +220,7 @@ enabled. The following log levels are available:
           log_level: warn
     ```
 
-    Errors and warnings are reported, terminating the build in
-    [`strict`][mkdocs.strict] mode. This includes warnings when symlinks cannot
-    be created due to a lack of permissions on Windows systems (#6550).
+    报告错误和警告，在[`strict`][mkdocs.strict]模式下终止构建。这包括当无法在Windows系统上创建符号链接(#6550)时的警告。
 
 === "`info`"
 
@@ -276,8 +230,7 @@ enabled. The following log levels are available:
           log_level: info
     ```
 
-    Errors, warnings and informational messages are reported, including which
-    assets were successfully downloaded by the plugin.
+    报告错误、警告和信息性消息，包括插件成功下载哪些资产。
 
 === "`debug`"
 
@@ -287,13 +240,11 @@ enabled. The following log levels are available:
           log_level: debug
     ```
 
-    All messages are reported, including debug messages, if and only if MkDocs
-    was started with the `--verbose` flag. Note that this will print a lot of
-    messages and is only useful for debugging.
+    报告所有消息，包括调试消息，前提是MkDocs是用`--verbose`标志启动的。请注意，这将打印大量消息，仅用于调试。
 
-### External assets
+### 外部资产 {#external-assets}
 
-The following settings are available for external assets:
+以下设置可用于外部资产：
 
 ---
 
@@ -302,9 +253,7 @@ The following settings are available for external assets:
 <!-- md:version 9.5.0 -->
 <!-- md:default `true` -->
 
-Use this setting to control whether the plugin should download external
-assets. If you only want the plugin to process [external links], you can disable
-handling of external assets with:
+使用此设置控制插件是否应下载外部资产。如果您只希望插件处理[外部链接]，您可以禁用外部资产的处理：
 
 ``` yaml
 plugins:
@@ -312,7 +261,7 @@ plugins:
       assets: false
 ```
 
-  [external links]: #external-links
+  [外部链接]: #external-links
 
 ---
 
@@ -321,10 +270,7 @@ plugins:
 <!-- md:version 9.5.0 -->
 <!-- md:default `true` -->
 
-Use this setting to control whether the plugin should downloads or only report
-external assets when they're encountered. If you already self-host all external
-assets, this setting can be used as a safety net to detect links to external
-assets placed by the author in pages:
+使用此设置控制插件在遇到外部资产时是否应下载或仅报告外部资产。如果您已经自行托管所有外部资产，此设置可用作安全网，以检测作者在页面中放置的指向外部资产的链接：
 
 ``` yaml
 plugins:
@@ -339,9 +285,7 @@ plugins:
 <!-- md:version 9.5.0 -->
 <!-- md:default `assets/external` -->
 
-It is normally not necessary to specify this setting, except for when you want
-to change the path within the [`site` directory][mkdocs.site_dir] where
-external assets are stored. If you want to change it, use:
+通常不需要指定此设置，除非您想更改[`site`目录][mkdocs.site_dir]内存储外部资产的路径。如果您想更改它，请使用：
 
 ``` yaml
 plugins:
@@ -349,8 +293,7 @@ plugins:
       assets_fetch_dir: my/custom/dir
 ```
 
-This configuration stores the downloaded copies at `my/custom/dir` in the
-[`site` directory][mkdocs.site_dir].
+此配置将下载的副本存储在[`site`目录][mkdocs.site_dir]的`my/custom/dir`中。
 
 ---
 
@@ -360,9 +303,7 @@ This configuration stores the downloaded copies at `my/custom/dir` in the
 <!-- md:version insiders-4.37.0 -->
 <!-- md:default none -->
 
-Use this setting to enable downloading of external assets for specific origins,
-e.g., when using [multiple instances] of the plugin to fine-tune processing of
-external assets for different origins:
+使用此设置为特定来源启用下载外部资产，例如，当使用插件的[多个实例]以针对不同来源微调外部资产的处理时：
 
 ``` yaml
 plugins:
@@ -379,9 +320,7 @@ plugins:
 <!-- md:version insiders-4.37.0 -->
 <!-- md:default none -->
 
-Use this setting to disable downloading of external assets for specific origins,
-e.g., when using [multiple instances] of the plugin to fine-tune processing of
-external assets for different origins:
+使用此设置为特定来源禁用下载外部资产，例如，当使用插件的[多个实例]以针对不同来源微调外部资产的处理时：
 
 ``` yaml
 plugins:
@@ -391,25 +330,21 @@ plugins:
         - giscus.app/*
 ```
 
-1.  [MathJax] loads web fonts for typesetting of mathematical content
-    through relative URLs, and thus cannot be automatically bundled by the
-    privacy plugin. [MathJax can be self-hosted].
+1.  [MathJax]加载用于数学内容排版的网络字体通过相对URL，因此不能由隐私插件自动捆绑。[MathJax可以自托管]。
 
-    [Giscus], which we recommend to use as a [comment system], uses a technique
-    called code-splitting to load only the code that is necessary, which
-    is implemented via relative URLs. [Giscus can be self-hosted] as well.
+    [Giscus]，我们推荐用作[评论系统]，使用称为代码分割的技术来只加载必要的代码，这是通过相对URL实现的。[Giscus也可以自托管]。
 
   [MathJax]: ../reference/math.md
-  [MathJax can be self-hosted]: https://docs.mathjax.org/en/latest/web/hosting.html
+  [MathJax可以自托管]: https://docs.mathjax.org/en/latest/web/hosting.html
   [Giscus]: https://giscus.app/
-  [comment system]: ../setup/adding-a-comment-system.md
-  [Giscus can be self-hosted]: https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md
+  [评论系统]: ../setup/adding-a-comment-system.md
+  [Giscus也可以自托管]: https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md
 
 ---
 
-### External links
+### 外部链接 {#external-links}
 
-The following settings are available for external links:
+以下设置可用于外部链接：
 
 ---
 
@@ -419,10 +354,7 @@ The following settings are available for external links:
 <!-- md:version insiders-4.37.0 -->
 <!-- md:default `true` -->
 
-Use this setting to instruct the plugin to parse and process external links to
-annotate them for [improved security], or to automatically add additional
-attributes to external links. If you want to disable processing of external
-links, use:
+使用此设置指示插件解析并处理外部链接，以便为其添加注释以[提高安全性]，或自动向外部链接添加额外属性。如果您想禁用外部链接的处理，请使用：
 
 ``` yaml
 plugins:
@@ -430,7 +362,7 @@ plugins:
       links: false
 ```
 
-  [improved security]: https://developer.chrome.com/en/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/
+  [提高安全性]: https://developer.chrome.com/en/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/
 
 ---
 
@@ -440,9 +372,7 @@ plugins:
 <!-- md:version insiders-4.37.0 -->
 <!-- md:default none -->
 
-Use this setting to specify additional attributes that should be added to
-external links, for example, to add `target="_blank"` to all external links
-so they open in a new tab:
+使用此设置指定应添加到外部链接的额外属性，例如，为所有外部链接添加`target="_blank"`，使它们在新标签页中打开：
 
 ``` yaml
 plugins:
@@ -459,9 +389,7 @@ plugins:
 <!-- md:version insiders-4.37.0 -->
 <!-- md:default `true` -->
 
-It is normally not recommended to change this setting, as it will automatically
-annotate external links that open in a new window with `rel="noopener"` for
-[improved security]:
+通常不建议更改此设置，因为它会自动为在新窗口中打开的外部链接添加`rel="noopener"`以[提高安全性]：
 
 ``` yaml
 plugins:
@@ -469,17 +397,16 @@ plugins:
       links_noopener: true
 ```
 
-## Limitations
+## 限制 {#limitations}
 
-Dynamically created URLs as part of scripts are not detected, and thus cannot be
-downloaded automatically, as the plugin does not execute scripts – it only detects fully qualified URLs for downloading and replacement. In short, don't do this:
+动态创建的URL作为脚本的一部分不会被检测到，因此不能自动下载，因为插件不执行脚本——它只检测用于下载和替换的完全限定URL。简而言之，不要这样做：
 
 ``` js
 const cdn = "https://polyfill.io"
 const url = `${cdn}/v3/polyfill.min.js`
 ```
 
-Instead, always use fully qualified URLs:
+相反，始终使用完全限定的URL：
 
 ``` js
 const url ="https://polyfill.io/v3/polyfill.min.js"

@@ -1,93 +1,69 @@
-# Conventions
+# 约定
 
-This section explains several conventions used in this documentation.
+本节解释了本文档中使用的几种约定。
 
-## Symbols
+## 符号
 
-This documentation use some symbols for illustration purposes. Before you read
-on, please make sure you've made yourself familiar with the following list of
-conventions:
+本文档使用一些符号来进行说明。在继续阅读之前，请确保您已熟悉以下约定列表：
 
-### <!-- md:sponsors --> – Sponsors only { data-toc-label="Sponsors only" }
+### <!-- md:sponsors --> – 仅限赞助者 { data-toc-label="仅限赞助者" }
 
-The pumping heart symbol denotes that a specific feature or behavior is only
-available to sponsors via [Insiders]. Make sure that you have access to
-[Insiders] if you want to use the feature.
+跳动的心脏符号表示某个特定功能或行为仅对赞助者通过 [Insiders] 可用。如果您想使用该功能，请确保您有访问 [Insiders] 的权限。
 
-### <!-- md:version --> – Version { data-toc-label="Version" }
+### <!-- md:version --> – 版本 { data-toc-label="版本" }
 
-The tag symbol in conjunction with a version number denotes when a specific
-feature or behavior was added. Make sure you're at least on this version
-if you want to use it.
+标签符号与版本号一起使用，表示添加了特定的功能或行为的时间。如果您想使用它，请确保您至少在此版本上。
 
-### <!-- md:version insiders- --> – Version (Insiders)  { data-toc-label="Version (Insiders)" }
+### <!-- md:version insiders- --> – 版本（Insiders） { data-toc-label="版本（Insiders）" }
 
-The tag symbol with a heart in conjunction with a version number denotes that a
-specific feature or behavior was added to the [Insiders] version of Material for
-MkDocs.
+标签符号与心形符号以及版本号一起使用，表示特定功能或行为已添加到 Material for MkDocs 的 [Insiders] 版本中。
 
-### <!-- md:default --> – Default value { #default data-toc-label="Default value" }
+### <!-- md:default --> – 默认值 { #default data-toc-label="默认值" }
 
-Some properties in `mkdocs.yml` have default values for when the author does not
-explicitly define them. The default value of the property is always included.
+`mkdocs.yml` 中的某些属性在作者没有明确定义时有默认值。属性的默认值总是包含在内。
 
-#### <!-- md:default computed --> – Default value is computed { #default data-toc-label="is computed" }
+#### <!-- md:default computed --> – 默认值是计算得出的 { #default data-toc-label="是计算得出的" }
 
-Some default values are not set to static values but computed from other values,
-like the site language, repository provider, or other settings.
+一些默认值不是设置为静态值，而是根据其他值计算得出的，如站点语言、仓库提供者或其他设置。
 
-#### <!-- md:default none --> – Default value is empty { #default data-toc-label="is empty" }
+#### <!-- md:default none --> – 默认值为空 { #default data-toc-label="为空" }
 
-Some properties do not contain default values. This means that the functionality
-that is associated with them is not available unless explicitly enabled.
+一些属性不包含默认值。这意味着，除非明确启用，否则与它们相关联的功能不可用。
 
-### <!-- md:flag metadata --> – Metadata property { #metadata data-toc-label="Metadata property" }
+### <!-- md:flag metadata --> – 元数据属性 { #metadata data-toc-label="元数据属性" }
 
-This symbol denotes that the thing described is a metadata property, which can
-be used in Markdown documents as part of the front matter definition.
+此符号表示所描述的内容是元数据属性，可以在 Markdown 文档的前言定义中使用。
 
-### <!-- md:flag multiple --> – Multiple instances { #multiple-instances data-toc-label="Multiple instances" }
+### <!-- md:flag multiple --> – 多实例 { #multiple-instances data-toc-label="多实例" }
 
-This symbol denotes that the plugin supports multiple instances, i.e, that it
-can be used multiple times in the `plugins` setting in `mkdocs.yml`.
+此符号表示插件支持多实例，即可以在 `mkdocs.yml` 的 `plugins` 设置中多次使用。
 
-### <!-- md:feature --> – Optional feature { #feature data-toc-label="Optional feature" }
+### <!-- md:feature --> – 可选功能 { #feature data-toc-label="可选功能" }
 
-Most of the features are hidden behind feature flags, which means they must
-be explicitly enabled via `mkdocs.yml`. This allows for the existence of
-potentially orthogonal features.
+大多数功能都隐藏在功能标志后面，这意味着必须通过 `mkdocs.yml` 明确启用它们。这允许存在潜在的正交功能。
 
-### <!-- md:flag experimental --> – Experimental { data-toc-label="Experimental" }
+### <!-- md:flag experimental --> – 实验性 { data-toc-label="实验性" }
 
-Some newer features are still considered experimental, which means they might
-(although rarely) change at any time, including their complete removal (which
-hasn't happened yet).
+一些较新的功能仍被视为实验性的，这意味着它们可能（尽管很少）随时更改，包括完全移除（尚未发生过）。
 
-### <!-- md:plugin --> – Plugin { data-toc-label="Plugin" }
+### <!-- md:plugin --> – 插件 { data-toc-label="插件" }
 
-Several features are implemented through MkDocs excellent plugin architecture,
-some of which are built-in and distributed with Material for MkDocs, so no
-installation is required.
+通过 MkDocs 出色的插件架构实现了几个功能，其中一些是内置的，并与 Material for MkDocs 一起分发，因此无需安装。
 
-### <!-- md:extension --> – Markdown extension { data-toc-label="Markdown extension" }
+### <!-- md:extension --> – Markdown 扩展 { data-toc-label="Markdown 扩展" }
 
-This symbol denotes that the thing described is a Markdown extension, which can
-be enabled in `mkdocs.yml` and adds additional functionality to the Markdown
-parser.
+此符号表示所描述的内容是 Markdown 扩展，可以在 `mkdocs.yml` 中启用，并为 Markdown 解析器添加额外功能。
 
-### <!-- md:flag required --> – Required value { #required data-toc-label="Required value" }
+### <!-- md:flag required --> – 必需值 { #required data-toc-label="必需值" }
 
-Some (very few in fact) properties or settings are required, which means the
-authors must explicitly define them.
+某些（实际上非常少）属性或设置是必需的，这意味着作者必须明确定义它们。
 
-### <!-- md:flag customization --> – Customization { #customization data-toc-label="Customization" }
+### <!-- md:flag customization --> – 自定义 { #customization data-toc-label="自定义" }
 
-This symbol denotes that the thing described is a customization that must be
-added by the author.
+此符号表示所描述的内容是必须由作者添加的自定义。
 
-### <!-- md:utility --> – Utility { data-toc-label="Utility" }
+### <!-- md:utility --> – 实用工具 { data-toc-label="实用工具" }
 
-Besides plugins, there are some utilities that build on top of MkDocs in order
-to provide extended functionality, like for example support for versioning.
+除了插件，还有一些实用工具建立在 MkDocs 之上，以提供扩展功能，例如支持版本控制。
 
   [Insiders]: insiders/index.md

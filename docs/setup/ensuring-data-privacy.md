@@ -1,26 +1,21 @@
-# Ensuring data privacy
+# 确保数据隐私 {#ensuring-data-privacy}
 
-Material for MkDocs makes compliance with data privacy regulations very easy,
-as it offers a native [cookie consent] solution to seek explicit consent from
-users before setting up [analytics]. Additionally, external assets can be
-automatically downloaded for [self-hosting].
+Material for MkDocs 使得遵守数据隐私法规变得非常简单，因为它提供了原生的[Cookie 同意]解决方案，在设置[分析]之前寻求用户的明确同意。此外，外部资产可以自动下载，用于[自托管]。
 
-  [cookie consent]: #cookie-consent
-  [analytics]: setting-up-site-analytics.md
-  [self-hosting]: #built-in-privacy-plugin
+  [Cookie 同意]: #cookie-consent
+  [分析]: setting-up-site-analytics.md
+  [自托管]: #built-in-privacy-plugin
 
-## Configuration
+## 配置 {#configuration}
 
-### Cookie consent
+### Cookie 同意 {#cookie-consent}
 
 <!-- md:version 8.4.0 -->
 <!-- md:default none -->
 <!-- md:flag experimental -->
 <!-- md:example cookie-consent -->
 
-Material for MkDocs ships a native and extensible cookie consent form which
-asks the user for consent prior to sending requests to third parties. Add the
-following to `mkdocs.yml`:
+Material for MkDocs 提供了一个原生且可扩展的 Cookie 同意表单，在向第三方发送请求之前询问用户的同意。在 `mkdocs.yml` 中添加以下内容：
 
 ``` yaml
 extra:
@@ -33,37 +28,31 @@ extra:
       make our documentation better.
 ```
 
-1.  You can add arbitrary HTML tags in the `description`, e.g. to link to your
-    terms of service or other parts of the site.
+1.  您可以在 `description` 中添加任意 HTML 标签，例如链接到您的服务条款或站点的其他部分。
 
-The following properties are available:
+以下属性可用：
 
 <!-- md:option consent.title -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    This property sets the title of the cookie consent, which is rendered at the
-    top of the form and must be set to a non-empty string.
+    此属性设置 Cookie 同意的标题，显示在表单顶部，必须设置为非空字符串。
 
 <!-- md:option consent.description -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    This property sets the description of the cookie consent, is rendered below
-    the title, and may include raw HTML (e.g. a links to the terms of service).
+    此属性设置 Cookie 同意的描述，显示在标题下方，可以包含原始 HTML（例如，链接到服务条款）。
 
 <!-- md:option consent.cookies -->
 
 :   <!-- md:default none --> This property allows to add custom
-    cookies or change the initial `checked` state and name of built-in cookies.
-    Currently, the following cookies are built-in:
+    cookies 或更改内置 cookies 的初始“选中”状态和名称。目前，以下 cookies 是内置的：
 
-    - __Google Analytics__ – `analytics` (enabled by default)
-    - __GitHub__ – `github` (enabled by default)
+    - __谷歌分析__ – `analytics`（默认启用）
+    - __GitHub__ – `github`（默认启用）
 
-    Each cookie must receive a unique identifier which is used as a key in the
-    `cookies` map, and can be either set to a string, or to a map defining
-    `name` and `checked` state:
+    每个 cookie 必须接收一个用作 `cookies` 映射中键的唯一标识符，并且可以设置为字符串，或者为定义 `name` 和 `checked` 状态的映射：
 
-    ===  "Custom cookie name"
+    ===  "自定义 cookie 名称"
 
         ``` yaml
         extra:
@@ -72,7 +61,7 @@ The following properties are available:
               analytics: Custom name
         ```
 
-    ===  "Custom initial state"
+    ===  "自定义初始状态"
 
         ``` yaml
         extra:
@@ -83,7 +72,7 @@ The following properties are available:
                 checked: false
         ```
 
-    ===  "Custom cookie"
+    ===  "自定义 cookie"
 
         ``` yaml
         extra:
@@ -93,19 +82,14 @@ The following properties are available:
               custom: Custom cookie
         ```
 
-        1.  If you define a custom cookie as part of the `cookies` property,
-            the `analytics` cookie must be added back explicitly, or analytics
-            won't be triggered.
+        1.  如果您在 `cookies` 属性中定义了一个自定义 cookie，必须显式添加回 `analytics` cookie，否则不会触发分析。
 
-    If Google Analytics was configured via `mkdocs.yml`, the cookie consent will
-    automatically include a setting for the user to disable it. [Custom cookies]
-    can be used from JavaScript.
+    如果通过 `mkdocs.yml` 配置了谷歌分析，cookie 同意将自动包括一个用户禁用它的设置。[自定义 cookies] 可以在 JavaScript 中使用。
 
 <!-- md:option consent.actions -->
 
 :   <!-- md:default `[accept, manage]` --> This property defines
-    which buttons are shown and in which order, e.g. to allow the user to accept
-    cookies and manage settings:
+    显示哪些按钮以及顺序，例如，允许用户接受 cookies 并管理设置：
 
     ``` yaml
     extra:
@@ -115,27 +99,24 @@ The following properties are available:
           - manage # (1)!
     ```
 
-    1.  If the `manage` settings button is omitted from the `actions` property,
-        the settings are always shown.
+    1.  如果从 `actions` 属性中省略了 `manage` 设置按钮，设置始终显示。
 
-    The cookie consent form includes three types of buttons:
+    Cookie 同意表单包括三种类型的按钮：
 
-    - `accept` – Button to accept selected cookies
-    - `reject` – Button to reject all cookies
-    - `manage` – Button to manage settings
+    - `accept` – 接受选定 cookies 的按钮
+    - `reject` – 拒绝所有 cookies 的按钮
+    - `manage` – 管理设置的按钮
 
-When a user first visits your site, a cookie consent form is rendered:
+当用户首次访问您的网站时，会显示一个 Cookie 同意表单：
 
 [![Cookie consent enabled]][Cookie consent enabled]
 
-  [Custom cookies]: #custom-cookies
+  [自定义 cookies]: #custom-cookies
   [Cookie consent enabled]: ../assets/screenshots/consent.png
 
-#### Change cookie settings
+#### 更改 Cookie 设置 {#change-cookie-settings}
 
-In order to comply with GDPR, users must be able to change their cookie settings
-at any time. This can be done by adding a simple link to your [copyright notice]
-in `mkdocs.yml`:
+为了符合 GDPR，用户必须随时能够更改他们的 Cookie 设置。这可以通过在 `mkdocs.yml` 中添加一个简单的链接到您的[版权声明]来完成：
 
 ``` yaml
 copyright: >
@@ -143,73 +124,49 @@ copyright: >
   <a href="#__consent">Change cookie settings</a>
 ```
 
-  [copyright notice]: setting-up-the-footer.md#copyright-notice
+  [版权声明]: setting-up-the-footer.md#copyright-notice
 
-### Built-in privacy plugin
+### 内置隐私插件 {#built-in-privacy-plugin}
 
 <!-- md:version 9.5.0 -->
 <!-- md:plugin [privacy][built-in privacy plugin] -->
 <!-- md:flag experimental -->
 
-The built-in privacy plugin automatically identifies external assets as part
-of the build process and downloads all assets for very simple self-hosting. Add
-the following lines to `mkdocs.yml`:
+内置隐私插件在构建过程中自动识别外部资产，并下载所有资产以便非常简单的自托管。在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 plugins:
   - privacy
 ```
 
-For a list of all settings, please consult the [plugin documentation].
+有关所有设置的列表，请参阅[插件文档]。
 
-  [plugin documentation]: ../plugins/privacy.md
+  [插件文档]: ../plugins/privacy.md
 
-!!! tip "Hosting images externally and optimizing them automatically"
+!!! tip "外部托管图像并自动优化它们"
 
-    This option makes the [built-in privacy plugin] an excellent choice for
-    when you want to host assets like images outside of your git repository
-    in another location to keep them fresh and your repository lean.
+    当您想要在 git 仓库之外的其他位置托管资产如图像，以保持它们的新鲜度和您的仓库精简时，这个选项使得[内置隐私插件]成为一个极佳的选择。
 
-    Additionally, as of <!-- md:version insiders-4.30.0 -->, the
-    built-in privacy plugin was entirely rewritten and now works perfectly
-    with the [built-in optimize plugin], which means that external assets
-    can be passed through the same optimization pipeline as the rest of your
-    documentation. This means you can store and edit unoptimized files
-    outside of your repository, and let both plugins built a highly
-    optimized site for you.
+    此外，截至 <!-- md:version insiders-4.30.0 -->，内置隐私插件已经完全重写，现在与[内置优化插件]完美协作，这意味着外部资产可以通过与您的文档其余部分相同的优化流程传递。这意味着您可以在仓库外存储和编辑未优化的文件，并让这两个插件为您构建一个高度优化的网站。
 
-    If you want to implement separate pipelines, i.e., optimize some images
-    differently from others or exclude some images from downloading, you can
-    use multiple instances of the [built-in privacy plugin].
+    如果您想实现单独的管道，即对某些图像进行不同的优化，或者从下载中排除某些图像，您可以使用[内置隐私插件]的多个实例。
 
-!!! question "Why can't Material for MkDocs bundle all assets by design?"
+!!! question "为什么 Material for MkDocs 不能按设计捆绑所有资产？"
 
-    The primary reason why Material for MkDocs can't just bundle all of its own
-    assets is the integration with [Google Fonts], which offers over a thousand
-    different fonts that can be used to render your documentation. Most of the
-    fonts include several weights and are split up into different character sets
-    to keep the download size small, so the browser only downloads what is
-    really needed. For Roboto, our default [regular font], this results in [42
-    `*.woff2` files in total][example].
+    Material for MkDocs 不能仅仅捆绑自己的所有资产的主要原因是与[谷歌字体]的集成，它提供了超过一千种不同的字体，可用于渲染您的文档。大多数字体包括几种权重，并分为不同的字符集以保持下载大小小，因此浏览器只下载真正需要的内容。对于我们的默认[常规字体] Roboto，这总共结果在 [42 个 `*.woff2` 文件][example]。
 
-    If Material for MkDocs would bundle all font files, the download size would
-    be in the hundreds of megabytes, slowing down automated builds. Furthermore,
-    authors might add external assets like third-party scripts or style sheets
-    that would need to be remembered to be defined as further local assets.
+    如果 Material for MkDocs 捆绑所有字体文件，下载大小将达到数百兆字节，减慢自动构建的速度。此外，作者可能会添加外部资产，如第三方脚本或样式表，这些需要记住定义为更多的本地资产。
 
-    This is the very reason the [built-in privacy plugin] exists — it automates
-    the process of downloading all external assets manually to ensure compliance
-    with GDPR with some some [technical limitations].
+    这正是[内置隐私插件]存在的原因——它自动化了手动下载所有外部资产的过程，以确保符合 GDPR，尽管存在一些[技术限制]。
 
-  [Google Fonts]: changing-the-fonts.md
-  [regular font]: changing-the-fonts.md#regular-font
+  [谷歌字体]: changing-the-fonts.md
+  [常规字体]: changing-the-fonts.md#regular-font
   [example]: #example
-  [built-in optimize plugin]: ../plugins/optimize.md
+  [内置优化插件]: ../plugins/optimize.md
 
-??? example "Expand to inspect example"
+??? example "展开查看示例"
 
-    For the official documentation, the [built-in privacy plugin] downloads the
-    following resources:
+    对于官方文档，[内置隐私插件]下载了以下资源：
 
     ``` { .sh .no-copy #example }
     .
@@ -276,45 +233,36 @@ For a list of all settings, please consult the [plugin documentation].
        └─ polyfill.io/v3/polyfill.min.js
     ```
 
-  [built-in privacy plugin]: ../plugins/privacy.md
+  [内置隐私插件]: ../plugins/privacy.md
   [preconnect]: https://developer.mozilla.org/en-US/docs/Web/Performance/dns-prefetch
 
-#### Advanced settings
+#### 高级设置 {#advanced-settings}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.50.0 -->
 
-The following advanced settings are currently reserved to our [sponsors]
-[Insiders]. They are entirely optional, and don't affect the functionality of
-the blog, but can be helpful for customizations:
+以下高级设置目前仅限我们的[赞助商][Insiders]。它们完全是可选的，并且不影响博客的功能，但对于定制可能有帮助：
 
 - [`log`][config.log]
 - [`log_level`][config.log_level]
 
-We'll add more settings here, as we discover new use cases.
+随着我们发现新的用例，我们将在这里添加更多设置。
 
   [Insiders]: ../insiders/index.md
   [config.log]: ../plugins/privacy.md#config.log
   [config.log_level]: ../plugins/privacy.md#config.log_level
 
-## Customization
+## 自定义 {#customization}
 
-### Custom cookies
+### 自定义 cookies {#custom-cookies}
 
 <!-- md:version 8.4.0 -->
 <!-- md:example custom-cookies -->
 
-If you've customized the [cookie consent] and added a `custom` cookie, the user
-will be prompted to accept or reject your custom cookie. Once the user accepts
-or rejects the cookie consent, or [changes the settings], the page reloads[^1].
-Use [additional JavaScript] to query the result:
+如果您自定义了[Cookie 同意]并添加了一个`自定义`cookie，用户将被提示接受或拒绝您的自定义 cookie。一旦用户接受或拒绝 Cookie 同意，或者[更改设置]，页面将重新加载[^1]。使用[额外的 JavaScript]查询结果：
 
   [^1]:
-    We reload the page to make interop with custom cookies simpler. If Material
-    for MkDocs would implement a callback-based approach, the author would need
-    to make sure to correctly update all scripts that use cookies. Additionally,
-    the cookie consent is only answered initially, which is why we consider this
-    to be a good trade-off of DX and UX.
+    我们重新加载页面是为了使与自定义 cookies 的互操作更简单。如果 Material for MkDocs 实现了基于回调的方法，作者将需要确保正确更新使用 cookies 的所有脚本。此外，Cookie 同意最初只回答一次，这就是为什么我们认为这是 DX 和 UX 的一个好的权衡。
 
 === ":octicons-file-code-16: `docs/javascripts/consent.js`"
 
@@ -334,5 +282,5 @@ Use [additional JavaScript] to query the result:
       - javascripts/consent.js
     ```
 
-  [additional JavaScript]: ../customization.md#additional-javascript
+  [额外的 JavaScript]: ../customization.md#additional-javascript
   [changes the settings]: #change-cookie-settings

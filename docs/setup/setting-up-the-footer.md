@@ -1,20 +1,15 @@
-# Setting up the footer
+# 设置页脚 {#setting-up-the-footer}
 
-The footer of your project documentation is a great place to add links to
-websites or platforms you or your company are using as additional marketing
-channels, e.g. :fontawesome-brands-mastodon:{ style="color: #5A4CE0" } or
-:fontawesome-brands-youtube:{ style="color: #EE0F0F" }, which you can easily
-configure via `mkdocs.yml`.
+您的项目文档的页脚是添加链接到您或您的公司正在使用的网站或平台的绝佳位置，作为额外的营销渠道，例如 :fontawesome-brands-mastodon:{ style="color: #5A4CE0" } 或 :fontawesome-brands-youtube:{ style="color: #EE0F0F" }，您可以通过 `mkdocs.yml` 轻松配置这些。
 
-## Configuration
+## 配置 {#configuration}
 
-### Navigation
+### 导航 {#navigation}
 
 <!-- md:version 9.0.0 -->
 <!-- md:feature -->
 
-The footer can include links to the previous and next page of the current page.
-If you wish to enable this behavior, add the following lines to `mkdocs.yml`:
+页脚可以包含指向当前页面的前一页和后一页的链接。如果您希望启用此行为，请将以下行添加到 `mkdocs.yml`：
 
 ``` yaml
 theme:
@@ -22,14 +17,12 @@ theme:
     - navigation.footer
 ```
 
-### Social links
+### 社交链接 {#social-links}
 
 <!-- md:version 1.0.0 -->
 <!-- md:default none -->
 
-Social links are rendered next to the copyright notice as part of the
-footer of your project documentation. Add a list of social links in `mkdocs.yml`
-with:
+社交链接作为页脚的一部分显示在版权声明旁边。在 `mkdocs.yml` 中添加一系列社交链接：
 
 ``` yaml
 extra:
@@ -38,8 +31,7 @@ extra:
       link: https://fosstodon.org/@squidfunk
 ```
 
-1.  Enter a few keywords to find the perfect icon using our [icon search] and
-    click on the shortcode to copy it to your clipboard:
+1.  输入一些关键字使用我们的[图标搜索]找到完美的图标，并点击短代码将其复制到剪贴板：
 
     <div class="mdx-iconsearch" data-mdx-component="iconsearch">
       <input class="md-input md-input--stretch mdx-iconsearch__input" placeholder="Search icon" data-mdx-component="iconsearch-query" value="mastodon" />
@@ -49,13 +41,12 @@ extra:
       </div>
     </div>
 
-The following properties are available for each link:
+以下属性可用于每个链接：
 
 <!-- md:option social.icon -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    This property must contain a valid path to any icon bundled with the theme,
-    or the build will not succeed. Some popular choices:
+    此属性必须包含有效的图标路径，该路径包含在主题中，否则构建将不会成功。一些流行的选择包括：
 
     * :fontawesome-brands-github: – `fontawesome/brands/github`
     * :fontawesome-brands-gitlab: – `fontawesome/brands/gitlab`
@@ -73,8 +64,7 @@ The following properties are available for each link:
 <!-- md:option social.link -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    This property must be set to a relative or absolute URL including the URI
-    scheme. All URI schemes are supported, including `mailto` and `bitcoin`:
+    此属性必须设置为相对或绝对 URL，包括 URI 方案。所有 URI 方案都受支持，包括 `mailto` 和 `bitcoin`：
 
     === ":fontawesome-brands-mastodon: Mastodon"
 
@@ -97,8 +87,7 @@ The following properties are available for each link:
 <!-- md:option social.name -->
 
 :   <!-- md:default _domain name from_ `link`_, if available_ -->
-    This property is used as the link's `title` attribute and can be set to a
-    discernable name to improve accessibility:
+    此属性用作链接的 `title` 属性，可以设置为可识别的名称以提高可访问性：
 
     ``` yaml
     extra:
@@ -108,57 +97,45 @@ The following properties are available for each link:
           name: squidfunk on Fosstodon
     ```
 
-  [icon search]: ../reference/icons-emojis.md#search
+  [图标搜索]: ../reference/icons-emojis.md#search
   [rel=me]: https://docs.joinmastodon.org/user/profile/#verification
 
-### Copyright notice
+### 版权声明 {#copyright-notice}
 
 <!-- md:version 0.1.0 -->
 <!-- md:default none -->
 
-A custom copyright banner can be rendered as part of the footer, which is
-displayed next to the social links. It can be defined as part of `mkdocs.yml`:
+作为页脚的一部分，可以渲染自定义的版权横幅，它显示在社交链接旁边。它可以作为 `mkdocs.yml` 的一部分定义：
 
 ``` yaml
 copyright: Copyright &copy; 2016 - 2020 Martin Donath
 ```
 
-### Generator notice
+### 生成器声明 {#generator-notice}
 
 <!-- md:version 7.3.0 -->
 <!-- md:default `true` -->
 
-The footer displays a _Made with Material for MkDocs_ notice to denote how
-the site was generated. The notice can be removed with the following option
-via `mkdocs.yml`:
+页脚显示 _由 Material for MkDocs 制作_ 的声明以表明网站是如何生成的。可以通过 `mkdocs.yml` 中的以下选项删除此声明：
 
 ``` yaml
 extra:
   generator: false
 ```
 
-!!! info "Please read this before removing the generator notice"
+!!! info "在删除生成器声明之前请阅读此信息"
 
-    The subtle __Made with Material for MkDocs__ hint in the footer is one of
-    the reasons why this project is so popular, as it tells the user how the
-    site is generated, helping new users to discover this project. Before
-    removing please consider that you're enjoying the benefits of @squidfunk's
-    work for free, as this project is Open Source and has a permissive license.
-    Thousands of hours went into this project, most of them
-    without any financial return.
+    页脚中细微的 __由 Material for MkDocs 制作__ 提示是这个项目如此受欢迎的原因之一，因为它告诉用户网站是如何生成的，帮助新用户发现这个项目。在删除之前，请考虑您正在免费享受 @squidfunk 的工作成果，因为这个项目是开源的，并且拥有宽松的许可证。数千小时的工作投入到这个项目中，大部分时间没有任何经济回报。
 
-    Thus, if you remove this notice, please consider [sponsoring][Insiders] the
-    project. __Thank you__ :octicons-heart-fill-24:{ .mdx-heart .mdx-insiders }
+    因此，如果您移除此声明，请考虑[赞助][Insiders]该项目。__谢谢您__ :octicons-heart-fill-24:{ .mdx-heart .mdx-insiders }
 
   [Insiders]: ../insiders/index.md
 
-## Usage
+## 使用 {#usage}
 
-### Hiding prev/next links
+### 隐藏前后链接 {#hiding-prev-next-links}
 
-The footer navigation showing links to the previous and next page can be hidden
-with the front matter `hide` property. Add the following lines at the top of a
-Markdown file:
+页脚导航显示指向前一页和后一页的链接，可以通过前置元素 `hide` 属性隐藏。在 Markdown 文件的顶部添加以下行：
 
 ``` yaml
 ---
@@ -170,18 +147,16 @@ hide:
 ...
 ```
 
-## Customization
+## 自定义 {#customization}
 
-### Custom copyright
+### 自定义版权 {#custom-copyright}
 
 <!-- md:version 8.0.0 -->
 <!-- md:flag customization -->
 
-In order to customize and override the [copyright notice], [extend the theme]
-and [override the `copyright.html` partial][overriding partials], which normally
-includes the `copyright` property set in `mkdocs.yml`.
+为了自定义和覆盖[版权声明]，[扩展主题]并[覆盖 `copyright.html` 部分][overriding partials]，通常包括在 `mkdocs.yml` 中设置的 `copyright` 属性。
 
-  [copyright notice]: #copyright-notice
+  [版权声明]: #copyright-notice
   [generator notice]: #generator-notice
-  [extend the theme]: ../customization.md#extending-the-theme
+  [扩展主题]: ../customization.md#extending-the-theme
   [overriding partials]: ../customization.md#overriding-partials

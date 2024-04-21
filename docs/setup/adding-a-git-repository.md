@@ -1,50 +1,37 @@
-# Adding a git repository
+# 添加 Git 仓库 {#adding-a-git-repository}
 
-If your documentation is related to source code, Material for MkDocs provides
-the ability to display information to the project's repository as part of the
-static site, including stars and forks. Furthermore, the
-[date of last update and creation], as well as [contributors] can be shown.
+如果您的文档与源代码相关，Material for MkDocs 提供了在静态站点中展示项目仓库信息的能力，包括星标和分叉数。此外，还可以显示[最后更新和创建日期]以及[贡献者]。
 
-## Configuration
+## 配置 {#configuration}
 
-### Repository
+### 仓库 {#repository}
 
 <!-- md:version 0.1.0 -->
 <!-- md:default none -->
 
-In order to display a link to the repository of your project as part of your
-documentation, set [`repo_url`][repo_url] in `mkdocs.yml` to the public URL of
-your repository, e.g.:
+为了在文档中显示项目仓库的链接，请在 `mkdocs.yml` 中设置 [`repo_url`][repo_url] 为您的仓库的公开 URL，例如：
 
 ``` yaml
 repo_url: https://github.com/squidfunk/mkdocs-material
 ```
 
-The link to the repository will be rendered next to the search bar on big
-screens and as part of the main navigation drawer on smaller screen sizes.
-Additionally, for public repositories hosted on [GitHub] or [GitLab], the
-number of stars and forks is automatically requested and rendered.
+在大屏幕上，仓库链接将呈现在搜索栏旁边，在较小的屏幕尺寸上则显示在主导航抽屉中。此外，对于托管在 [GitHub] 或 [GitLab] 上的公开仓库，会自动请求并呈现星标和分叉数。
 
-GitHub repositories also include the tag of the latest release.[^1]
+GitHub 仓库还将包括最新发布版本的标签。[^1]
 
   [^1]:
-    Unfortunately, GitHub only provides an API endpoint to obtain the [latest
-    release] - not the latest tag. Thus, make sure to [create a release] (not
-    pre-release) for the latest tag you want to display next to the number of
-    stars and forks.
+    不幸的是，GitHub 只提供了获取[最新发布版本]的 API 端点 - 而不是最新标签。因此，请确保为您希望在星标和分叉数旁边显示的最新标签[创建一个发布版本]（不是预发布版本）。
 
   [repo_url]: https://www.mkdocs.org/user-guide/configuration/#repo_url
-  [latest release]: https://docs.github.com/en/rest/reference/releases#get-the-latest-release
-  [create a release]: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release
+  [最新发布版本]: https://docs.github.com/en/rest/reference/releases#get-the-latest-release
+  [创建一个发布版本]: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release
 
-#### Repository name
+#### 仓库名称 {#repository-name}
 
 <!-- md:version 0.1.0 -->
 <!-- md:default _automatically set to_ `GitHub`, `GitLab` _or_ `Bitbucket` -->
 
-MkDocs will infer the source provider by examining the URL and try to set the
-_repository name_ automatically. If you wish to customize the name, set
-[`repo_name`][repo_name] in `mkdocs.yml`:
+MkDocs 会通过检查 URL 来推断源提供者，并尝试自动设置 _仓库名称_。如果您希望自定义名称，请在 `mkdocs.yml` 中设置 [`repo_name`][repo_name]：
 
 ``` yaml
 repo_name: squidfunk/mkdocs-material
@@ -52,14 +39,12 @@ repo_name: squidfunk/mkdocs-material
 
   [repo_name]: https://www.mkdocs.org/user-guide/configuration/#repo_name
 
-#### Repository icon
+#### 仓库图标 {#repository-icon}
 
 <!-- md:version 5.0.0 -->
 <!-- md:default computed -->
 
-While the default repository icon is a generic git icon, it can be set to
-any icon bundled with the theme by referencing a valid icon path in
-`mkdocs.yml`:
+虽然默认的仓库图标是一个通用的 git 图标，但可以通过在 `mkdocs.yml` 中引用有效的图标路径来设置为任何与主题捆绑的图标：
 
 ``` yaml
 theme:
@@ -67,8 +52,7 @@ theme:
     repo: fontawesome/brands/git-alt # (1)!
 ```
 
-1.  Enter a few keywords to find the perfect icon using our [icon search] and
-    click on the shortcode to copy it to your clipboard:
+1.  输入几个关键词以使用我们的[图标搜索]找到完美的图标，并点击短代码将其复制到您的剪贴板：
 
     <div class="mdx-iconsearch" data-mdx-component="iconsearch">
       <input class="md-input md-input--stretch mdx-iconsearch__input" placeholder="Search icon" data-mdx-component="iconsearch-query" value="git" />
@@ -78,7 +62,7 @@ theme:
       </div>
     </div>
 
-Some popular choices:
+一些流行的选择：
 
 - :fontawesome-brands-git: – `fontawesome/brands/git`
 - :fontawesome-brands-git-alt: – `fontawesome/brands/git-alt`
@@ -89,28 +73,24 @@ Some popular choices:
 - :fontawesome-brands-bitbucket: – `fontawesome/brands/bitbucket`
 - :fontawesome-solid-trash: – `fontawesome/solid/trash`
 
-  [icon search]: ../reference/icons-emojis.md#search
+  [图标搜索]: ../reference/icons-emojis.md#search
 
-#### Code actions
+#### Code actions {#code-actions}
 
 <!-- md:version 9.0.0 -->
 <!-- md:feature -->
 
-If the [repository URL] points to a valid [GitHub], [GitLab] or [Bitbucket]
-repository, [MkDocs] provides a setting called [`edit_uri`][edit_uri], which
-resolves to the subfolder where your documentation is hosted.
+如果 [repository URL] 指向一个有效的 [GitHub]、[GitLab] 或 [Bitbucket] 仓库，[MkDocs] 提供了一个名为 [`edit_uri`][edit_uri] 的设置，它解析到托管您文档的子文件夹。
 
-If your default branch is called `main`, change the setting to:
+如果您的默认分支名为 `main`，请更改设置：
 
 ``` yaml
 edit_uri: edit/main/docs/
 ```
 
-After making sure that `edit_uri` is correctly configured, buttons for code
-actions can be added. Two types of code actions are supported: `edit` and `view`
-(GitHub only):
+确保 `edit_uri` 配置正确后，可以添加代码操作按钮。支持两种类型的代码操作：`edit` 和 `view`（仅限 GitHub）：
 
-=== ":material-file-edit-outline: Edit this page"
+=== ":material-file-edit-outline: 编辑此页面"
 
     ``` yaml
     theme:
@@ -118,7 +98,7 @@ actions can be added. Two types of code actions are supported: `edit` and `view`
         - content.action.edit
     ```
 
-=== ":material-file-eye-outline: View source of this page"
+=== ":material-file-eye-outline: 查看此页面的源代码"
 
     ``` yaml
     theme:
@@ -126,7 +106,7 @@ actions can be added. Two types of code actions are supported: `edit` and `view`
         - content.action.view
     ```
 
-The icon of the edit and view buttons can be changed with the following lines:
+可以使用以下行更改编辑和查看按钮的图标：
 
 ``` yaml
 theme:
@@ -135,8 +115,7 @@ theme:
     view: material/eye
 ```
 
-1.  Enter a few keywords to find the perfect icon using our [icon search] and
-    click on the shortcode to copy it to your clipboard:
+1.  输入几个关键词以使用我们的[图标搜索]找到完美的图标，并点击短代码将其复制到您的剪贴板：
 
     <div class="mdx-iconsearch" data-mdx-component="iconsearch">
       <input class="md-input md-input--stretch mdx-iconsearch__input" placeholder="Search icon" data-mdx-component="iconsearch-query" value="material pencil" />
@@ -153,30 +132,26 @@ theme:
   [MkDocs]: https://www.mkdocs.org
   [edit_uri]: https://www.mkdocs.org/user-guide/configuration/#edit_uri
 
-### Revisioning
+### 版本控制 {#revisioning}
 
-The following plugins are fully integrated with Material for MkDocs, allowing
-for showing the [date of last update and creation] of a document, as well as
-links to all [contributors] or [authors] involved.
+以下插件与 Material for MkDocs 完全集成，允许显示文档的[最后更新和创建日期]，以及涉及的所有[贡献者]或[作者]的链接。
 
-  [date of last update and creation]: #document-dates
-  [contributors]: #document-contributors
+  [最后更新和创建日期]: #document-dates
+  [贡献者]: #document-contributors
   [authors]: #document-authors
 
-#### Document dates
+#### 文档日期 {#document-dates}
 
 <!-- md:version 4.6.0 -->
 <!-- md:plugin [git-revision-date-localized] -->
 
-The [git-revision-date-localized] plugin adds support for adding the date of
-last update and creation of a document at the bottom of each page. Install it
-with `pip`:
+[git-revision-date-localized] 插件支持在每个页面的底部添加文档的最后更新和创建日期。使用 `pip` 安装它：
 
 ```
 pip install mkdocs-git-revision-date-localized-plugin
 ```
 
-Then, add the following lines to `mkdocs.yml`:
+然后，在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 plugins:
@@ -184,13 +159,11 @@ plugins:
       enable_creation_date: true
 ```
 
-The following configuration options are supported:
+支持以下配置选项：
 
 <!-- md:option git-revision-date-localized.enabled -->
 
-:   <!-- md:default `true` --> This option specifies whether
-    the plugin is enabled when building your project. If you want to switch
-    the plugin off, e.g. for local builds, use an [environment variable]:
+:   <!-- md:default `true` --> 此选项指定构建项目时是否启用插件。如果您想在本地构建时关闭插件，请使用[环境变量]：
 
     ``` yaml
     plugins:
@@ -200,9 +173,7 @@ The following configuration options are supported:
 
 <!-- md:option git-revision-date-localized.type -->
 
-:   <!-- md:default `date` --> The format of the date to be
-    displayed. Valid values are `date`, `datetime`, `iso_date`, `iso_datetime`
-    and `timeago`:
+:   <!-- md:default `date` --> 要显示的日期格式。有效值包括 `date`、`datetime`、`iso_date`、`iso_datetime` 和 `timeago`：
 
     ``` yaml
     plugins:
@@ -212,9 +183,7 @@ The following configuration options are supported:
 
 <!-- md:option git-revision-date-localized.enable_creation_date -->
 
-:   <!-- md:default `false` --> Enables the display of the
-    creation date of the file associated with the page next to the last updated
-    date at the bottom of the page:
+:   <!-- md:default `false` --> 启用在页面底部最后更新日期旁显示与页面相关联的文件的创建日期：
 
     ``` yaml
     plugins:
@@ -222,17 +191,13 @@ The following configuration options are supported:
           enable_creation_date: true
     ```
 
-    !!! note "When using build environments"
+    !!! note "使用构建环境时"
 
-        If you are deploying through a CI system, you might need to adjust your
-        CI settings when fetching the code. For more information, see
-        [git-revision-date-localized].
+        如果您通过 CI 系统部署，您可能需要在获取代码时调整您的 CI 设置。有关更多信息，请查看 [git-revision-date-localized]。
 
 <!-- md:option git-revision-date-localized.fallback_to_build_date -->
 
-:   <!-- md:default `false` --> Enables falling back to
-    the time when `mkdocs build` was executed. Can be used as a fallback when
-    the build is performed outside of a git repository:
+:   <!-- md:default `false` --> 启用回退到执行 `mkdocs build` 的时间。当在非 git 仓库外进行构建时可以使用此选项作为回退：
 
     ``` yaml
     plugins:
@@ -240,33 +205,26 @@ The following configuration options are supported:
           fallback_to_build_date: true
     ```
 
-The other configuration options of this extension are not officially supported
-by Material for MkDocs, which is why they may yield unexpected results. Use
-them at your own risk.
+此扩展的其他配置选项没有得到 Material for MkDocs 的官方支持，因此可能会产生意外结果。请自行决定使用。
 
   [git-revision-date-localized]: https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
 
-#### Document contributors
+#### 文档贡献者 {#document-contributors}
 
 <!-- md:version 9.5.0 -->
 <!-- md:plugin [git-committers] -->
 <!-- md:flag experimental -->
 
-The [git-committers][^2] plugin renders the GitHub avatars of all contributors,
-linking to their GitHub profiles at the bottom of each page. As always, it can
-be installed with `pip`:
+[git-committers][^2] 插件渲染所有贡献者的 GitHub 头像，并在每个页面的底部链接到他们的 GitHub 个人资料。一如既往，可以通过 `pip` 安装它：
 
   [^2]:
-    We currently recommend using a fork of the [git-committers] plugin, as it
-    contains many improvements that have not yet been merged back into the
-    original plugin. See byrnereese/mkdocs-git-committers-plugin#12 for more
-    information.
+    我们目前建议使用 [git-committers] 插件的一个分支，因为它包含许多尚未合并回原始插件的改进。有关更多信息，请查看 byrnereese/mkdocs-git-committers-plugin#12。
 
 ```
 pip install mkdocs-git-committers-plugin-2
 ```
 
-Then, add the following lines to `mkdocs.yml`:
+然后，在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 plugins:
@@ -275,13 +233,11 @@ plugins:
       branch: main
 ```
 
-The following configuration options are supported:
+支持以下配置选项：
 
 <!-- md:option git-committers.enabled -->
 
-:   <!-- md:default `true` --> This option specifies whether
-    the plugin is enabled when building your project. If you want to switch
-    the plugin off, e.g. for local builds, use an [environment variable]:
+:   <!-- md:default `true` --> 此选项指定构建项目时是否启用插件。如果您想在本地构建时关闭插件，请使用[环境变量]：
 
     ``` yaml
     plugins:
@@ -291,9 +247,7 @@ The following configuration options are supported:
 
 <!-- md:option git-committers.repository -->
 
-:   <!-- md:default none --> <!-- md:flag required -->
-    This property must be set to the slug of the repository that contains your
-    documentation. The slug must follow the pattern `<username>/<repository>`:
+:   <!-- md:default none --> <!-- md:flag required --> 必须设置此属性为包含您文档的仓库的 slug。slug 必须遵循 `<username>/<repository>` 的模式：
 
     ``` yaml
     plugins:
@@ -303,8 +257,7 @@ The following configuration options are supported:
 
 <!-- md:option git-committers.branch -->
 
-:   <!-- md:default `master` --> This property should be set to
-    the branch of the repository from which to retrieve the contributors. To use the `main` branch:
+:   <!-- md:default `master` --> 此属性应设置为从中检索贡献者的仓库分支。要使用 `main` 分支：
 
     ``` yaml
     plugins:
@@ -312,35 +265,28 @@ The following configuration options are supported:
           branch: main
     ```
 
-The other configuration options of this extension are not officially supported
-by Material for MkDocs, which is why they may yield unexpected results. Use
-them at your own risk.
+此扩展的其他配置选项没有得到 Material for MkDocs 的官方支持，因此可能会产生意外结果。请自行决定使用。
 
   [Insiders]: ../insiders/index.md
   [git-committers]: https://github.com/ojacques/mkdocs-git-committers-plugin-2
-  [environment variable]: https://www.mkdocs.org/user-guide/configuration/#environment-variables
+  [环境变量]: https://www.mkdocs.org/user-guide/configuration/#environment-variables
   [rate limits]: https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting
 
-#### Document authors
+#### 文档作者 {#document-authors}
 
 <!-- md:version 9.5.0 -->
 <!-- md:plugin [git-authors] -->
 <!-- md:flag experimental -->
 
-The [git-authors] plugin is a lightweight alternative to the
-[git-committers] plugin and extracts the authors of a document from git to display
-them at the bottom of each page.
+[git-authors] 插件是 [git-committers] 插件的轻量级替代品，它从 git 中提取文档的作者，并在每个页面的底部显示它们。
 
-Material for MkDocs offers deep integration for [git-authors]. This means the
-[customized overrides](https://timvink.github.io/mkdocs-git-authors-plugin/usage.html#mkdocs-material-theme)
-are not necessary, and additional styling (such as nice icons) are added.
-Simply install it with `pip`:
+Material for MkDocs 为 [git-authors] 提供了深度集成。这意味着不需要[自定义覆盖](https://timvink.github.io/mkdocs-git-authors-plugin/usage.html#mkdocs-material-theme)，并且添加了额外的样式（如漂亮的图标）。只需通过 `pip` 安装它：
 
 ```
 pip install mkdocs-git-authors-plugin
 ```
 
-Then, add the following lines to `mkdocs.yml`:
+然后，在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 plugins:

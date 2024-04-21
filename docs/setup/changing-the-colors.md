@@ -1,25 +1,20 @@
-# Changing the colors
+# 更改颜色 {#changing-the-colors}
 
-As any proper Material Design implementation, Material for MkDocs supports
-Google's original [color palette], which can be easily configured through
-`mkdocs.yml`. Furthermore, colors can be customized with a few lines of CSS to
-fit your brand's identity by using [CSS variables][custom colors].
+作为任何合适的 Material Design 实现，Material for MkDocs 支持谷歌的原始[调色板]，可以通过 `mkdocs.yml` 轻松配置。此外，可以使用 [CSS 变量][自定义颜色] 通过几行 CSS 来定制颜色，以符合您品牌的标识。
 
-  [color palette]: http://www.materialui.co/colors
-  [custom colors]: #custom-colors
+  [调色板]: http://www.materialui.co/colors
+  [自定义颜色]: #custom-colors
 
-## Configuration
+## 配置 {#configuration}
 
-### Color palette
+### 调色板 {#color-palette}
 
-#### Color scheme
+#### 颜色方案 {#color-scheme}
 
 <!-- md:version 5.2.0 -->
 <!-- md:default `default` -->
 
-Material for MkDocs supports two color schemes: a __light mode__, which is just
-called `default`, and a __dark mode__, which is called `slate`. The color scheme
-can be set via `mkdocs.yml`:
+Material for MkDocs 支持两种颜色方案：一种是简称为 `default` 的 __light mode__ ，另一种是称为 `slate` 的 __dark mode__ 。颜色方案可以通过 `mkdocs.yml` 设置：
 
 ``` yaml
 theme:
@@ -27,7 +22,7 @@ theme:
     scheme: default
 ```
 
-Click on a tile to change the color scheme:
+点击砖块更改颜色方案：
 
 <div class="mdx-switch">
   <button data-md-color-scheme="default"><code>default</code></button>
@@ -50,14 +45,12 @@ Click on a tile to change the color scheme:
   })
 </script>
 
-#### Primary color
+#### 主要颜色 {#primary-color}
 
 <!-- md:version 0.2.0 -->
 <!-- md:default `indigo` -->
 
-The primary color is used for the header, the sidebar, text links and several
-other components. In order to change the primary color, set the following value
-in `mkdocs.yml` to a valid color name:
+主要颜色用于头部、侧边栏、文本链接和其他几个组件。要更改主要颜色，请将 `mkdocs.yml` 中的以下值设置为有效的颜色名称：
 
 ``` yaml
 theme:
@@ -65,7 +58,7 @@ theme:
     primary: indigo
 ```
 
-Click on a tile to change the primary color:
+点击砖块更改主要颜色：
 
 <div class="mdx-switch">
   <button data-md-color-primary="red"><code>red</code></button>
@@ -103,16 +96,15 @@ Click on a tile to change the primary color:
   })
 </script>
 
-See our guide below to learn how to set [custom colors].
+参阅下面的指南，了解如何设置[自定义颜色]。
 
-#### Accent color
+#### 强调颜色 {#accent-color}
 
 <!-- md:version 0.2.0 -->
 <!-- md:default `indigo` -->
 
-The accent color is used to denote elements that can be interacted with, e.g.
-hovered links, buttons and scrollbars. It can be changed in `mkdocs.yml` by
-choosing a valid color name:
+强调颜色用于标记可以互动的元素，例如悬停的链接、按钮和滚动条。它可以通过选择一个有效的颜色名称在
+ `mkdocs.yml` 中更改：
 
 ``` yaml
 theme:
@@ -120,7 +112,7 @@ theme:
     accent: indigo
 ```
 
-Click on a tile to change the accent color:
+点击砖块更改强调颜色：
 
 <style>
   .md-typeset button[data-md-color-accent] > code {
@@ -160,17 +152,15 @@ Click on a tile to change the accent color:
   })
 </script>
 
-See our guide below to learn how to set [custom colors].
+参阅下面的指南，了解如何设置[自定义颜色]。
 
-### Color palette toggle
+### 切换调色板 {#color-palette-toggle}
 
 <!-- md:version 7.1.0 -->
 <!-- md:default none -->
 <!-- md:example color-palette-toggle -->
 
-Offering a light _and_ dark color palette makes your documentation pleasant to
-read at different times of the day, so the user can choose accordingly. Add the
-following lines to `mkdocs.yml`:
+提供浅色 _和_ 深色颜色调板使您的文档在一天中的不同时间易于阅读，因此用户可以相应选择。在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 theme:
@@ -189,10 +179,9 @@ theme:
         name: Switch to light mode
 ```
 
-1.  Note that the `theme.palette` setting is now defined as a list.
+1.  注意现在将 `theme.palette` 设置定义为列表。
 
-2.  Enter a few keywords to find the perfect icon using our [icon search] and
-    click on the shortcode to copy it to your clipboard:
+2.  输入一些关键词以使用我们的[图标搜索]找到完美的图标，并点击短代码将其复制到您的剪贴板：
 
     <div class="mdx-iconsearch" data-mdx-component="iconsearch">
       <input class="md-input md-input--stretch mdx-iconsearch__input" placeholder="Search icon" data-mdx-component="iconsearch-query" value="brightness" />
@@ -202,17 +191,14 @@ theme:
       </div>
     </div>
 
-This configuration will render a color palette toggle next to the search bar.
-Note that you can also define separate settings for [`primary`][palette.primary]
-and [`accent`][palette.accent] per color palette.
+此配置将在搜索栏旁边渲染一个颜色调板切换。注意，您还可以为每个颜色调板定义单独的[`primary`][palette.primary]和[`accent`][palette.accent]设置。
 
-The following properties must be set for each toggle:
+以下属性必须为每个切换设置：
 
 <!-- md:option palette.toggle.icon -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    This property must point to a valid icon path referencing any icon bundled
-    with the theme, or the build will not succeed. Some popular combinations:
+    此属性必须指向一个有效的图标路径，引用主题中捆绑的任何图标，否则构建将不会成功。一些流行的组合包括：
 
     * :material-brightness-7: + :material-brightness-4: – `material/brightness-7` + `material/brightness-4`
     * :material-toggle-switch: + :material-toggle-switch-off-outline: – `material/toggle-switch` + `material/toggle-switch-off-outline`
@@ -223,24 +209,21 @@ The following properties must be set for each toggle:
 <!-- md:option palette.toggle.name -->
 
 :   <!-- md:default none --> <!-- md:flag required -->
-    This property is used as the toggle's `title` attribute and should be set to
-    a discernable name to improve accessibility. It's rendered as a [tooltip].
+    此属性用作切换的 `title` 属性，并应设置为一个可辨认的名称以提高可访问性。它被渲染为一个[tooltip]。
 
   [palette.scheme]: #color-scheme
   [palette.primary]: #primary-color
   [palette.accent]: #accent-color
-  [icon search]: ../reference/icons-emojis.md#search
+  [图标搜索]: ../reference/icons-emojis.md#search
   [tooltip]: ../reference/tooltips.md
 
-### System preference
+### 系统偏好 {#system-preference}
 
 <!-- md:version 7.1.0 -->
 <!-- md:default none -->
 <!-- md:example color-palette-system-preference -->
 
-Each color palette can be linked to the user's system preference for light and
-dark appearance by using a media query. Simply add a `media` property next to
-the `scheme` definition in `mkdocs.yml`:
+每个颜色调板可以通过使用媒体查询链接到用户对浅色和深色外观的系统偏好。只需在 `mkdocs.yml` 中的 `scheme` 定义旁边添加一个 `media` 属性：
 
 ``` yaml
 theme:
@@ -261,20 +244,16 @@ theme:
         name: Switch to light mode
 ```
 
-When the user first visits your site, the media queries are evaluated in the
-order of their definition. The first media query that matches selects the
-default color palette.
+当用户首次访问您的网站时，媒体查询按其定义的顺序进行评估。匹配的第一个媒体查询选择默认颜色调板。
 
-#### Automatic light / dark mode
+#### 自动浅色/深色模式 {#automatic-light-dark-mode}
 
 <!-- md:version 9.5.0 -->
 <!-- md:flag experimental -->
 <!-- md:example color-palette-system-preference -->
 
-Newer operating systems allow to automatically switch between light and dark
-appearance during day and night times. Material for MkDocs adds support for
-automatic light / dark mode, delegating color palette selection to the user's
-operating system. Add the following lines to `mkdocs.yml`:
+较新的操作系统允许在白天和夜间自动切换浅色和深色外观。Material for MkDocs 添加了对自动
+浅色/深色模式的支持，将颜色调板选择委托给用户的操作系统。在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 theme:
@@ -301,31 +280,22 @@ theme:
         name: Switch to system preference
 ```
 
-1.  You can also define separate settings for [`primary`][palette.primary] and
-    [`accent`][palette.accent] per color palette, i.e. different colors for
-    light and dark mode.
+1.  您还可以为每个颜色调板定义单独的[`primary`][palette.primary]和[`accent`][palette.accent]设置，即浅色和深色模式的不同颜色。
 
-Material for MkDocs will now change the color palette each time the operating
-system switches between light and dark appearance, even when the user doesn't
-reload the site.
+Material for MkDocs 现在将在操作系统在浅色和深色外观之间切换时更改颜色调板，即使用户没有重新加载站点。
 
   [Insiders]: ../insiders/index.md
 
-## Customization
+## 自定义 {#customization}
 
-### Custom colors
+### 自定义颜色 {#custom-colors}
 
 <!-- md:version 5.0.0 -->
 <!-- md:example custom-colors -->
 
-Material for MkDocs implements colors using [CSS variables] (custom
-properties). If you want to customize the colors beyond the palette (e.g. to
-use your brand-specific colors), you can add an [additional style sheet] and
-tweak the values of the CSS variables.
+Material for MkDocs 使用 [CSS 变量] (自定义属性) 实现颜色。如果您想自定义颜色以超出调板（例如使用您的品牌特定颜色），您可以添加[附加样式表]并调整 CSS 变量的值。
 
-First, set the [`primary`][palette.primary] or [`accent`][palette.accent] values
-in `mkdocs.yml` to `custom`, to signal to the theme that you want to define
-custom colors, e.g., when you want to override the `primary` color:
+首先，在 `mkdocs.yml` 中将 [`primary`][palette.primary] 或 [`accent`][palette.accent] 值设置为 `custom`，以向主题发出信号，表明您想定义自定义颜色，例如，当您想覆盖 `primary` 颜色时：
 
 ``` yaml
 theme:
@@ -333,9 +303,7 @@ theme:
     primary: custom
 ```
 
-Let's say you're :fontawesome-brands-youtube:{ style="color: #EE0F0F" }
-__YouTube__, and want to set the primary color to your brand's palette. Just
-add:
+假设您是 :fontawesome-brands-youtube:{ style="color: #EE0F0F" } __YouTube__，并希望将主要颜色设置为您品牌的调板。只需添加：
 
 === ":octicons-file-code-16: `docs/stylesheets/extra.css`"
 
@@ -354,19 +322,17 @@ add:
       - stylesheets/extra.css
     ```
 
-See the file containing the [color definitions] for a list of all CSS variables.
+参见包含[颜色定义]的文件，了解所有 CSS 变量的列表。
 
-  [CSS variables]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-  [color definitions]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
-  [additional style sheet]: ../customization.md#additional-css
+  [CSS 变量]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+  [颜色定义]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
+  [附加样式表]: ../customization.md#additional-css
 
 
-### Custom color schemes
+### 自定义颜色方案 {#custom-color-schemes}
 
-Besides overriding specific colors, you can create your own, named color scheme
-by wrapping the definitions in a `[data-md-color-scheme="..."]`
-[attribute selector], which you can then set via `mkdocs.yml` as described
-in the [color schemes][palette.scheme] section:
+除了覆盖特定颜色外，您还可以通过将定义包装在 `[data-md-color-scheme="..."]`
+[属性选择器] 中来创建自己的命名颜色方案，然后可以按照[颜色方案][palette.scheme]部分中描述的通过 `mkdocs.yml` 设置：
 
 === ":octicons-file-code-16: `docs/stylesheets/extra.css`"
 
@@ -388,9 +354,8 @@ in the [color schemes][palette.scheme] section:
       - stylesheets/extra.css
     ```
 
-Additionally, the `slate` color scheme defines all of it's colors via `hsla`
-color functions and deduces its colors from the `--md-hue` CSS variable. You
-can tune the `slate` theme with:
+此外，`slate` 颜色方案通过 `hsla` 颜色函数定义所有颜色，并从 `--md-hue` CSS 变量推导其颜
+色。您可以调整 `slate` 主题：
 
 ``` css
 [data-md-color-scheme="slate"] {
@@ -398,6 +363,6 @@ can tune the `slate` theme with:
 }
 ```
 
-1.  The `hue` value must be in the range of `[0, 360]`
+1.  `hue` 值必须在 `[0, 360]` 范围内
 
-  [attribute selector]: https://www.w3.org/TR/selectors-4/#attribute-selectors
+  [属性选择器]: https://www.w3.org/TR/selectors-4/#attribute-selectors

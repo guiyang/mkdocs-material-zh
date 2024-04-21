@@ -4,10 +4,7 @@ title: Insiders
 
 # Insiders
 
-Material for MkDocs follows the __sponsorware__ release strategy, which means
-that new features are first exclusively released to sponsors as part of
-[Insiders]. Read on to learn [what sponsorships achieve],
-[how to become a sponsor] to get access to Insiders, and [what's in it for you]!
+MkDocs 的 Material 遵循 __赞助商发布__ 策略，这意味着新功能首先作为 [Insiders] 的一部分独家发布给赞助商。继续阅读以了解[赞助商实现了什么]，[如何成为赞助商] 来获取 Insiders 的访问权限，以及[你将获得什么]！
 
 <!-- <figure class="mdx-video" markdown>
   <div class="mdx-video__inner">
@@ -22,61 +19,39 @@ This documentation is built with Insiders
 </figure> -->
 
   [Insiders]: #what-is-insiders
-  [what sponsorships achieve]: #what-sponsorships-achieve
-  [how to become a sponsor]: #how-to-become-a-sponsor
-  [what's in it for you]: #whats-in-it-for-me
+  [赞助商实现了什么]: #what-sponsorships-achieve
+  [如何成为赞助商]: #how-to-become-a-sponsor
+  [你将获得什么]: #whats-in-it-for-me
   [Material for MkDocs]: https://squidfunk.github.io/mkdocs-material/
 
-## What is Insiders?
+## 什么是 Insiders？ {#what-is-insiders}
 
-Material for MkDocs Insiders is a private fork of Material for MkDocs, hosted as
-a private GitHub repository. Almost[^1] [all new features][what's in it for you]
-are developed as part of this fork, which means that they are immediately
-available to all eligible sponsors, as they are made collaborators of this
-repository.
+MkDocs 的 Material Insiders 是 MkDocs 的 Material 的一个私有分支，托管在一个私有 GitHub 仓库中。几乎[^1] [所有新功能][你将获得什么]都是作为这个分支的一部分开发的，这意味着它们对所有合格的赞助商立即可用，因为他们成为这个仓库的协作者。
 
   [^1]:
-    In general, every new feature is first exclusively released to sponsors, but
-    sometimes upstream dependencies like [Python Markdown Extensions] enhance
-    existing features that must be supported by Material for MkDocs.
+    通常，每个新功能首先独家发布给赞助商，但有时上游依赖如 [Python Markdown 扩展包] 增强现有功能，这些必须由 MkDocs 的 Material 支持。
 
-Every feature is tied to a [funding goal] in monthly subscriptions. When a
-funding goal is hit, the features that are tied to it are merged back into
-Material for MkDocs and released for general availability, making them available
-to all users. Bugfixes are always released in tandem.
+每个功能都与月度订阅中的[资金目标]绑定。当达到资金目标时，与之绑定的功能将合并回MkDocs 的 Material 并发布以供普通使用，使其对所有用户可用。Bug 修复始终同时发布。
 
-Sponsorships start as low as [__$15 a month__][how to become a sponsor].[^2]
+赞助从 [__每月 $15__][如何成为赞助商] 开始。[^2]
 
   [^2]:
-    Note that $15 a month is the minimum amount to become eligible for
-    Insiders. While GitHub Sponsors also allows to sponsor lower amounts or
-    one-time amounts, those can't be granted access to Insiders due to
-    technical reasons.
+    请注意，每月 15 美元是成为 Insiders 资格的最低金额。尽管 GitHub 赞助商也允许赞助较低金额或一次性金额，但由于技术原因，这些不能被授予访问 Insiders 的权限。
 
   [Python Markdown Extensions]: https://facelessuser.github.io/pymdown-extensions/
-  [funding goal]: #funding
+  [资金目标]: #funding
 
-## What sponsorships achieve
+## 赞助商实现了什么 {#what-sponsorships-achieve}
 
-Sponsorships make this project sustainable, as they buy the maintainers of this
-project time – a very scarce resource – which is spent on the development of new
-features, bug fixing, stability improvement, issue triage and general support.
-The biggest bottleneck in Open Source is time.[^3]
+赞助使这个项目可持续，因为它们为这个项目的维护者购买了时间——一种非常稀缺的资源——这些时间花在了新功能的开发、Bug 修复、稳定性改进、问题分类和一般支持上。开源中最大的瓶颈是时间。[^3]
 
   [^3]:
-    Making an Open Source project sustainable is exceptionally hard: maintainers
-    burn out, projects are abandoned. That's not great and very unpredictable.
-    The sponsorware model ensures that if you decide to use Material for MkDocs,
-    you can be sure that bugs are fixed quickly and new features are added
-    regularly.
+    使一个开源项目可持续是异常困难的：维护者精疲力尽，项目被放弃。这不是一个好现象，也非常不可预测。赞助商模式确保，如果你决定使用 MkDocs 的 Material，你可以确信 Bug 会迅速修复，并且定期添加新功能。
 
-If you're unsure if you should sponsor this project, check out the list of
-[completed funding goals] to learn whether you're already using features that
-were developed with the help of sponsorships. You're most likely using at least
-a handful of them, [thanks to our awesome sponsors]!
+如果你不确定是否应该赞助这个项目，请查看[完成的资金目标]列表，了解你是否已经在使用通过赞助开发的功能。你很可能至少使用了其中的一些，[多亏了我们出色的赞助商]！
 
-  [completed funding goals]: #goals-completed
-  [thanks to our awesome sponsors]: #how-to-become-a-sponsor
+  [完成的资金目标]: #goals-completed
+  [多亏了我们出色的赞助商]: #how-to-become-a-sponsor
 
 <figure style="min-width:15.6rem">
   <blockquote class="twitter-tweet" data-conversation="none" data-dnt="true">
@@ -85,80 +60,56 @@ a handful of them, [thanks to our awesome sponsors]!
   <script async src="https://platform.twitter.com/widgets.js"></script>
 </figure>
 
-## What's in it for me?
+## 你将获得什么？ {#whats-in-it-for-me}
 
-The moment you [become a sponsor][how to become a sponsor], you'll get __immediate
-access to 26 additional features__ that you can __start using now__, and
-which are currently exclusively available to sponsors:
+当你[成为赞助商][如何成为赞助商]的那一刻起，你将立即获得 __26个额外功能__ 的访问权限，这些功能目前仅对赞助商独家提供，并且你可以__立即开始使用__：
 
 <div class="mdx-columns" markdown>
 
-- [x] [Blog plugin: pinned posts] :material-alert-decagram:{ .mdx-pulse title="Added on February 24, 2024" }
-- [x] [Instant previews] :material-alert-decagram:{ .mdx-pulse title="Added on January 28, 2024" }
-- [x] [Footnote tooltips] :material-alert-decagram:{ .mdx-pulse title="Added on January 24, 2024" }
-- [x] [Tags plugin: advanced settings]
-- [x] [Tags plugin: nested tags]
-- [x] [Tags plugin: shadow tags]
-- [x] [Stay on page when switching languages]
-- [x] [Blog plugin: author profiles]
-- [x] [Blog plugin: advanced settings]
-- [x] [Projects plugin]
-- [x] [Instant prefetching]
-- [x] [Social plugin: custom layouts]
-- [x] [Social plugin: background images]
-- [x] [Code range selection]
-- [x] [Code annotations: custom selectors]
-- [x] [Privacy plugin: advanced settings]
-- [x] [Optimize plugin]
-- [x] [Navigation path] (Breadcrumbs)
-- [x] [Typeset plugin]
-- [x] [Privacy plugin: external links]
-- [x] [Navigation subtitles]
-- [x] [Tags plugin: allow list] + [custom sorting]
-- [x] [Blog plugin: custom index pages]
-- [x] [Blog plugin: related links]
-- [x] [Meta plugin]
-- [x] [Tags plugin: configurable listings]
+- [x] [博客插件：置顶帖子][Blog plugin: pinned posts] :material-alert-decagram:{ .mdx-pulse title="Added on February 24, 2024" }
+- [x] [即时预览][Instant previews] :material-alert-decagram:{ .mdx-pulse title="Added on January 28, 2024" }
+- [x] [脚注工具提示][Footnote tooltips] :material-alert-decagram:{ .mdx-pulse title="Added on January 24, 2024" }
+- [x] [标签插件：高级设置][Tags plugin: advanced settings]
+- [x] [标签插件：嵌套标签][Tags plugin: nested tags]
+- [x] [标签插件：影子标签][Tags plugin: shadow tags]
+- [x] [切换语言时保持在页面上][Stay on page when switching languages]
+- [x] [博客插件：作者资料][Blog plugin: author profiles]
+- [x] [博客插件：高级设置][Blog plugin: advanced settings]
+- [x] [项目插件][Projects plugin]
+- [x] [即时预取][Instant prefetching]
+- [x] [社交插件：自定义布局][Social plugin: custom layouts]
+- [x] [社交插件：背景图片][Social plugin: background images]
+- [x] [代码范围选择][Code range selection]
+- [x] [代码注释：自定义选择器][Code annotations: custom selectors]
+- [x] [隐私插件：高级设置][Privacy plugin: advanced settings]
+- [x] [优化插件][Optimize plugin]
+- [x] [导航路径][Navigation path] (面包屑 Breadcrumbs)
+- [x] [排版插件][Typeset plugin]
+- [x] [隐私插件：外部链接][Privacy plugin: external links]
+- [x] [导航字幕][Navigation subtitles]
+- [x] [标签插件：允许列表][Tags plugin: allow list] + [自定义排序][custom sorting]
+- [x] [博客插件：自定义索引页面][Blog plugin: custom index pages]
+- [x] [博客插件：相关链接][Blog plugin: related links]
+- [x] [元数据插件][Meta plugin]
+- [x] [标签插件：可配置列表][Tags plugin: configurable listings]
 
 </div>
 
-New features are added every other week. Be sure to come back.
+每两周添加新功能。记得回来看看。
 
-## How to become a sponsor
+## 如何成为赞助商 {#how-to-become-a-sponsor}
 
-Thanks for your interest in sponsoring! In order to become an eligible sponsor
-with your GitHub account, visit [squidfunk's sponsor profile], and complete
-a sponsorship of __$15 a month or more__. You can use your individual or
-organization GitHub account for sponsoring.
+感谢你对赞助的兴趣！为了成为合格的赞助商，使用你的 GitHub 账户访问 [squidfunk 的赞助商资料页]，并完成 __每月 15 美元或更多__ 的赞助。你可以使用你的个人或组织 GitHub 账户进行赞助。
 
-__Important__: If you're sponsoring @squidfunk through a GitHub organization,
-please send a short email to sponsors@squidfunk.com with the name of your
-organization and the GitHub account of the individual that should be added as a
-collaborator.[^4]
+__重要说明__：如果你是通过 GitHub 组织赞助 @squidfunk，请发送一封简短的电子邮件至 sponsors@squidfunk.com，注明你的组织名称和应被添加为协作者的个人 GitHub 账户。[^4]
 
-You can cancel your sponsorship anytime.[^5]
+你可以随时取消你的赞助。[^5]
 
   [^4]:
-    It's currently not possible to grant access to each member of an
-    organization, as GitHub only allows for adding users. Thus, after
-    sponsoring, please send an email to sponsors@squidfunk.com, stating which
-    account should become a collaborator of the Insiders repository. We're
-    working on a solution which will make access to organizations much simpler.
-    To ensure that access is not tied to a particular individual GitHub account,
-    create a bot account (i.e. a GitHub account that is not tied to a specific
-    individual), and use this account for the sponsoring. After being added to
-    the list of collaborators, the bot account can create a private fork of the
-    private Insiders GitHub repository, and grant access to all members of the
-    organizations.
+    目前无法授予组织中的每个成员访问权限，因为 GitHub 只允许添加用户。因此，在赞助后，请发送电子邮件至 sponsors@squidfunk.com，说明哪个账户应成为 Insiders 仓库的协作者。我们正在开发一个解决方案，将使组织访问变得更加简单。为确保访问不绑定于特定的个人 GitHub 账户，请创建一个机器人账户（即不绑定特定个人的 GitHub 账户），并使用此账户进行赞助。被添加为协作者后，机器人账户可以创建一个 Insiders 私有 GitHub 仓库的私有分支，并授予组织所有成员的访问权限。
 
   [^5]:
-    If you cancel your sponsorship, GitHub schedules a cancellation request
-    which will become effective at the end of the billing cycle. This means
-    that even though you cancel your sponsorship, you will keep your access to
-    Insiders as long as your cancellation isn't effective. All charges are
-    processed by GitHub through Stripe. As we don't receive any information
-    regarding your payment, and GitHub doesn't offer refunds, sponsorships are
-    non-refundable.
+    如果你取消赞助，GitHub 将安排一个取消请求，该请求将在计费周期结束时生效。这意味着即使你取消了赞助，只要你的取消尚未生效，你仍将保留对 Insiders 的访问权限。所有费用均通过 GitHub 通过 Stripe 处理。由于我们未收到有关你付款的任何信息，并且 GitHub 不提供退款，赞助是不可退款的。
 
 [:octicons-heart-fill-24:{ .mdx-heart } &nbsp; Join our <span class="mdx-sponsorship-count" data-mdx-component="sponsorship-count"></span> awesome sponsors][squidfunk's sponsor profile]{ .md-button .md-button--primary .mdx-sponsorship-button }
 
@@ -166,13 +117,13 @@ You can cancel your sponsorship anytime.[^5]
 
 <div class="mdx-premium" markdown>
 
-**Silver sponsors**:
+**银牌赞助商**：
 
 [![FastAPI]{ style="height: 120px" }](https://fastapi.tiangolo.com/){ target=_blank title="FastAPI" }
 [![Trendpop]{ style="height: 120px" }](https://www.trendpop.com/){ target=_blank title="Trendpop" }
 [![SailPoint]{ style="height: 120px" }](https://documentation.sailpoint.com/){ target=_blank title="SailPoint" }
 
-**Bronze sponsors**:
+**银牌赞助商**:
 
 [![Cirrus CI]](https://cirrus-ci.org/){ target=_blank title="Cirrus CI" }
 [![Basler]](https://docs.baslerweb.com/){ target=_blank title="Basler" }
@@ -261,34 +212,26 @@ You can cancel your sponsorship anytime.[^5]
 <div class="mdx-sponsorship" data-mdx-component="sponsorship" hidden>
   <div class="mdx-sponsorship__list"></div>
   <small>
-    If you sponsor publicly, you're automatically added here with a link to
-    your profile and avatar to show your support for Material for MkDocs.
-    Alternatively, if you wish to keep your sponsorship private, you'll be a
-    silent +1. You can select visibility during checkout and change it
-    afterwards.
+    如果你公开赞助，你将自动被添加到这里，并附上你的个人资料和头像的链接，以显示你对 MkDocs 的 Material 的支持。或者，如果你希望保持你的赞助私密，你将是一个默默的支持者。你可以在结账时选择可见性，并且之后可以更改它。
   </small>
 </div>
 
   [squidfunk's sponsor profile]: https://github.com/sponsors/squidfunk?metadata_origin=docs
 
-## Funding <span class="mdx-sponsorship-total" data-mdx-component="sponsorship-total"></span>
+## 资金筹集 <span class="mdx-sponsorship-total" data-mdx-component="sponsorship-total"></span> {#funding}
 
-### Goals
+### 目标 {#goals}
 
-The following section lists all funding goals. Each goal contains a list of
-features prefixed with a checkmark symbol, denoting whether a feature is
-:octicons-check-circle-fill-24:{ style="color: #00e676" } already available or
-:octicons-check-circle-fill-24:{ style="color: var(--md-default-fg-color--lightest)" } planned, but not yet implemented. When the funding goal is hit, the features
-are released for general availability.
+以下部分列出了所有资金筹集目标。每个目标包含一个带有勾选标记的功能列表，该标记表示功能是否 :octicons-check-circle-fill-24:{ style="color: #00e676" } 已经可用 或 :octicons-check-circle-fill-24:{ style="color: var(--md-default-fg-color--lightest)" } 计划中但尚未实施。当资金目标达成时，这些功能将发布以供普遍使用。
 
 #### $ 16,000 – Chipotle
 
-- [x] [Meta plugin]
-- [x] [Blog plugin: related links]
-- [x] [Blog plugin: custom index pages]
-- [x] [Tags plugin: configurable listings]
-- [x] [Tags plugin: allow list] + [custom sorting]
-- [x] [Navigation subtitles]
+- [x] [元数据插件][Meta plugin]
+- [x] [博客插件：相关链接][Blog plugin: related links]
+- [x] [博客插件：自定义索引页面][Blog plugin: custom index pages]
+- [x] [标签插件：可配置列表][Tags plugin: configurable listings]
+- [x] [标签插件：允许列表][Tags plugin: allow list] + [自定义排序][custom sorting]
+- [x] [导航字幕][Navigation subtitles]
 
   [Meta plugin]: ../plugins/meta.md
   [Blog plugin: related links]: ../setup/setting-up-a-blog.md#adding-related-links
@@ -300,12 +243,12 @@ are released for general availability.
 
 #### $ 18,000 – Lemon Drop
 
-- [x] [Optimize plugin]
-- [x] [Navigation path] (Breadcrumbs)
-- [x] [Blog plugin: advanced settings]
-- [x] [Blog plugin: author profiles]
-- [x] [Blog plugin: pinned posts]
-- [x] [Instant prefetching]
+- [x] [优化插件][Optimize plugin]
+- [x] [导航路径][Navigation path] (面包屑 Breadcrumbs)
+- [x] [博客插件：高级设置][Blog plugin: advanced settings]
+- [x] [博客插件：作者资料][Blog plugin: author profiles]
+- [x] [博客插件：置顶帖子][Blog plugin: pinned posts]
+- [x] [即时预取][Instant prefetching]
 
   [Optimize plugin]: ../plugins/optimize.md
   [Navigation path]: ../setup/setting-up-navigation.md#navigation-path
@@ -316,12 +259,12 @@ are released for general availability.
 
 #### $ 20,000 – Jalapeño
 
-- [x] [Typeset plugin]
-- [x] [Footnote tooltips]
-- [x] [Privacy plugin: advanced settings]
-- [x] [Privacy plugin: external links]
-- [ ] to be announced
-- [ ] to be announced
+- [x] [排版插件][Typeset plugin]
+- [x] [脚注工具提示][Footnote tooltips]
+- [x] [隐私插件：高级设置][Privacy plugin: advanced settings]
+- [x] [隐私插件：外部链接][Privacy plugin: external links]
+- [ ] 待公布
+- [ ] 待公布
 
   [Typeset plugin]: ../plugins/typeset.md
   [Footnote tooltips]: ../reference/footnotes.md#footnote-tooltips
@@ -330,12 +273,12 @@ are released for general availability.
 
 #### $ 22,000 – Habanero Orange
 
-- [x] [Instant previews]
-- [x] [Social plugin: custom layouts]
-- [x] [Social plugin: background images]
-- [x] [Code range selection]
-- [x] [Code annotations: custom selectors]
-- [x] [Stay on page when switching languages]
+- [x] [即时预览][Instant previews]
+- [x] [社交插件：自定义布局][Social plugin: custom layouts]
+- [x] [社交插件：背景图片][Social plugin: background images]
+- [x] [代码范围选择][Code range selection]
+- [x] [代码注释：自定义选择器][Code annotations: custom selectors]
+- [x] [切换语言时保持在页面上][Stay on page when switching languages]
 
   [Instant previews]: ../setup/setting-up-navigation.md#instant-previews
   [Social plugin: custom layouts]: ../setup/setting-up-social-cards.md#customization
@@ -346,12 +289,12 @@ are released for general availability.
 
 #### $ 24,000 – Blockpaprika
 
-- [x] [Projects plugin]
-- [x] [Tags plugin: nested tags]
-- [x] [Tags plugin: shadow tags]
-- [x] [Tags plugin: advanced settings]
-- [ ] to be announced
-- [ ] to be announced
+- [x] [项目插件][Projects plugin]
+- [x] [标签插件：嵌套标签][Tags plugin: nested tags]
+- [x] [标签插件：影子标签][Tags plugin: shadow tags]
+- [x] [标签插件：高级设置][Tags plugin: advanced settings]
+- [ ] 待公布
+- [ ] 待公布
 
   [Projects plugin]: ../plugins/projects.md
   [Tags plugin: nested tags]: ../setup/setting-up-tags.md#nested-tags
@@ -359,20 +302,18 @@ are released for general availability.
   [Tags plugin: advanced settings]: ../setup/setting-up-tags.md#advanced-settings
 
 
-### Goals completed
+### 目标完成 {#goals-completed}
 
-This section lists all funding goals that were previously completed, which means
-that those features were part of Insiders, but are now generally available and
-can be used by all users.
+此部分列出了之前已完成的资金目标，这意味着这些功能曾是 Insiders 的一部分，但现在已普遍可用，所有用户都可以使用。
 
 #### $ 14,000 – Goat's Horn
 
-- [x] [Privacy plugin]
-- [x] [Card grids]
-- [x] [Tooltips]
-- [x] [Content tabs: anchor links]
-- [x] [Automatic light / dark mode]
-- [x] [Document contributors]
+- [x] [隐私插件][Privacy plugin]
+- [x] [卡片网格][Card grids]
+- [x] [工具提示][Tooltips]
+- [x] [内容标签：锚点链接][Content tabs: anchor links]
+- [x] [自动浅色/深色模式][Automatic light / dark mode]
+- [x] [文档贡献者][Document contributors]
 
   [Privacy plugin]: ../setup/ensuring-data-privacy.md#built-in-privacy-plugin
   [Card grids]: ../reference/grids.md
@@ -383,12 +324,12 @@ can be used by all users.
 
 #### $ 12,000 – Piri Piri
 
-- [x] [Blog plugin]
-- [x] [Chinese search support]
-- [x] [Annotations]
-- [x] [Navigation icons]
-- [x] [Navigation pruning]
-- [x] [Navigation status]
+- [x] [博客插件][Blog plugin]
+- [x] [中文搜索支持][Chinese search support]
+- [x] [注释][Annotations]
+- [x] [导航图标][Navigation icons]
+- [x] [导航裁剪][Navigation pruning]
+- [x] [导航状态][Navigation status]
 
   [Blog plugin]: ../setup/setting-up-a-blog.md
   [Chinese search support]: ../blog/posts/chinese-search-support.md
@@ -399,12 +340,12 @@ can be used by all users.
 
 #### $ 10,000 – Carolina Reaper
 
-- [x] [Brand new search plugin]
-- [x] [Rich search previews]
-- [x] [Tokenizer with lookahead]
-- [x] [Advanced search highlighting]
-- [x] [Excluding content from search]
-- [x] [Offline plugin]
+- [x] [全新搜索插件][Brand new search plugin]
+- [x] [丰富的搜索预览][Rich search previews]
+- [x] [带前瞻的分词器][Tokenizer with lookahead]
+- [x] [高级搜索高亮][Advanced search highlighting]
+- [x] [从搜索中排除内容][Excluding content from search]
+- [x] [离线插件][Offline plugin]
 
   [Brand new search plugin]: ../blog/posts/search-better-faster-smaller.md
   [Rich search previews]: ../blog/posts/search-better-faster-smaller.md#rich-search-previews
@@ -415,12 +356,12 @@ can be used by all users.
 
 #### $ 8,000 – Scotch Bonnet
 
-- [x] [Social cards]
-- [x] Code annotations: anchor links
-- [x] [Code annotations: strip comments]
-- [x] [Tag icons]
-- [x] [Table of contents anchor following]
-- [x] Sidebars automatically scroll to active item
+- [x] [社交卡片][Social cards]
+- [x] 代码注释：锚点链接
+- [x] [代码注释：去除注释][Code annotations: strip comments]
+- [x] [标签图标][Tag icons]
+- [x] [目录跟踪锚点][Table of contents anchor following]
+- [x] 侧边栏自动滚动至活跃项目
 
   [Social cards]: ../setup/setting-up-social-cards.md
   [Code annotations: strip comments]: ../reference/code-blocks.md#stripping-comments
@@ -429,9 +370,9 @@ can be used by all users.
 
 #### $ 7,000 – Royal Gold
 
-- [x] [Cookie consent]
-- [x] [Was this page helpful?]
-- [x] [Dismissable announcement bar]
+- [x] [Cookie 同意][Cookie consent]
+- [x] [这个页面有帮助吗？][Was this page helpful?]
+- [x] [可关闭的公告栏][Dismissable announcement bar]
 
   [Cookie consent]: ../setup/ensuring-data-privacy.md#cookie-consent
   [Was this page helpful?]: ../setup/setting-up-site-analytics.md#was-this-page-helpful
@@ -439,9 +380,9 @@ can be used by all users.
 
 #### $ 6,000 – Trinidad Scorpion
 
-- [x] [Boosting pages in search]
-- [x] [Custom admonition icons]
-- [x] [Linking content tabs]
+- [x] [在搜索中提升页面][Boosting pages in search]
+- [x] [自定义警告图标][Custom admonition icons]
+- [x] [链接内容标签][Linking content tabs]
 
   [Boosting pages in search]: ../setup/setting-up-site-search.md#search-boosting
   [Custom admonition icons]: ../reference/admonitions.md#admonition-icons
@@ -449,18 +390,18 @@ can be used by all users.
 
 #### $ 5,000 – Aji Panca
 
-- [x] [Mermaid.js integration]
-- [x] Stay on page when switching versions
-- [x] [Tags with search integration]
+- [x] [Mermaid.js 集成][Mermaid.js integration]
+- [x] 切换版本时保持在页面上
+- [x] [带搜索集成的标签][Tags with search integration]
 
   [Mermaid.js integration]: ../reference/diagrams.md
   [Tags with search integration]: ../setup/setting-up-tags.md
 
 #### $ 4,000 – Ghost Pepper
 
-- [x] [Anchor tracking]
-- [x] [Code annotations]
-- [x] [Version warning]
+- [x] [锚点跟踪][Anchor tracking]
+- [x] [代码注释][Code annotations]
+- [x] [版本警告][Version warning]
 
   [Anchor tracking]: ../setup/setting-up-navigation.md#anchor-tracking
   [Code annotations]: ../reference/code-blocks.md#adding-annotations
@@ -468,9 +409,9 @@ can be used by all users.
 
 #### $ 3,000 – Caribbean Red
 
-- [x] [Sticky navigation tabs]
-- [x] [Section index pages]
-- [x] [Remove generator notice]
+- [x] [粘性导航标签][Sticky navigation tabs]
+- [x] [部分索引页面][Section index pages]
+- [x] [移除生成器通知][Remove generator notice]
 
   [Sticky navigation tabs]: ../setup/setting-up-navigation.md#sticky-navigation-tabs
   [Section index pages]: ../setup/setting-up-navigation.md#section-index-pages
@@ -478,9 +419,9 @@ can be used by all users.
 
 #### $ 2,500 – Biquinho Vermelho
 
-- [x] [Search suggestions]
-- [x] [Search highlighting]
-- [x] [Search sharing]
+- [x] [搜索建议][Search suggestions]
+- [x] [搜索高亮][Search highlighting]
+- [x] [搜索共享][Search sharing]
 
   [Search suggestions]: ../setup/setting-up-site-search.md#search-suggestions
   [Search highlighting]: ../setup/setting-up-site-search.md#search-highlighting
@@ -488,18 +429,18 @@ can be used by all users.
 
 #### $ 2,000 – Black Pearl
 
-- [x] Latest release tag
-- [x] [Color palette toggle]
-- [x] [Back-to-top button]
+- [x] 最新发布标签
+- [x] [颜色调板切换][Color palette toggle]
+- [x] [返回顶部按钮][Back-to-top button]
 
   [Color palette toggle]: ../setup/changing-the-colors.md#color-palette-toggle
   [Back-to-top button]: ../setup/setting-up-navigation.md#back-to-top-button
 
 #### $ 1,500 – Bhut Jolokia
 
-- [x] [Admonition inline blocks]
-- [x] [Site language selection]
-- [x] [Versioning]
+- [x] [警告内联块][Admonition inline blocks]
+- [x] [站点语言选择][Site language selection]
+- [x] [版本控制][Versioning]
 
   [Admonition inline blocks]: ../reference/admonitions.md#inline-blocks
   [Site language selection]: ../setup/changing-the-language.md#site-language-selector
@@ -507,11 +448,11 @@ can be used by all users.
 
 #### $ 1,000 – Prairie Fire
 
-- [x] [Navigation sections]
-- [x] [Navigation expansion]
-- [x] [Hiding the sidebars]
-- [x] [Table of contents in navigation]
-- [x] [Header hides on scroll]
+- [x] [导航部分][Navigation sections]
+- [x] [导航扩展][Navigation expansion]
+- [x] [隐藏侧边栏][Hiding the sidebars]
+- [x] [目录在导航中][Table of contents in navigation]
+- [x] [滚动时隐藏头部][Header hides on scroll]
 
   [Navigation sections]: ../setup/setting-up-navigation.md#navigation-sections
   [Navigation expansion]: ../setup/setting-up-navigation.md#navigation-expansion
@@ -521,75 +462,47 @@ can be used by all users.
 
 #### $ 500 – Madame Jeanette
 
-- [x] Improved search result grouping
-- [x] Improved search result relevance and scoring
-- [x] Missing query terms in search results
+- [x] 改进的搜索结果分组
+- [x] 改进的搜索结果相关性和评分
+- [x] 搜索结果中缺失的查询词
 
-## Frequently asked questions
+## 常见问题解答 {#frequently-asked-questions}
 
-### Compatibility
+### 兼容性 {#compatibility}
 
-_We're building an open source project and want to allow outside collaborators
-to run and build our documentation locally without having access to Insiders.
-Is this still possible?_
+_我们正在构建一个开源项目，并希望允许外部协作者在没有访问 Insiders 的情况下在本地运行和构建我们的文档。这仍然可能吗？_
 
-Yes. Insiders is compatible with Material for MkDocs. Almost all new features
-and configuration options are either backward-compatible or implemented behind
-feature flags. When working with outside collaborators, it should be rarely
-necessary to change the general appearance of your site. Most Insiders features
-enhance the overall experience, e.g. by adding icons to pages or providing a
-feedback widget. While these features add value for the user of your site, they
-shouldn't be necessary for previewing when making changes to content. Currently,
-the only content-related features in Insiders that can't be properly previewed
-by non-Insiders users are:
+是的。Insiders 与 MkDocs 的 Material 兼容。几乎所有新功能和配置选项要么向后兼容，要么在功能标志后实施。与外部协作者合作时，很少需要更改您的网站的一般外观。大多数 Insiders 功能增强了整体体验，例如通过添加页面图标或提供反馈小部件。虽然这些功能为您的网站用户增值，但在对内容进行更改时预览它们通常不是必需的。目前，Insiders 中唯一不能由非Insiders用户正确预览的内容相关功能是：
 
-- [Annotations]
-- [Card grids]
+- [注释][Annotations]
+- [卡片网格][Card grids]
 
-This means that outside collaborators are able to build the documentation
-locally with Material for MkDocs and when they push their changes, your CI
-pipeline will build it with Insiders. When using built-in plugins that are
-exclusive to Insiders, it's recommended to split configuration into a base
-`mkdocs.yml` and one with plugin overrides via [configuration inheritance].
+这意味着外部协作者能够在本地使用 MkDocs 的 Material 构建文档，当他们推送更改时，您的 CI 管道将使用 Insiders 构建它。使用 Insiders 独有的内置插件时，建议将配置拆分为基本的 `mkdocs.yml` 和带有插件覆盖的配置[配置继承]。
 
-See the [getting started guide] for more information.
+有关更多信息，请参阅[入门指南]。
 
-  [configuration inheritance]: https://www.mkdocs.org/user-guide/configuration/#configuration-inheritance
-  [getting started guide]: getting-started.md#caveats
+  [配置继承]: https://www.mkdocs.org/user-guide/configuration/#configuration-inheritance
+  [入门指南]: getting-started.md#caveats
 
-### Payment
+### 付款 {#payment}
 
-_We don't want to pay for sponsorship every month. Are there any other options?_
+_我们不想每个月都支付赞助费用。还有其他选项吗？_
 
-Yes. You can sponsor on a yearly basis by [switching your GitHub account to a
-yearly billing cycle][billing cycle]. If for some reason you cannot do that, you
-could also create a dedicated GitHub account with a yearly billing cycle, which
-you only use for sponsoring (some sponsors already do that).
+是的。您可以通过[将您的 GitHub 账户切换到年度计费周期][计费周期]来每年赞助一次。如果由于某种原因您无法这样做，您也可以创建一个带有年度计费周期的专用 GitHub 账户，仅用于赞助（一些赞助商已经这样做了）。
 
-If you have any problems or further questions, please reach out to
-sponsors@squidfunk.com.
+如果您有任何问题或进一步的问题，请联系 sponsors@squidfunk.com。
 
-  [billing cycle]: https://docs.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/changing-the-duration-of-your-billing-cycle
+  [计费周期]: https://docs.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/changing-the-duration-of-your-billing-cycle
 
-### Terms
+### 条款 {#terms}
 
-_Are we allowed to use Insiders under the same terms and conditions as
-Material for MkDocs?_
+_我们可以在与 MkDocs 的 Material 相同的条款和条件下使用 Insiders 吗？_
 
-Yes. Whether you're an individual or a company, you may use _Material for MkDocs
-Insiders_ precisely under the same terms as Material for MkDocs, which are given
-by the [MIT license]. However, we kindly ask you to respect our
-__fair use policy__:
+是的。无论您是个人还是公司，您都可以在与 MkDocs 的 Material 相同的条款下使用 _MkDocs 的 Material Insiders_，这些条款由 [MIT 许可证] 给出。然而，我们恳请您尊重我们的 __公平使用政策__：
 
-- Please __don't distribute the source code__ of Insiders. You may freely use
-  it for public, private or commercial projects, privately fork or mirror it,
-  but please don't make the source code public, as it would counteract the
-  sponsorware strategy.
+- 请 __不要分发 Insiders 的源代码__。您可以将其自由用于公共、私人或商业项目，私下分叉或镜像它，但请不要公开源代码，因为这将违反赞助商策略。
 
-- If you cancel your subscription, you're automatically removed as a
-  collaborator and will miss out on all future updates of Insiders. However, you
-  may __use the latest version__ that's available to you __as long as you like__.
-  Just remember that [GitHub deletes private forks].
+- 如果您取消了订阅，您将自动被移除为协作者，并且将错过 Insiders 的所有未来更新。然而，您可以 __尽可能长时间地使用__ 您 __能够访问的最新版本__。只需记住[GitHub 删除私有分支]。
 
   [MIT license]: ../license.md
-  [GitHub deletes private forks]: https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/removing-a-collaborator-from-a-personal-repository
+  [GitHub 删除私有分支]: https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/removing-a-collaborator-from-a-personal-repository

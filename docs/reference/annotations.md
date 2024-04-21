@@ -2,17 +2,13 @@
 icon: material/plus-circle
 ---
 
-# Annotations
+# 注释 Annotations {#annotations}
 
-One of the flagship features of Material for MkDocs is the ability to inject
-annotations – little markers that can be added almost anywhere in a document
-and expand a tooltip containing arbitrary Markdown on click or keyboard focus.
+Material for MkDocs 的一大亮点功能是能够注入注释 -- 可以在文档中几乎任何地方添加的小标记，在点击或键盘聚焦时展开包含任意 Markdown 的工具提示。
 
-## Configuration
+## 配置 {#configuration}
 
-This configuration allows to add annotations to all inline- and block-level
-elements, as well as code blocks, and nest annotations inside each other. Add
-the following lines to `mkdocs.yml`:
+此配置允许向所有内联和块级元素以及代码块添加注释，并在彼此之间嵌套注释。将以下行添加到 `mkdocs.yml`：
 
 ``` yaml
 markdown_extensions:
@@ -21,23 +17,21 @@ markdown_extensions:
   - pymdownx.superfences
 ```
 
-See additional configuration options:
+查看其他配置选项：
 
-- [Attribute Lists]
-- [Markdown in HTML]
+- [属性列表]
+- [HTML 中的 Markdown]
 - [SuperFences]
 
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [Markdown in HTML]: ../setup/extensions/python-markdown.md#markdown-in-html
+  [属性列表]: ../setup/extensions/python-markdown.md#attribute-lists
+  [HTML 中的 Markdown]: ../setup/extensions/python-markdown.md#markdown-in-html
   [SuperFences]: ../setup/extensions/python-markdown-extensions.md#superfences
 
-### Annotation icons
+### 注释图标 {#annotation-icons}
 
 <!-- md:version 9.2.0 -->
 
-The annotation icon can be changed to any icon bundled with the theme, or even
-a [custom icon], e.g. to material/arrow-right-circle:. Simply add the following
-lines to `mkdocs.yml`:
+注释图标可以更改为主题捆绑的任何图标，甚至是[自定义图标]，例如 material/arrow-right-circle:. 只需将以下行添加到 `mkdocs.yml`：
 
 ``` yaml
 theme:
@@ -45,8 +39,7 @@ theme:
     annotation: material/arrow-right-circle # (1)!
 ```
 
-1.  Enter a few keywords to find the perfect icon using our [icon search] and
-    click on the shortcode to copy it to your clipboard:
+1.  输入几个关键字使用我们的[图标搜索]找到完美的图标，并点击简码复制到您的剪贴板：
 
     <div class="mdx-iconsearch" data-mdx-component="iconsearch">
       <input class="md-input md-input--stretch mdx-iconsearch__input" placeholder="Search icon" data-mdx-component="iconsearch-query" value="material circle" />
@@ -56,7 +49,7 @@ theme:
       </div>
     </div>
 
-Some popular choices:
+一些流行的选择：
 
 - :material-plus-circle: - `material/plus-circle`
 - :material-circle-medium: - `material/circle-medium`
@@ -67,19 +60,17 @@ Some popular choices:
 - :material-star-four-points-circle: - `material/star-four-points-circle`
 - :material-plus-circle-outline: - `material/plus-circle-outline`
 
-  [custom icon]: ../setup/changing-the-logo-and-icons.md#additional-icons
-  [icon search]: icons-emojis.md#search
+  [自定义图标]: ../setup/changing-the-logo-and-icons.md#additional-icons
+  [图标搜索]: icons-emojis.md#search
 
-## Usage
+## 用法 {#usage}
 
-### Using annotations
+### 使用注释 {#using-annotations}
 
 <!-- md:version 9.2.0 -->
 <!-- md:flag experimental -->
 
-Annotations consist of two parts: a marker, which can be placed anywhere in
-a block marked with the `annotate` class, and content located in a list below
-the block containing the marker:
+注释包括两个部分：可以放置在用 `annotate` 类标记的块中任何位置的标记，以及位于包含标记的块下方列表中的内容：
 
 ``` markdown title="Text with annotations"
 Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
@@ -94,20 +85,15 @@ Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 { .annotate }
 
-1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be written in Markdown.
+1.  :man_raising_hand: 我是一个注释！我可以包含 `代码`、__格式化文本__、图片......基本上任何可以用 Markdown 编写的内容。
 
 </div>
 
-Note that the `annotate` class must only be added to the outermost block. All
-nested elements can use the same list to define annotations, except when
-annotations are nested themselves.
+请注意，`annotate` 类只能添加到最外层的块上。所有嵌套元素都可以使用相同的列表来定义注释，除非注释本身嵌套。
 
-#### in annotations
+#### 在注释中 {#in-annotations}
 
-When [SuperFences] is enabled, annotations can be nested inside annotations by
-adding the `annotate` class to the list item hosting the annotation content,
-repeating the process:
+当启用 [SuperFences] 时，可以通过将 `annotate` 类添加到托管注释内容的列表项上，重复该过程来嵌套注释：
 
 ``` markdown title="Text with nested annotations"
 Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
@@ -124,18 +110,15 @@ Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 { .annotate }
 
-1.  :man_raising_hand: I'm an annotation! (1)
-    { .annotate style="margin-bottom: 0" }
+1.  :man_raising_hand: 我是一个注释！(1) { .annotate style="margin-bottom: 0" }
 
-    1.  :woman_raising_hand: I'm an annotation as well!
+    1.  :woman_raising_hand: 我也是一个注释！
 
 </div>
 
-#### in admonitions
+#### 在警告中 {#in-admonitions}
 
-The titles and bodies of [admonitions] can also host annotations by adding the
-`annotate` modifier after the type qualifier, which is similar to how
-[inline blocks] work:
+[警告]的标题和正文也可以通过在类型限定符后添加 `annotate` 修饰符来托管注释，这类似于[行内块]的工作方式：
 
 ``` markdown title="Admonition with annotations"
 !!! note annotate "Phasellus posuere in sem ut cursus (1)"
@@ -161,13 +144,12 @@ The titles and bodies of [admonitions] can also host annotations by adding the
 
 </div>
 
-  [admonitions]: admonitions.md
-  [inline blocks]: admonitions.md#inline-blocks
+  [警告]: admonitions.md
+  [行内块]: admonitions.md#inline-blocks
 
-#### in content tabs
+#### 在内容标签中 {#in-content-tabs}
 
-Content tabs can host annotations by adding the `annotate` class to the block
-of a dedicated content tab (and not to the container, which is not supported):
+内容标签可以通过将 `annotate` 类添加到专用内容标签的块上（而不是不支持的容器上）来托管注释：
 
 ``` markdown title="Content tabs with annotations"
 === "Tab 1"
@@ -192,23 +174,20 @@ of a dedicated content tab (and not to the container, which is not supported):
     Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
     { .annotate }
 
-    1.  :man_raising_hand: I'm an annotation!
+    1.  :man_raising_hand: 我是一个注释！
 
 === "Tab 2"
 
     Phasellus posuere in sem ut cursus (1)
     { .annotate }
 
-    1.  :woman_raising_hand: I'm an annotation as well!
+    1.  :woman_raising_hand: 我也是一个注释！
 
 </div>
 
-#### in everything else
+#### 在其他所有内容中 {#in-everything-else}
 
-The [Attribute Lists] extension is the key ingredient for adding annotations to
-most elements, but it has some [limitations]. However, it's always possible to
-leverage the [Markdown in HTML] extension to wrap arbitrary elements with a
-`div` with the `annotate` class:
+[属性列表] 扩展是将注释添加到大多数元素的关键成分，但它有一些[限制]。然而，始终可以利用 [HTML 中的 Markdown] 扩展将任意元素用 `annotate` 类的 `div` 包装起来：
 
 ```` html title="HTML with annotations"
 <div class="annotate" markdown>
@@ -227,20 +206,16 @@ leverage the [Markdown in HTML] extension to wrap arbitrary elements with a
 
   </div>
 
-1.  :man_raising_hand: I'm an annotation!
+1.  :man_raising_hand: 我是一个注释！
 
 </div>
 
-With this trick, annotations can also be added to blockquotes, lists, and many
-other elements that are not supported by the [Attribute Lists] extension.
-Furthermore, note that [code blocks follow different semantics].
+利用这个技巧，注释也可以添加到引用、列表和许多其他不受 [属性列表] 扩展支持的元素中。此外，请注意[代码块遵循不同的语义]。
 
-!!! warning "Known limitations"
+!!! warning "已知限制"
 
-    Please note that annotations currently don't work in [data tables] as
-    reported in #3453, as data tables are scrollable elements and positioning
-    is very tricky to get right. This might be fixed in the future.
+    请注意，注释目前不适用于[数据表]，如 #3453 报告的，因为数据表是可滚动元素，定位非常难以正确处理。这可能在将来得到修复。
 
-  [limitations]: https://python-markdown.github.io/extensions/attr_list/#limitations
-  [code blocks follow different semantics]: code-blocks.md#adding-annotations
-  [data tables]: data-tables.md
+  [限制]: https://python-markdown.github.io/extensions/attr_list/#limitations
+  [代码块遵循不同的语义]: code-blocks.md#adding-annotations
+  [数据表]: data-tables.md

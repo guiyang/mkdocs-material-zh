@@ -2,34 +2,21 @@
 icon: material/database-outline
 ---
 
-# Caching
+# 缓存 {#caching}
 
-Some of the [built-in plugins] implement intelligent caching mechanisms, which
-massively speed up consecutive builds by reducing the amount of work that needs
-to be done. This guide explains how to configure caching in different
-environments.
+一些[内置插件]实现了智能缓存机制，通过减少需要完成的工作量，显著加快了连续构建的速度。本指南解释了如何在不同环境中配置缓存。
 
-## Prerequisites
+## 先决条件 {#prerequisites}
 
-Caching is entirely optional but enabled by default. It can be disabled per
-plugin. If not configured otherwise, plugins will cache their data in the
-`.cache` folder in the root of your project. For this reason it's recommended
-to create a `.gitignore` file in the root of your project:
+缓存完全是可选的，但默认情况下是启用的。它可以按插件禁用。如果没有另行配置，插件将在项目根目录的`.cache`文件夹中缓存其数据。因此，建议在项目根目录中创建一个`.gitignore`文件：
 
 ``` title=".gitignore"
 .cache
 ```
 
-This ensures that cached files are not added to your git repository – something
-that is generally not recommended to do unless absolutely necessary. In some
-cases, you might need to check in cached files, e.g. when you need to
-pre-generate [social cards] locally, e.g., when you're not be able to install
-the image processing dependencies in your continuous integration (CI)
-environment.
+这确保缓存文件不会被添加到您的git仓库中——通常不建议这样做，除非绝对必要。在某些情况下，您可能需要检入缓存文件，例如，当您需要在本地预生成[社交卡片]时，例如，当您无法在持续集成（CI）环境中安装图像处理依赖时。
 
-In this case, we recommend changing the `cache_dir` setting – something that all
-plugins that implement caching share – to a folder which you add to your git
-repository.
+在这种情况下，我们建议更改`cache_dir`设置——所有实现缓存的插件共享的设置——到您添加到git仓库的文件夹中。
 
-  [built-in plugins]: ../index.md
-  [social cards]: ../../setup/setting-up-social-cards.md
+  [内置插件]: ../index.md
+  [社交卡片]: ../../setup/setting-up-social-cards.md

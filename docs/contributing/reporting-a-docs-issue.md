@@ -1,24 +1,18 @@
-# Documentation issues
+# 文档问题 {#documentation-issues}
 
-Our documentation is composed of more than 80 pages and includes extensive
-information on features, configurations, customizations, and much more. If you
-have found an inconsistency or see room for improvement, please follow this
-guide to submit an issue on our [issue tracker].
+我们的文档包括超过80页，包含了关于功能、配置、自定义设置等的广泛信息。如果你发现了不一致之处或看到了改进的空间，请按照本指南在我们的[问题跟踪器][issue tracker]上提交问题。
 
   [issue tracker]: https://github.com/squidfunk/mkdocs-material/issues
 
-## Issue template
+## 问题模板 {#issue-template}
 
-Reporting a documentation issue is usually less involved than reporting a bug,
-as we don't need a [reproduction]. Please thoroughly read this guide before
-creating a new documentation issue, and provide the following information as
-part of the issue:
+报告文档问题通常比报告错误涉及的内容少，因为我们不需要[复现]。请在创建新的文档问题之前彻底阅读本指南，并提供以下信息作为问题的一部分：
 
-- [Title]
-- [Description]
-- [Related links]
-- [Proposed change] <small>optional</small>
-- [Checklist]
+- [标题][Title]
+- [描述][Description]
+- [相关链接][Related links]
+- [建议更改][Proposed change] <small>可选</small>
+- [清单][Checklist]
 
   [reproduction]: ../guides/creating-a-reproduction.md
   [Title]: #title
@@ -27,65 +21,40 @@ part of the issue:
   [Proposed change]: #proposed-change
   [Checklist]: #checklist
 
-### Title
+### 标题 {#title}
 
-A good title should be a short, one-sentence description of the issue, contain
-all relevant information and, in particular, keywords to simplify the search in
-our issue tracker.
+一个好的标题应该是对问题的简短、一句话描述，包含所有相关信息，特别是关键词，以简化我们问题跟踪器中的搜索。
 
-| <!-- --> | Example  |
+| <!-- --> | 示例  |
 | -------- | -------- |
-| :material-check:{ style="color: #4DB6AC" } __Clear__ | Clarify social cards setup on Windows
-| :material-close:{ style="color: #EF5350" } __Unclear__ | Missing information in the docs
-| :material-close:{ style="color: #EF5350" } __Useless__ | Help
+| :material-check:{ style="color: #4DB6AC" } __清晰__ | 阐明在Windows上设置社交卡片的方法
+| :material-close:{ style="color: #EF5350" } __不清晰__ | 文档中缺少信息
+| :material-close:{ style="color: #EF5350" } __无用__ | 帮助
 
-### Description
+### 描述 {#description}
 
-Provide a clear and concise summary of the inconsistency or issue you
-encountered in the documentation or the documentation section that needs
-improvement. Explain why you think the documentation should be adjusted and
-describe the severity of the issue:
+提供你在文档中遇到的不一致或需要改进的文档部分的清晰简洁的总结。解释你认为为什么文档应该调整，并描述问题的严重性：
 
--   __Keep it short and concise__ – if the inconsistency or issue can be
-    precisely explained in one or two sentences, perfect. Maintainers and future
-    users will be grateful for having to read less.
+-   __保持简洁__ — 如果不一致或问题可以在一两句话中准确解释，那就完美了。维护者和未来的用户会感激你减少了阅读量。
 
--   __One issue at a time__ – if you encounter several unrelated inconsistencies,
-    please create separate issues for them. Don't report them in the same issue
-    – it makes attribution difficult.
+-   __一次解决一个问题__ — 如果你遇到几个不相关的不一致，请为它们创建单独的问题。不要在同一个问题中报告它们 — 这会使归因变得困难。
 
-> __Why we need this__: describing the problem clearly and concisely is a
-> prerequisite for improving our documentation – we need to understand what's
-> wrong, so we can fix it.
+> __为什么我们需要这个__：清晰简洁地描述问题是改进我们文档的先决条件 — 我们需要理解出了什么问题，这样我们才能修复它。
 
-### Related links
+### 相关链接 {#related-links}
 
-After you described the documentation section that needs to be adjusted above,
-we now ask you to share the link to this specific documentation section and
-other possibly related sections. Make sure to use anchor links (permanent links)
-where possible, as it simplifies discovery.
+在你上面描述了需要调整的文档部分后，现在我们请求你分享这个具体文档部分的链接和可能相关的其他部分。尽可能使用锚链接（永久链接），因为它简化了发现。
 
-> __Why we need this__: providing the links to the documentation help us
-> understand which sections of our documentation need to be adjusted, extended,
-> or overhauled.
+> __为什么我们需要这个__：提供文档的链接有助于我们理解哪些部分的文档需要调整、扩展或彻底改写。
 
+### 建议更改 <small>可选</small> {#proposed-change}
 
-### Proposed change <small>optional</small> { #proposed-change }
+现在你已经向我们提供了描述和文档部分的链接，你可以通过提出改进来帮助我们、维护者和社区。你可以勾画出粗略的想法或写出具体的提议。这个字段是可选的，但非常有帮助。
 
-Now that you have provided us with the description and links to the
-documentation sections, you can help us, maintainers, and the community by
-proposing an improvement. You can sketch out rough ideas or write a concrete
-proposal. This field is optional but very helpful.
+> __为什么我们需要这个__：改进提议对于遇到同样问题的其他用户可能很有益，因为它们在我们维护者更新文档之前提供了解决方案。
 
-> __Why we need this__: an improvement proposal can be beneficial for other
-> users who encounter the same issue, as they offer solutions before we
-> maintainers can update the documentation.
+### 清单 {#checklist}
 
-### Checklist
+感谢你遵循指南并为我们的文档提供宝贵的反馈 — 你快完成了。清单确保你已经阅读了这份指南，并已尽你所能提供了我们需要的所有信息来改进它。
 
-Thanks for following the guide and providing valuable feedback for our
-documentation – you are almost done. The checklist ensures that you have read
-this guide and have worked to your best knowledge to provide us with every piece
-of information we need to improve it.
-
-__We'll take it from here.__
+__我们将从这里接手。__

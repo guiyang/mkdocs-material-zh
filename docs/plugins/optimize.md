@@ -1,87 +1,66 @@
 ---
-title: Built-in optimize plugin
+title: 内置优化插件
 icon: material/rabbit
 ---
 
-# Built-in optimize plugin
+# 内置优化插件 {#built-in-optimize-plugin}
 
-The optimize plugin automatically identifies and optimizes all media files when
-[building your project] by using common compression and conversion techniques.
-As a result, your site loads significantly faster and yields better rankings in
-search engines.
+优化插件在[构建您的项目]时自动识别并优化所有媒体文件，使用常见的压缩和转换技术。因此，您的站点加载速度显著加快，并在搜索引擎中获得更好的排名。
 
 ---
 
-<!-- md:sponsors --> __Sponsors only__ – this plugin is currently reserved to
-[our awesome sponsors].
+<!-- md:sponsors --> __仅限赞助者__ — 此插件目前仅供[我们的优秀赞助者]使用。
 
-  [building your project]: ../creating-your-site.md#building-your-site
-  [our awesome sponsors]: ../insiders/index.md
+  [构建您的项目]: ../creating-your-site.md#building-your-site
+  [我们的优秀赞助者]: ../insiders/index.md
 
-## Objective
+## 目标 {#objective}
 
-### How it works
+### 它是如何工作的 {#how-it-works}
 
-The plugin scans the [`docs` directory][mkdocs.docs_dir] for media files and
-assets, optimizing them automatically in order to reduce the final size of the
-[`site` directory][mkdocs.site_dir]. This leads to faster loading times as you
-ship less bytes to your users, as well as a smaller download for
-[offline-capable documentation].
+该插件扫描[`docs`目录][mkdocs.docs_dir]中的媒体文件和资产，并自动优化它们以减少[`site`目录][mkdocs.site_dir]的最终大小。这导致加载时间更快，因为您向用户发送的字节更少，同时还为[离线可用文档]提供了更小的下载。
 
-Optimized images are [intelligently cached][intelligent caching], which is why
-the plugin will only optimize media files that changed since the last build.
-This makes it possible to swap out or update images, without having to worry
-about optimizing them, or even worse, forgetting to do so.
+优化后的图像采用[智能缓存][intelligent caching]，这就是为什么插件只优化自上次构建以来发生变化的媒体文件。这使得更换或更新图像变得可能，无需担心优化它们，更糟的是，忘记这么做。
 
-In order to optimize media files, a few [dependencies] need to be available on
-your system.
+为了优化媒体文件，您的系统上需要有一些[依赖项]。
 
-  [offline-capable documentation]: ../setup/building-for-offline-usage.md
-  [dependencies]: #configuration
+  [离线可用文档]: ../setup/building-for-offline-usage.md
+  [依赖项]: #configuration
 
-### When to use it
+### 何时使用它 {#when-to-use-it}
 
-It's generally recommended to use the plugin, as media files are optimized
-automatically without the need for intervention, ensuring that your site loads
-as fast as possible. Optimized media files are one of the key components for a
-high and consistent ranking in search engines.
+通常建议使用该插件，因为媒体文件会自动优化，无需干预，确保您的站点尽可能快地加载。优化后的媒体文件是搜索引擎中高排名和持续排名的关键组成部分。
 
-Additionally, the plugin can be combined with other built-in plugins
-that Material for MkDocs offers, in order to create sophisticated
-build pipelines tailored to your project:
+此外，该插件可以与 Material for MkDocs 提供的其他内置插件结合使用，以创建针对您项目的复杂构建管道：
 
 <div class="grid cards" markdown>
 
--   :material-shield-account: &nbsp; __[Built-in privacy plugin][privacy]__
+-   :material-shield-account: &nbsp; __[内置隐私插件][privacy]__
 
     ---
 
-    The privacy plugin makes it easy to use unoptimized external assets, passing
-    them to the optimize plugin before copying them to the [`site` directory]
-    [mkdocs.site_dir].
+    隐私插件使使用未优化的外部资产变得简单，将它们传递给优化插件，然后复制到[`site`目录][mkdocs.site_dir]。
 
     ---
 
-    __External media files can be automatically downloaded and optimized__
+    __外部媒体文件可以自动下载并优化__
 
--   :material-connection: &nbsp; __[Built-in offline plugin][offline]__
-
-    ---
-
-    The offline plugin adds support for building offline-capable documentation,
-    so you can distribute the [`site` directory][mkdocs.site_dir] as a `.zip`
-    file that can be downloaded.
+-   :material-connection: &nbsp; __[内置离线插件][offline]__
 
     ---
 
-    __Your documentation can be distributed as a smaller `.zip` download__
+    离线插件增加了构建离线可用文档的支持，因此您可以将[`site`目录][mkdocs.site_dir]分发为可下载的`.zip`文件。
+
+    ---
+
+    __您的文档可以作为更小的`.zip`文件分发__
 
 </div>
 
   [privacy]: privacy.md
   [offline]: offline.md
 
-## Configuration
+## 配置 {#configuration}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.29.0 -->
@@ -89,30 +68,24 @@ build pipelines tailored to your project:
 <!-- md:flag multiple -->
 <!-- md:flag experimental -->
 
-As with all [built-in plugins], getting started with the optimize plugin is
-straightforward. Just add the following lines to `mkdocs.yml`, and observe how
-media files are optimized automatically:
+与所有[内置插件]一样，开始使用优化插件非常简单。只需将以下行添加到`mkdocs.yml`，并观察媒体文件如何自动优化：
 
 ``` yaml
 plugins:
   - optimize
 ```
 
-The optimize plugin is built into Material for MkDocs and doesn't need to be
-installed.
+优化插件已内置于 Material for MkDocs 中，无需安装。
 
-However, in order to optimize all media files, it's necessary to install the
-dependencies for [image processing], if they're not already available on your
-system. The linked guide includes instructions for several operating systems
-and mentions some alternative environments.
+不过，为了优化所有媒体文件，如果您的系统上还没有安装[图像处理]的依赖，需要安装它们。链接的指南包括了几个操作系统的说明，并提到了一些替代环境。
 
   [optimize]: optimize.md
-  [built-in plugins]: index.md
-  [image processing]: requirements/image-processing.md
+  [内置插件]: index.md
+  [图像处理]: requirements/image-processing.md
 
-### General
+### 通用 {#general}
 
-The following settings are available:
+以下设置可用：
 
 ---
 
@@ -122,9 +95,7 @@ The following settings are available:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable the plugin when [building your project].
-If you want to disable the plugin, e.g., for local builds, you can use an
-[environment variable][mkdocs.env] in `mkdocs.yml`:
+使用此设置在[构建您的项目]时启用或禁用插件。如果您想禁用插件，例如，对于本地构建，您可以在`mkdocs.yml`中使用[环境变量][mkdocs.env]：
 
 ``` yaml
 plugins:
@@ -132,7 +103,7 @@ plugins:
       enabled: !ENV [CI, false]
 ```
 
-This configuration enables the plugin only during continuous integration (CI).
+此配置仅在持续集成（CI）期间启用插件。
 
 ---
 
@@ -142,9 +113,7 @@ This configuration enables the plugin only during continuous integration (CI).
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default available CPUs - 1 -->
 
-With more CPUs available, the plugin can do more work in parallel, and thus
-complete media file optimization faster. If you want to disable concurrent
-processing completely, use:
+拥有更多 CPU 可用时，插件可以并行处理更多工作，从而更快完成媒体文件优化。如果您想完全禁用并发处理，请使用：
 
 ``` yaml
 plugins:
@@ -152,18 +121,15 @@ plugins:
       concurrency: 1
 ```
 
-By default, the plugin uses all available CPUs - 1 with a minimum of 1.
+默认情况下，插件使用所有可用的 CPU 减 1，最少为 1。
 
-### Caching
+### 缓存 {#caching}
 
-The plugin implements an [intelligent caching] mechanism, ensuring that a media
-file or asset is only passed through the optimization pipeline when its contents
-change. If you swap out or update an image, the plugin detects it and updates
-the optimized version of the media file.
+插件实现了一个[智能缓存]机制，确保只有在媒体文件或资产内容发生变化时，才会通过优化管道传递。如果您更换或更新了图像，插件会检测到并更新媒体文件的优化版本。
 
-The following settings are available for caching:
+以下设置适用于缓存：
 
-  [intelligent caching]: requirements/caching.md
+  [智能缓存]: requirements/caching.md
 
 ---
 
@@ -173,10 +139,7 @@ The following settings are available for caching:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `true` -->
 
-Use this setting to instruct the plugin to bypass the cache, in order to
-re-optimize all media files, even though the cache may not be stale. It's
-normally not necessary to specify this setting, except for when debugging
-the plugin itself. Caching can be disabled with:
+使用此设置指示插件绕过缓存，以便重新优化所有媒体文件，即使缓存可能不是陈旧的。通常不需要指定此设置，除非是在调试插件本身时。可以通过以下方式禁用缓存：
 
 ``` yaml
 plugins:
@@ -192,9 +155,7 @@ plugins:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `.cache/plugin/optimize` -->
 
-It is normally not necessary to specify this setting, except for when you want
-to change the path within your root directory where media files are cached.
-If you want to change it, use:
+通常不需要指定此设置，除非您想更改媒体文件缓存的根目录路径。如果您想更改它，请使用：
 
 ``` yaml
 plugins:
@@ -202,20 +163,15 @@ plugins:
       cache_dir: my/custom/dir
 ```
 
-If you're using [multiple instances] of the plugin, it can be a good idea to
-set different cache directories for both instances, so that they don't interfere
-with each other.
+如果您正在使用[多个实例]的插件，将不同的缓存目录设置为不同的实例可能是个好主意，这样它们就不会相互干扰。
 
-  [multiple instances]: index.md#multiple-instances
+  [多个实例]: index.md#multiple-instances
 
-### Optimization
+### 优化 {#optimization}
 
-Documentation often makes use of screenshots or diagrams for better
-visualization of things, both of which are prime candidates for optimization.
-The plugin automatically optimizes images using [pngquant] for `.png` files,
-and [Pillow] for `.jpg` files.
+文档通常使用截图或图表来更好地可视化事物，这两者都是优化的首选对象。插件自动使用[pngquant]优化`.png`文件，使用[Pillow]优化`.jpg`文件。
 
-The following settings are available for optimization:
+以下设置适用于优化：
 
   [pngquant]: https://pngquant.org/
   [Pillow]: https://pillow.readthedocs.io/
@@ -228,10 +184,7 @@ The following settings are available for optimization:
 <!-- md:version insiders-4.41.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable media file optimization. Currently,
-the plugin's sole purpose is to optimize media files, so it's equivalent to the
-[`enabled`][config.enabled] setting, but in the near future, other features
-might be added. If you want to disable optimization, use:
+使用此设置启用或禁用媒体文件优化。目前，插件的唯一目的是优化媒体文件，所以它相当于[`enabled`][config.enabled]设置，但在不久的将来，可能会添加其他功能。如果您想禁用优化，请使用：
 
 ``` yaml
 plugins:
@@ -247,9 +200,7 @@ plugins:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable the optimization of `.png` files. It's
-normally not necessary to specify this setting, but if you want to disable
-the optimization of `.png` files, use:
+使用此设置启用或禁用`.png`文件的优化。通常不需要指定此设置，但如果您想禁用`.png`文件的优化，请使用：
 
 ``` yaml
 plugins:
@@ -265,11 +216,9 @@ plugins:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `3` of `1-10` -->
 
-Use this setting to specify the speed/quality tradeoff that [pngquant] applies
-when optimizing `.png` files. The lower the number, the more aggressively
-[pngquant] will try to optimize:
+使用此设置来指定 [pngquant] 在优化 `.png` 文件时应用的速度/质量折衷。数字越低，[pngquant] 优化得越激进：
 
-=== "Slower <small>smaller</small>"
+=== "更慢 <small>更小</small>"
 
     ``` yaml
     plugins:
@@ -277,7 +226,7 @@ when optimizing `.png` files. The lower the number, the more aggressively
           optimize_png_speed: 1
     ```
 
-=== "Faster <small>larger</small>"
+=== "更快 <small>更大</small>"
 
     ``` yaml
     plugins:
@@ -285,7 +234,7 @@ when optimizing `.png` files. The lower the number, the more aggressively
           optimize_png_speed: 10
     ```
 
-A factor of `10` has 5% lower quality, but is 8x faster than the default `3`.
+`10` 的因子质量降低 5%，但比默认的 `3` 快 8 倍。
 
 ---
 
@@ -295,9 +244,8 @@ A factor of `10` has 5% lower quality, but is 8x faster than the default `3`.
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `true` -->
 
-Use this setting to specify whether [pngquant] should strip optional metadata
-from `.png` files that are not required to display the image, e.g., [EXIF].
-If you want to preserve metadata, use:
+使用此设置指定 [pngquant] 是否应剥离 `.png` 文件中不需要显示图像的可选元数据，例如，[EXIF]。
+如果您想保留元数据，请使用：
 
 ``` yaml
 plugins:
@@ -315,9 +263,7 @@ plugins:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `true` -->
 
-Use this setting to enable or disable the optimization of `.jpg` files. It's
-normally not necessary to specify this setting, but if you want to disable
-the optimization of `.jpg` files, use:
+使用此设置启用或禁用 `.jpg` 文件的优化。通常不需要指定此设置，但如果您想禁用 `.jpg` 文件的优化，请使用：
 
 ``` yaml
 plugins:
@@ -333,9 +279,7 @@ plugins:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `60` of `0-100` -->
 
-Use this setting to specify the image quality that [Pillow] applies when
-optimizing `.jpg` files. If the images look blurry, it's a good idea to
-fine-tune and change this setting:
+使用此设置指定 [Pillow] 在优化 `.jpg` 文件时应用的图像质量。如果图像看起来模糊，调整并更改此设置是个好主意：
 
 ``` yaml
 plugins:
@@ -351,9 +295,7 @@ plugins:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `true` -->
 
-Use this setting to specify whether [Pillow] should use progressive encoding
-when optimizing `.jpg` files, rendering faster on slow connections. If you want
-to disable progressive encoding, use:
+使用此设置指定 [Pillow] 在优化 `.jpg` 文件时是否应使用渐进式编码，以便在慢速连接上更快地呈现。如果您想禁用渐进式编码，请使用：
 
 ``` yaml
 plugins:
@@ -371,9 +313,7 @@ plugins:
 <!-- md:version insiders-4.41.0 -->
 <!-- md:default none -->
 
-Use this setting to enable media file optimization for specific directories
-of your project, e.g., when using [multiple instances] of the plugin to optimize
-media files differently:
+使用此设置为项目的特定目录启用媒体文件优化，例如，当使用 [多个实例] 的插件以不同方式优化媒体文件时：
 
 ``` yaml
 plugins:
@@ -382,9 +322,7 @@ plugins:
         - screenshots/*
 ```
 
-This configuration enables optimization for all media files that are contained
-in the `screenshots` folder and its subfolders inside the [`docs` directory]
-[mkdocs.docs_dir].
+此配置为 [`docs` 目录][mkdocs.docs_dir] 内的 `screenshots` 文件夹及其子文件夹中包含的所有媒体文件启用优化。
 
 ---
 
@@ -394,9 +332,7 @@ in the `screenshots` folder and its subfolders inside the [`docs` directory]
 <!-- md:version insiders-4.41.0 -->
 <!-- md:default none -->
 
-Use this setting to disable media file optimization for specific directories
-of your project, e.g., when using [multiple instances] of the plugin to optimize
-media files differently:
+使用此设置为项目的特定目录禁用媒体文件优化，例如，当使用 [多个实例] 的插件以不同方式优化媒体文件时：
 
 ``` yaml
 plugins:
@@ -405,13 +341,11 @@ plugins:
         - vendor/*
 ```
 
-This configuration disables optimization for all media files that are contained
-in the `vendor` folder and its subfolders inside the [`docs` directory]
-[mkdocs.docs_dir].
+此配置禁用 [`docs` 目录][mkdocs.docs_dir] 内的 `vendor` 文件夹及其子文件夹中包含的所有媒体文件的优化。
 
-### Reporting
+### 报告 {#reporting}
 
-The following settings are available for reporting:
+以下设置可用于报告：
 
 ---
 
@@ -421,8 +355,7 @@ The following settings are available for reporting:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `true` -->
 
-Use this setting to control whether the plugin should print the number of bytes
-gained after optimizing each file. If you want to disable this behavior, use:
+使用此设置控制插件是否应在优化每个文件后打印获得的字节数。如果您想禁用此行为，请使用：
 
 ``` yaml
 plugins:
@@ -438,9 +371,7 @@ plugins:
 <!-- md:version insiders-4.29.0 -->
 <!-- md:default `true` -->
 
-Use this setting to control whether the plugin should print the total number of
-bytes gained after optimizing all files. If you want to disable this behavior,
-use:
+使用此设置控制插件是否应在优化所有文件后打印总获得的字节数。如果您想禁用此行为，请使用：
 
 ``` yaml
 plugins:

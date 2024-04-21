@@ -1,55 +1,44 @@
-# Building for offline usage
+# 构建离线使用的文档 {#building-for-offline-usage}
 
-If you want to ship your documentation together with your product, MkDocs has
-you covered – with support from themes, [MkDocs] allows for building
-offline-capable documentation. Notably, Material for MkDocs offers offline
-support for many of its features.
+如果您希望将文档与产品一起交付，MkDocs 提供了支持——通过主题支持，[MkDocs] 允许构建可离线使用的文档。值得注意的是，Material for MkDocs 为其许多功能提供了离线支持。
 
   [MkDocs]: https://www.mkdocs.org
 
-## Configuration
+## 配置 {#configuration}
 
-### Built-in offline plugin
+### 内置离线插件 {#built-in-offline-plugin}
 
 <!-- md:version 9.0.0 -->
 <!-- md:plugin [offline] – built-in -->
 
-The built-in offline plugin makes sure that the [site search] works when you
-distribute the contents of your [site directory] as a download. Simply add
-the following lines to `mkdocs.yml`:
+内置离线插件确保当您将[站点目录]的内容作为下载分发时，[站点搜索]能够工作。只需在 `mkdocs.yml` 中添加以下行：
 
 ``` yaml
 plugins:
   - offline
 ```
 
-For a list of all settings, please consult the [plugin documentation].
+有关所有设置的列表，请查阅[插件文档]。
 
   [offline]: ../plugins/offline.md
-  [plugin documentation]: ../plugins/offline.md
+  [插件文档]: ../plugins/offline.md
 
-!!! tip "Automatically bundle all external assets"
+!!! tip "自动捆绑所有外部资源"
 
-    The [built-in privacy plugin] makes it easy to use external assets
-    while building documentation for offline usage, as it will automatically
-    download all external assets to distribute them with your documentation.
+    [内置隐私插件] 使使用外部资源构建离线使用的文档变得简单，因为它会自动下载所有外部资源，以便与您的文档一起分发。
 
-  [site search]: setting-up-site-search.md
-  [site directory]: https://www.mkdocs.org/user-guide/configuration/#site_dir
-  [built-in privacy plugin]:../plugins/privacy.md
+  [站点搜索]: setting-up-site-search.md
+  [站点目录]: https://www.mkdocs.org/user-guide/configuration/#site_dir
+  [内置隐私插件]:../plugins/privacy.md
 
-#### Limitations
+#### 限制 {#limitations}
 
-Material for MkDocs offers many interactive features, some of which will not
-work from the file system due to the restrictions of modern browsers: all
-features that use the `fetch` API will error.
+Material for MkDocs 提供了许多交互功能，其中一些由于现代浏览器的限制将无法从文件系统中工作：所有使用 `fetch` API 的功能都将出错。
 
-Thus, when building for offline usage, make sure to disable the following
-configuration settings: [instant loading], [site analytics], [git repository],
-[versioning] and [comment systems].
+因此，在为离线使用构建时，请确保禁用以下配置设置：[即时加载]、[站点分析]、[Git 仓库]、[版本控制]和[评论系统]。
 
-  [Instant loading]: setting-up-navigation.md#instant-loading
-  [Site analytics]: setting-up-site-analytics.md
-  [Versioning]: setting-up-versioning.md
-  [Git repository]: adding-a-git-repository.md
-  [Comment systems]: adding-a-comment-system.md
+  [即时加载]: setting-up-navigation.md#instant-loading
+  [站点分析]: setting-up-site-analytics.md
+  [版本控制]: setting-up-versioning.md
+  [Git 仓库]: adding-a-git-repository.md
+  [评论系统]: adding-a-comment-system.md

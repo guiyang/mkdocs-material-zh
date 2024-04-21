@@ -2,30 +2,25 @@
 icon: material/image-sync-outline
 ---
 
-# Image processing
+# 图像处理 {#image-processing}
 
-Some of the [built-in plugins] depend on external libraries for efficient image
-processing, most notably the [social] plugin to generate [social cards], and the
-[optimize] plugin for applying [image optimization]. This guide explains how to
-install those libraries in different environments.
+一些[内置插件]依赖外部库进行高效的图像处理，尤其是[social]插件生成[社交卡片]，以及[optimize]插件应用[图像优化]。本指南说明如何在不同环境中安装这些库。
 
-  [built-in plugins]: ../index.md
+  [内置插件]: ../index.md
   [social]: ../social.md
-  [social cards]: ../../setup/setting-up-social-cards.md
+  [社交卡片]: ../../setup/setting-up-social-cards.md
   [optimize]: ../optimize.md
-  [image optimization]: ../../setup/building-an-optimized-site.md
+  [图像优化]: ../../setup/building-an-optimized-site.md
 
-## Dependencies
+## 依赖项 {#dependencies}
 
-The libraries for image processing are entirely optional, and only need to be
-installed if you want to use the [social] plugin or the [optimize] plugin. The
-libraries are listed under the `imaging` extra:
+图像处理库是完全可选的，仅在您想使用[social]插件或[optimize]插件时需要安装。这些库在`imaging`附加组件下列出：
 
 ```
 pip install "mkdocs-material[imaging]"
 ```
 
-This will install compatible versions of the following packages:
+这将安装以下包的兼容版本：
 
 - [Pillow]
 - [CairoSVG]
@@ -33,18 +28,13 @@ This will install compatible versions of the following packages:
   [Pillow]: https://pillow.readthedocs.io/
   [CairoSVG]: https://cairosvg.org/
 
-### Cairo Graphics
+### Cairo 图形库 {#cairo-graphics}
 
-[Cairo Graphics] is a graphics library and dependency of [Pillow], which
-Material for MkDocs makes use of for generating [social cards] and performing
-[image optimization]. See the following section which explains how to install
-[Cairo Graphics] and its dependencies on your system:
+[Cairo Graphics]是一个图形库，也是[Pillow]的依赖项，Material for MkDocs 使用它来生成[社交卡片]和执行[图像优化]。以下部分解释了如何在您的系统上安装[Cairo Graphics]及其依赖项：
 
 === ":material-apple: macOS"
 
-    Make sure [Homebrew] is installed, which is a modern package manager for
-    macOS. Next, use the following command to install all necessary
-    dependencies:
+    确保安装了[Homebrew]，这是macOS的现代包管理器。接下来，使用以下命令安装所有必要的依赖项：
 
     ```
     brew install cairo freetype libffi libjpeg libpng zlib
@@ -52,15 +42,11 @@ Material for MkDocs makes use of for generating [social cards] and performing
 
 === ":fontawesome-brands-windows: Windows"
 
-    As stated in the [installation guide], the easiest way to get up and running
-    with the [Cairo Graphics] library on Windows is by installing [GTK+]. You
-    can also download a precompiled [GTK runtime].
+    如[安装指南]中所述，在Windows上安装[Cairo Graphics]库的最简单方法是安装[GTK+]。您还可以下载预编译的[GTK运行时]。
 
 === ":material-linux: Linux"
 
-    There are several package managers for Linux with varying availability per
-    distribution. The [installation guide] explains how to install the [Cairo
-    Graphics] library for your distribution:
+    Linux有多种包管理器，其可用性因发行版而异。[安装指南]解释了如何为您的发行版安装[Cairo Graphics]库：
 
     === ":material-ubuntu: Ubuntu"
 
@@ -80,30 +66,26 @@ Material for MkDocs makes use of for generating [social cards] and performing
         zypper install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel
         ```
 
-The following environments come with a preinstalled version of [Cairo Graphics]:
+以下环境预安装了[Cairo Graphics]：
 
-- [x] No installation needed in [Docker image]
-- [x] No installation needed in [GitHub Actions] (Ubuntu)
+- [x] 在[Docker镜像]中无需安装
+- [x] 在[GitHub Actions]（Ubuntu）中无需安装
 
   [Cairo Graphics]: https://www.cairographics.org/
   [Homebrew]: https://brew.sh/
-  [installation guide]: https://www.cairographics.org/download/
+  [安装指南]: https://www.cairographics.org/download/
   [GTK+]: https://www.gtk.org/docs/installations/windows/
-  [GTK runtime]: https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases
-  [Docker image]: https://hub.docker.com/r/squidfunk/mkdocs-material/
+  [GTK运行时]: https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases
+  [Docker镜像]: https://hub.docker.com/r/squidfunk/mkdocs-material/
   [GitHub Actions]: ../../publishing-your-site.md#with-github-actions
 
 ### pngquant
 
-[pngquant] is an excellent library for lossy PNG compression, and a direct
-dependency of the [built-in optimize plugin]. See the following section which
-explains how to install [pngquant] system:
+[pngquant]是一个出色的用于有损PNG压缩的库，是[内置优化插件]的直接依赖项。以下部分解释了如何安装[pngquant]系统：
 
 === ":material-apple: macOS"
 
-    Make sure [Homebrew] is installed, which is a modern package manager for
-    macOS. Next, use the following command to install all necessary
-    dependencies:
+    确保安装了[Homebrew]，这是macOS的现代包管理器。接下来，使用以下命令安装所有必要的依赖项：
 
     ```
     brew install pngquant
@@ -111,36 +93,31 @@ explains how to install [pngquant] system:
 
 === ":fontawesome-brands-windows: Windows"
 
-    Installing [pngquant] on Windows is a little more involved. The
-    [pngquant-winbuild] repository contains a guide on how to set up an
-    environment for building [pngquant] on Windows.
+    在Windows上安装[pngquant]稍微复杂一些。[pngquant-winbuild]仓库包含了如何在Windows上设置[pngquant]环境的指南。
 
 === ":material-linux: Linux"
 
-    All popular Linux distributions, regardless of package manager, should
-    allow to install [pngquant] with the bundled package manager. For example,
-    on Ubuntu, [pngquant] can be installed with:
+    所有流行的Linux发行版，无论包管理器如何，都应该允许使用捆绑的包管理器安装[pngquant]。例如，在Ubuntu上，可以使用以下命令安装[pngquant]：
 
     ```
     apt-get install pngquant
     ```
 
-    The same is true for `yum` and `zypper`.
+    对于 `yum` 和 `zypper` 也是如此。
 
-The following environments come with a preinstalled version of [pngquant]:
+以下环境预安装了[pngquant]：
 
-- [x] No installation needed in [Docker image]
+- [x] 在[Docker镜像]中无需安装
 
   [pngquant]: https://pngquant.org/
   [built-in optimize plugin]: ../../plugins/optimize.md
   [pngquant-winbuild]: https://github.com/jibsen/pngquant-winbuild
 
-## Troubleshooting
+### 故障排除 {#troubleshooting}
 
-### Cairo library was not found
+### 找不到Cairo库 {#cairo-library-was-not-found}
 
-After following the installation guide above it may happen that you still get
-the following error:
+按照上面的安装指南操作后，您可能仍然遇到以下错误：
 
 ```bash
 no library called "cairo-2" was found
@@ -151,34 +128,24 @@ cannot load library 'libcairo.2.dylib': error 0x7e.  Additionally, ctypes.util.f
 cannot load library 'libcairo-2.dll': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo-2.dll'
 ```
 
-This means that the [`cairosvg`][PyPi CairoSVG] package was installed, but the
-underlying [`cairocffi`][PyPi CairoCFFI] dependency couldn't [find][cffi-dopen]
-the installed library. Depending on the operating system the library lookup
-process is different:
+这意味着安装了[`cairosvg`][PyPi CairoSVG]包，但底层的[`cairocffi`][PyPi CairoCFFI]依赖项无法[找到][cffi-dopen]已安装的库。根据操作系统，库查找过程有所不同：
 
 !!! tip
-    Before proceeding remember to fully restart any open Terminal windows, and
-    their parent hosts like IDEs to reload any environmental variables, which
-    were altered during the installation process. This might be the quick fix.
+    在继续之前，请记住完全重启所有打开的终端窗口及其父主机，如IDE，以重新加载在安装过程中更改的任何环境变量。这可能是快速解决方案。
 
 === ":material-apple: macOS"
 
-    On macOS the library lookup checks inside paths defined in [dyld][osx-dyld].
-    Additionally each library `name` is checked in [three variants][find-library-macOS]
-    with the `libname.dylib`, `name.dylib` and `name.framework/name` format.
+    在macOS上，库查找会检查[dyld][osx-dyld]中定义的路径。此外，每个库`name`都会以[三种变体][find-library-macOS]检查，格式为`libname.dylib`、`name.dylib`和`name.framework/name`。
 
-    [Homebrew] should set every needed variable to point at the installed
-    library directory, but if that didn't happen, you can use the debug script
-    below to see what paths are looked up.
+    [Homebrew]应该设置所有需要的变量指向已安装库的目录，但如果没有发生，您可以使用下面的调试脚本查看查找的路径。
 
-    A [known workaround][cffi-issue] is to add the Homebrew lib path directly
-    before running MkDocs:
+    一个[已知的解决方法][cffi-issue]是在运行MkDocs之前直接添加Homebrew lib路径：
 
     ```bash
     export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
     ```
 
-    View source code of [cairo-lookup-macos.py]
+    查看[cairo-lookup-macos.py]的源代码
 
     ```bash title="Python Debug macOS Script"
     curl "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-macos.py" | python -
@@ -186,31 +153,28 @@ process is different:
 
 === ":fontawesome-brands-windows: Windows"
 
-    On Windows the library lookup checks inside the paths defined in the
-    environmental `PATH` variable. Additionally each library `name` is checked
-    in [two variants][find-library-Windows] with the `name` and `name.dll` format.
+    在Windows上，库查找会检查环境`PATH`变量中定义的路径。此外，每个库`name`都会以[两种变体][find-library-Windows]检查，格式为`name`和`name.dll`。
 
-    The default installation path of [GTK runtime] is:
+    [GTK运行时]的默认安装路径为：
 
     ```powershell
     C:\Program Files\GTK3-Runtime Win64
     ```
 
-    and the libraries are in the `<INSTALL-DIR>\lib` directory. Use the debug
-    script below to check if the path is included. If it isn't then:
+    并且库在`<INSTALL-DIR>\lib`目录中。使用下面的调试脚本检查是否包含该路径。如果没有包含：
 
-    1. Press ++windows+r++.
-    2. Run the `SystemPropertiesAdvanced` applet.
-    3. Select "Environmental Variables" at the bottom.
-    4. Add the whole path to the `lib` directory to your `Path` variable.
-    5. Click OK on all open windows to apply changes.
-    6. Fully restart any open Terminal windows and their parent hosts like IDEs.
+    1. 按++windows+r++。
+    2. 运行`SystemPropertiesAdvanced`小程序。
+    3. 在底部选择“环境变量”。
+    4. 将整个路径添加到`lib`目录到您的`Path`变量中。
+    5. 点击所有打开窗口的确定以应用更改。
+    6. 完全重启任何打开的终端窗口及其父主机，如IDE。
 
     ```powershell title="You can also list paths using PowerShell"
     $env:Path -split ';'
     ```
 
-    View source code of [cairo-lookup-windows.py]
+    查看[cairo-lookup-windows.py]的源代码
 
     ```powershell title="PowerShell - Python Debug Windows Script"
     (Invoke-WebRequest "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-windows.py").Content | python -
@@ -218,27 +182,19 @@ process is different:
 
 === ":material-linux: Linux"
 
-    On Linux the library lookup can [differ greatly][find-library-Linux] and is
-    dependent from the installed distribution. For tested Ubuntu and Manjaro
-    systems Python runs shell commands to check which libraries are available in
-    [`ldconfig`][ubuntu-ldconfig], in the [`gcc`][ubuntu-gcc]/`cc` compiler, and
-    in [`ld`][ubuntu-ld].
+    在Linux上，库查找[可能有很大差异][find-library-Linux]，这取决于已安装的发行版。对于经过测试的Ubuntu和Manjaro系统，Python运行shell命令来检查[`ldconfig`][ubuntu-ldconfig]、[`gcc`][ubuntu-gcc]/`cc`编译器以及[`ld`][ubuntu-ld]中有哪些库可用。
 
-    You can extend the `LD_LIBRARY_PATH` environmental variable with an absolute
-    path to a library directory containing `libcairo.so` etc. Run this directly
-    before MkDocs:
+    您可以使用绝对路径扩展`LD_LIBRARY_PATH`环境变量，该路径指向包含`libcairo.so`等库的库目录。在运行MkDocs之前直接运行此命令：
 
     ```bash
     export LD_LIBRARY_PATH=/absolute/path/to/lib:$LD_LIBRARY_PATH
     ```
 
-    You can also modify the `/etc/ld.so.conf` file.
+    您还可以修改`/etc/ld.so.conf`文件。
 
-    The Python script below shows, which function is being run to find installed
-    libraries. You can check the source to find out what specific commands are
-    executed on your system during library lookup.
+    下面的Python脚本显示了查找已安装库时运行的函数。您可以检查源代码以了解在库查找期间在您的系统上执行的具体命令。
 
-    View source code of [cairo-lookup-linux.py]
+    查看[cairo-lookup-linux.py]的源代码
 
     ```bash title="Python Debug Linux Script"
     curl "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-linux.py" | python -

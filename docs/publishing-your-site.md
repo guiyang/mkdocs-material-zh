@@ -1,23 +1,16 @@
-# Publishing your site
+# 发布站点 {#publishing-your-site}
 
-The great thing about hosting project documentation in a `git` repository is
-the ability to deploy it automatically when new changes are pushed. MkDocs
-makes this ridiculously simple.
+在 `git` 仓库中托管项目文档的一个优点是，当推送新更改时能够自动部署它。MkDocs 使这变得非常简单。
 
-## GitHub Pages
+## GitHub 页面 {#github-pages}
 
-If you're already hosting your code on GitHub, [GitHub Pages] is certainly
-the most convenient way to publish your project documentation. It's free of
-charge and pretty easy to set up.
+如果您已在 GitHub 上托管您的代码，[GitHub 页面]无疑是发布项目文档的最便捷方式。它免费且设置相当简单。
 
-  [GitHub Pages]: https://pages.github.com/
+  [GitHub 页面]: https://pages.github.com/
 
-### with GitHub Actions
+### 使用 GitHub Actions {#with-gitHub-actions}
 
-Using [GitHub Actions] you can automate the deployment of your project
-documentation. At the root of your repository, create a new GitHub Actions
-workflow, e.g. `.github/workflows/ci.yml`, and copy and paste the following
-contents:
+使用 [GitHub Actions]，您可以自动化项目文档的部署。在仓库的根目录下，创建一个新的 GitHub Actions 工作流，例如 `.github/workflows/ci.yml`，并复制粘贴以下内容：
 
 === "Material for MkDocs"
 
@@ -53,22 +46,19 @@ contents:
           - run: mkdocs gh-deploy --force
     ```
 
-    1.  You can change the name to your liking.
+    1.  您可以根据喜好更改 name 名称。
 
-    2.  At some point, GitHub renamed `master` to `main`. If your default branch
-        is named `master`, you can safely remove `main`, vice versa.
+    2.  在某个时点，GitHub 将 `master` 重命名为 `main`。如果您的默认分支命名为 `master`，您可以安全地删除 `main`，反之亦然。
 
-    3.  Store the `cache_id` environmental variable to access it later during cache
-        `key` creation. The name is case-sensitive, so be sure to align it with `${{ env.cache_id }}`.
+    3.  存储 `cache_id` 环境变量，以便稍后在创建缓存 `key` 时访问它。名称区分大小写，因此请确保与 `${{ env.cache_id }}` 一致。
 
-        - The `--utc` option makes sure that each workflow runner uses the same time zone.
-        - The `%V` format assures a cache update once a week.
-        - You can change the format to `%F` to have daily cache updates.
+        - `--utc` 选项确保每个工作流运行器使用相同的时区。
+        - `%V` 格式保证每周更新一次缓存。
+        - 您可以将格式更改为 `%F` 以进行每日缓存更新。
 
-        You can read the [manual page] to learn more about the formatting options of the `date` command.
+        您可以阅读 [手册页面] 以了解更多关于 `date` 命令的格式化选项。
 
-    4.  This is the place to install further [MkDocs plugins] or Markdown
-        extensions with `pip` to be used during the build:
+    4.  这是安装更多 [MkDocs 插件] 或在构建过程中使用的 Markdown 扩展的地方：
 
         ``` sh
         pip install \
@@ -115,55 +105,41 @@ contents:
       GH_TOKEN: ${{ secrets.GH_TOKEN }} # (2)!
     ```
 
-    1.  This step is only necessary if you want to use the
-        [built-in optimize plugin] to automatically compress images.
+    1.  如果您想使用 [内置优化插件] 自动压缩图像，此步骤是必需的。
 
-    2.  Remember to set the `GH_TOKEN` environment variable to the value of your
-        [personal access token] when deploying [Insiders], which can be done
-        using [GitHub secrets].
+    2.  部署 [Insiders] 时，请记得将 `GH_TOKEN` 环境变量设置为您的 [个人访问令牌] 的值，这可以通过 [GitHub secrets] 完成。
 
-Now, when a new commit is pushed to either the `master` or `main` branches,
-the static site is automatically built and deployed. Push your changes to see
-the workflow in action.
+现在，当新提交被推送到 `master` 或 `main` 分支时，静态站点会自动构建并部署。推送您的更改以查看工作流程是否有效。
 
-If the GitHub Page doesn't show up after a few minutes, go to the settings of
-your repository and ensure that the [publishing source branch] for your GitHub
-Page is set to `gh-pages`.
+如果几分钟后 GitHub 页面没有显示，请转到您的仓库设置，并确保您的 GitHub 页面的 [发布源分支] 设置为 `gh-pages`。
 
-Your documentation should shortly appear at `<username>.github.io/<repository>`.
+您的文档很快就会出现在 `<username>.github.io/<repository>` 上。
 
   [GitHub Actions]: https://github.com/features/actions
-  [MkDocs plugins]: https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins
-  [personal access token]: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
+  [MkDocs 插件]: https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins
+  [个人访问令牌]: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
   [Insiders]: insiders/index.md
-  [built-in optimize plugin]: plugins/optimize.md
+  [内置优化插件]: plugins/optimize.md
   [GitHub secrets]: https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
-  [publishing source branch]: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-  [manual page]: https://man7.org/linux/man-pages/man1/date.1.html
+  [发布源分支]: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+  [手册页面]: https://man7.org/linux/man-pages/man1/date.1.html
 
-### with MkDocs
+### 使用 MkDocs {#with-mkdocs}
 
-If you prefer to deploy your project documentation manually, you can just invoke
-the following command from the directory containing the `mkdocs.yml` file:
+如果您更喜欢手动部署项目文档，可以从包含 `mkdocs.yml` 文件的目录中调用以下命令：
 
 ```
 mkdocs gh-deploy --force
 ```
 
-This will build your documentation and deploy it to a branch
-`gh-pages` in your repository. See [this overview in the MkDocs
-documentation] for more information. For a description of the
-arguments, see [the documentation for the command].
+这将构建您的文档并将其部署到仓库中的 `gh-pages` 分支。有关更多信息，请查看 [MkDocs 问当中的概述部分]。有关参数的描述，请查看 [命令说明文档]。
 
-  [this overview in the MkDocs documentation]: https://www.mkdocs.org/user-guide/deploying-your-docs/#project-pages
-  [the documentation for the command]: https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
+  [MkDocs 问当中的概述部分]: https://www.mkdocs.org/user-guide/deploying-your-docs/#project-pages
+  [命令说明文档]: https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
 
-## GitLab Pages
+## GitLab 页面 {#gitlab-pages}
 
-If you're hosting your code on GitLab, deploying to [GitLab Pages] can be done
-by using the [GitLab CI] task runner. At the root of your repository, create a
-task definition named `.gitlab-ci.yml` and copy and paste the following
-contents:
+如果您在 GitLab 上托管代码，可以通过使用 [GitLab CI] 任务运行器来部署到 [GitLab 页面]。在仓库的根目录下创建一个名为 `.gitlab-ci.yml` 的任务定义，并复制粘贴以下内容：
 
 === "Material for MkDocs"
 
@@ -197,21 +173,15 @@ contents:
         - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     ```
 
-    1.  Remember to set the `GH_TOKEN` environment variable to the value of your
-        [personal access token] when deploying [Insiders], which can be done
-        using [masked custom variables].
+    1.  部署 [Insiders] 时，请记得将 `GH_TOKEN` 环境变量设置为您的 [个人访问令牌] 的值，这可以通过 [遮蔽的自定义变量] 完成。
 
-Now, when a new commit is pushed to the [default branch] (typically `master` or
-`main`), the static site is automatically built and deployed. Commit and push
-the file to your repository to see the workflow in action.
+现在，当新提交被推送到 [默认分支]（通常为 `master` 或 `main`）时，静态站点会自动构建并部署。提交并推送文件到您的仓库以查看工作流程是否有效。
 
-Your documentation should shortly appear at `<username>.gitlab.io/<repository>`.
+您的文档很快就会出现在 `<username>.gitlab.io/<repository>` 上。
 
-## Other
+## 其他 {#other}
 
-Since we can't cover all possible platforms, we rely on community contributed
-guides that explain how to deploy websites built with Material for MkDocs to
-other providers:
+由于我们无法涵盖所有可能的平台，我们依赖社区贡献的指南来解释如何将使用 Material for MkDocs 构建的网站部署到其他提供商：
 
 <div class="mdx-columns" markdown>
 
@@ -225,10 +195,10 @@ other providers:
 
 </div>
 
-  [GitLab Pages]: https://gitlab.com/pages
+  [GitLab 页面]: https://gitlab.com/pages
   [GitLab CI]: https://docs.gitlab.com/ee/ci/
-  [masked custom variables]: https://docs.gitlab.com/ee/ci/variables/#create-a-custom-variable-in-the-ui
-  [default branch]: https://docs.gitlab.com/ee/user/project/repository/branches/default.html
+  [遮蔽的自定义变量]: https://docs.gitlab.com/ee/ci/variables/#create-a-custom-variable-in-the-ui
+  [默认分支]: https://docs.gitlab.com/ee/user/project/repository/branches/default.html
   [Azure]: https://bawmedical.co.uk/t/publishing-a-material-for-mkdocs-site-to-azure-with-automatic-branch-pr-preview-deployments/763
   [Cloudflare Pages]: https://www.starfallprojects.co.uk/projects/deploy-host-docs/deploy-mkdocs-material-cloudflare/
   [DigitalOcean]: https://www.starfallprojects.co.uk/projects/deploy-host-docs/deploy-mkdocs-material-digitalocean-app-platform/

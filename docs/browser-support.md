@@ -1,18 +1,13 @@
-# Browser support
+# 浏览器支持 {#browser-support}
 
-Material for MkDocs goes at great lengths to support the largest possible range
-of browsers while retaining the simplest possibilities for customization via
-modern CSS features like [custom properties] and [mask images].
+Material for MkDocs 努力支持尽可能广泛的浏览器范围，同时通过现代 CSS 功能如 [自定义属性] 和 [遮罩图像] 保留简单的自定义可能性。
 
-  [custom properties]: https://caniuse.com/css-variables
-  [mask images]: https://caniuse.com/mdn-css_properties_mask-image
+  [自定义属性]: https://caniuse.com/css-variables
+  [遮罩图像]: https://caniuse.com/mdn-css_properties_mask-image
 
-## Supported browsers
+## 支持的浏览器 {#supported-browsers}
 
-The following table lists all browsers for which Material for MkDocs offers full
-support, so it can be assumed that all features work without degradation. If you
-find that something doesn't look right in a browser which is in the supported
-version range, please [open an issue]:
+以下表格列出了 Material for MkDocs 提供全面支持的所有浏览器，因此可以假设所有功能都能在这些浏览器中正常工作而不会退化。如果您发现在支持版本范围内的某个浏览器中某些内容看起来不正确，请[提交问题]：
 
 <figure markdown>
 
@@ -28,40 +23,27 @@ version range, please [open an issue]:
 
   <figcaption markdown>
 
-Browser support matrix sourced from [caniuse.com].[^1]
+浏览器支持矩阵来源于 [caniuse.com]。[^1]
 
   </figcaption>
 </figure>
 
   [^1]:
-    The data was collected from [caniuse.com] in January 2022, and is primarily
-    based on browser support for [custom properties], [mask images] and the
-    [:is pseudo selector] which are not entirely polyfillable. Browsers with a
-    cumulated market share of less than 1% were not considered, but might still
-    be fully or partially supported.
+    数据收集自 [caniuse.com]，于2022年1月，并主要基于对 [自定义属性]、[遮罩图像] 和 [:is pseudo selector] 的浏览器支持，这些功能不完全可填充。市场份额少于1%的浏览器未被考虑，但它们可能仍然完全或部分支持。
 
-Note that the usage data is based on global browser market share, so it could
-in fact be entirely different for your target demographic. It's a good idea to
-check the distribution of browser types and versions among your users.
+请注意，使用数据基于全球浏览器市场份额，因此实际上可能与您的目标人群完全不同。检查用户中浏览器类型和版本的分布是一个好主意。
 
-  [open an issue]: https://github.com/squidfunk/mkdocs-material/issues/new/choose
+  [提交问题]: https://github.com/squidfunk/mkdocs-material/issues/new/choose
   [caniuse.com]: https://caniuse.com/
   [:is pseudo selector]: https://caniuse.com/css-matches-pseudo
   [browser support]: #supported-browsers
   [built-in privacy plugin]: plugins/privacy.md
 
-## Other browsers
+## 其他浏览器 {#other-browsers}
 
-Albeit your site might not look as perfect as when viewed with a modern browser,
-the following older browser versions might work with some additional effort:
+尽管您的网站在现代浏览器上看起来可能不完美，以下较旧的浏览器版本可能需要一些额外努力才能工作：
 
-- :fontawesome-brands-firefox: __Firefox 31-52__ – icons will render as little
-  boxes due to missing support for [mask images]. While this cannot be
-  polyfilled, it might be mitigated by hiding the icons altogether.
-- :fontawesome-brands-edge: __Edge 16-18__ – the spacing of some elements might
-  be a little off due to missing support for the [:is pseudo selector], which
-  can be mitigated with some additional effort.
-- :fontawesome-brands-internet-explorer: __Internet Explorer__ - no support,
-  mainly due to missing support for [custom properties]. The last version of
-  Material for MkDocs to support Internet Explorer is
+- :fontawesome-brands-firefox: __Firefox 31-52__ – 由于缺少对 [遮罩图像] 的支持，图标将显示为小方框。虽然这无法填充，但可以通过完全隐藏图标来缓解。
+- :fontawesome-brands-edge: __Edge 16-18__ – 由于缺少对 [:is pseudo selector] 的支持，某些元素的间距可能会有点不准确，这可以通过一些额外的努力来缓解。
+- :fontawesome-brands-internet-explorer: __Internet Explorer__ - 不支持，主要是由于缺少对 [自定义属性] 的支持。Material for MkDocs 支持 Internet Explorer 的最后版本是
   <!-- md:version 4.6.3 -->.

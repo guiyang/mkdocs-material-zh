@@ -1,73 +1,56 @@
-# How to upgrade
+# 如何升级
 
-When upgrading Insiders, you should always check the version of Material for
-MkDocs which makes up the first part of the version qualifier, e.g., Insiders
-`4.x.x` is currently based on `9.x.x`:
+在升级 Insiders 时，你应始终检查构成版本限定符第一部分的 MkDocs 的 Material 版本，例如，Insiders `4.x.x` 当前基于 `9.x.x`：
 
 ```
 9.x.x-insiders-4.x.x
 ```
 
-If the major version increased, it's a good idea to consult the [upgrade
-guide] and go through the steps to ensure your configuration is up to date and
-all necessary changes have been made. 
+如果主版本号增加，最好查阅[升级指南][upgrade guide]并遵循其中的步骤，以确保你的配置是最新的，并且已经进行了所有必要的更改。
 
   [upgrade guide]: ../upgrade.md
   [list of tags]: https://github.com/squidfunk/mkdocs-material-insiders/tags
 
-Depending on how you installed and what you want to upgrade to you
-need to run different commands:
+根据你的安装方式以及你想升级到的版本，你需要运行不同的命令：
 
-=== "pip upgrade to release"
+=== "通过 pip 升级到发布版本"
 
-    If you installed Insiders via `pip` and you want to upgrade to a
-    specific release, pick the tag from the [list of tags] and replace 
-    the tag at the end of the URL of the command given below:
+    如果你是通过 `pip` 安装 Insiders 并且想升级到特定发布版本，从[标签列表][list of tags]中选取标签，并在下面命令的 URL 末尾替换该标签：
 
     ```
     pip install --upgrade git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git@9.4.2-insiders-4.42.0
     ```
 
-=== "pip upgrade to latest development"
+=== "通过 pip 升级到最新开发版本"
 
-    If you installed Insiders via `pip` and want to upgrade to the
-    latest development version, run:
+    如果你是通过 `pip` 安装 Insiders 并且想升级到最新的开发版本，运行：
 
     ```
     pip install --upgrade git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
     ```
 
-=== "git upgrade"
+=== "通过 git 升级"
 
-    If you installed Insiders via `git`, you will first need to check
-    out the version you want to install into your workspace. After
-    this is done, you can run `pip` to install that version.
+    如果你是通过 `git` 安装 Insiders，你首先需要检出你想安装的版本到你的工作空间。完成这一步后，你可以运行 `pip` 来安装该版本。
 
-    First, make sure that your local clone is up-to-date with the
-    upstream repository by running `git pull`.
+    首先，确保你的本地克隆与上游仓库保持同步，运行 `git pull`。
 
-    You can look up the tags using `git tag --sort -refname` or you
-    can consult the [list of tags]. Then, checkout the tag you want to
-    use by replacing the one given in the command below (twice)and running 
-    it from your workspace[^detached]:
-      
+    你可以使用 `git tag --sort -refname` 查看标签，或者参阅[标签列表][list of tags]。然后，用你想使用的标签替换下面命令中给出的标签（两次），并在你的工作空间运行它[^detached]:
+
       [^detached]:
-        The `--detach` argument serves to tell `git` that you are ok to
-        have your workspace in the [detached head] state, which is
-        perfectly fine to have here.
-        
+        `--detach` 参数用于告诉 `git` 你同意将你的工作空间置于[分离头][detached head]状态，这在这里完全是可以接受的。
+
       [detached head]: https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit/
 
-    ``` 
-    cd mkdocs-material 
-    git checkout --detach tags/9.4.2-insiders-4.42.0 
+    ```
+    cd mkdocs-material
+    git checkout --detach tags/9.4.2-insiders-4.42.0
     ```
 
-    Now, change back to the parent directory in which your Git
-    repository lives and run `pip`:
+    现在，回到你的 Git 仓库所在的父目录并运行 `pip`：
 
     ```
-    cd .. 
+    cd ..
     pip install -e mkdocs-material
     ```
 

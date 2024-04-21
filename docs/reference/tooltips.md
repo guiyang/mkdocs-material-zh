@@ -2,18 +2,13 @@
 icon: material/tooltip-plus
 ---
 
-# Tooltips
+# 工具提示 Tooltips
 
-Technical documentation often incurs the usage of many acronyms, which may
-need additional explanation, especially for new user of your project. For these
-matters, Material for MkDocs uses a combination of Markdown extensions to
-enable site-wide glossaries.
+技术文档经常使用许多缩写词，这些缩写词可能需要额外的解释，特别是对于项目的新用户。对于这些问题，MkDocs 的 Material 使用 Markdown 扩展的组合来启用全站词汇表。
 
-## Configuration
+## 配置
 
-This configuration enables abbreviations and allows to build a simple
-project-wide glossary, sourcing definitions from a central location. Add the
-following line to `mkdocs.yml`:
+此配置启用缩写并允许构建一个简单的项目范围内的词汇表，从中央位置获取定义。将以下行添加到 `mkdocs.yml`：
 
 ``` yaml
 markdown_extensions:
@@ -22,24 +17,22 @@ markdown_extensions:
   - pymdownx.snippets
 ```
 
-See additional configuration options:
+查看更多配置选项：
 
-- [Abbreviations]
-- [Attribute Lists]
-- [Snippets]
+- [缩写]
+- [属性列表]
+- [片段]
 
-  [Abbreviations]: ../setup/extensions/python-markdown.md#abbreviations
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [Snippets]: ../setup/extensions/python-markdown-extensions.md#snippets
+  [缩写]: ../setup/extensions/python-markdown.md#abbreviations
+  [属性列表]: ../setup/extensions/python-markdown.md#attribute-lists
+  [片段]: ../setup/extensions/python-markdown-extensions.md#snippets
 
-### Improved tooltips
+### 改进的工具提示
 
 <!-- md:version 9.5.0 -->
 <!-- md:flag experimental -->
 
-When improved tooltips are enabled, Material for MkDocs replaces the browser's
-rendering logic for `title` attribute with beautiful little tooltips.
-Add the following lines to `mkdocs.yml`:
+启用改进的工具提示后，MkDocs 的 Material 将替换浏览器的 `title` 属性渲染逻辑，使用美观的小工具提示。将以下行添加到 `mkdocs.yml`：
 
 ``` yaml
 theme:
@@ -47,46 +40,43 @@ theme:
     - content.tooltips
 ```
 
-Now, tooltips will be rendered for the following elements:
+现在，以下元素将渲染工具提示：
 
-- __Content__ – elements with a `title`, permalinks and code copy button
-- __Header__ – home button, header title, color palette switch and repository link
-- __Navigation__ – links that are shortened with ellipsis, i.e. `...`
+- __内容__ – 带有 `title` 的元素、永久链接和代码复制按钮
+- __头部__ – 首页按钮、头部标题、颜色调板切换和仓库链接
+- __导航__ – 用省略号缩短的链接，即 `...`
 
-## Usage
+## 使用
 
-### Adding tooltips
+### 添加工具提示
 
-The [Markdown syntax] allows to specify a `title` for each link, which will
-render as a beautiful tooltip when [improved tooltips] are enabled. Add a
-tooltip to a link with the following lines:
+[Markdown 语法] 允许为每个链接指定一个 `title`，当启用 [改进的工具提示] 时，将呈现为一个美观的工具提示。使用以下行为链接添加工具提示：
 
 ``` markdown title="Link with tooltip, inline syntax"
-[Hover me](https://example.com "I'm a tooltip!")
+[悬停我](https://example.com "我是一个工具提示！")
 ```
 
 <div class="result" markdown>
 
-[Hover me](https://example.com "I'm a tooltip!")
+[悬停我](https://example.com "我是一个工具提示！")
 
 </div>
 
-Tooltips can also be added to link references:
+工具提示也可以添加到链接引用：
 
 ``` markdown title="Link with tooltip, reference syntax"
-[Hover me][example]
+[悬停我][示例]
 
-  [example]: https://example.com "I'm a tooltip!"
+  [示例]: https://example.com "I'm a tooltip!"
 ```
 
 <div class="result" markdown>
 
-[Hover me](https://example.com "I'm a tooltip!")
+[悬停我](https://example.com "我是一个工具提示！")
 
 </div>
 
-For all other elements, a `title` can be added by using the [Attribute Lists]
-extension:
+对于所有其他元素，可以使用 [属性列表] 扩展添加 `title`：
 
 ``` markdown title="Icon with tooltip"
 :material-information-outline:{ title="Important information" }
@@ -98,50 +88,43 @@ extension:
 
 </div>
 
-  [Markdown syntax]: https://daringfireball.net/projects/markdown/syntax#link
-  [improved tooltips]: #improved-tooltips
+  [Markdown 语法]: https://daringfireball.net/projects/markdown/syntax#link
+  [改进的工具提示]: #improved-tooltips
 
-### Adding abbreviations
+### 添加缩写
 
-Abbreviations can be defined by using a special syntax similar to URLs and
-[footnotes], starting with a `*` and immediately followed by the term or
-acronym to be associated in square brackets:
+可以使用类似于网址和 [脚注] 的特殊语法定义缩写，以 `*` 开始并紧随其后的方括号中包含要关联的术语或缩写：
 
 ``` markdown title="Text with abbreviations"
-The HTML specification is maintained by the W3C.
+HTML 规范由 W3C 维护。
 
-*[HTML]: Hyper Text Markup Language
-*[W3C]: World Wide Web Consortium
+*[HTML]: 超文本标记语言
+*[W3C]: 万维网联盟
 ```
 
 <div class="result" markdown>
 
-The HTML specification is maintained by the W3C.
+HTML 规范由 W3C 维护。
 
-*[HTML]: Hyper Text Markup Language
-*[W3C]: World Wide Web Consortium
+*[HTML]: 超文本标记语言
+*[W3C]: 万维网联盟
 
 </div>
 
-  [footnotes]: footnotes.md
+  [脚注]: footnotes.md
 
-### Adding a glossary
+### 添加词汇表
 
-The [Snippets] extension can be used to implement a simple glossary by moving
-all abbreviations in a dedicated file[^1], and [auto-append] this file to all
-pages with the following configuration:
+可以使用 [片段] 扩展实现一个简单的词汇表，通过将所有缩写移动到一个专用文件[^1]，并通过以下配置将此文件 [自动追加] 到所有页面：
 
   [^1]:
-    It's highly recommended to put the Markdown file containing the
-    abbreviations outside of the `docs` folder (here, a folder with the name
-    `includes` is used), as MkDocs might otherwise complain about an
-    unreferenced file.
+    强烈建议将包含缩写的 Markdown 文件放在 `docs` 文件夹外部（此处使用名为 `includes` 的文件夹），因为 MkDocs 可能会因未引用的文件而发出警告。
 
 === ":octicons-file-code-16: `includes/abbreviations.md`"
 
     ```` markdown
-    *[HTML]: Hyper Text Markup Language
-    *[W3C]: World Wide Web Consortium
+    *[HTML]: 超文本标记语言
+    *[W3C]: 万维网联盟
     ````
 
 === ":octicons-file-code-16: `mkdocs.yml`"
@@ -153,13 +136,11 @@ pages with the following configuration:
             - includes/abbreviations.md
     ````
 
-  [auto-append]: https://facelessuser.github.io/pymdown-extensions/extensions/snippets/#auto-append-snippets
+  [自动追加]: https://facelessuser.github.io/pymdown-extensions/extensions/snippets/#auto-append-snippets
 
 !!! tip
 
-    When using a dedicated file outside of the `docs` folder, add the parent directory to the list
-    of `watch` folders so that when the glossary file is updated, the project is automatically
-    reloaded when running `mkdocs serve`.
+    使用位于 `docs` 文件夹外的专用文件时，将父目录添加到 `watch` 文件夹列表中，以便在更新词汇表文件时，项目在运行 `mkdocs serve` 时自动重新加载。
 
     ```` yaml
     watch:

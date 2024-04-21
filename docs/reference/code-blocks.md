@@ -2,20 +2,15 @@
 icon: material/code-json
 ---
 
-# Code blocks
+# 代码块 Code blocks {#code-blocks}
 
-Code blocks and examples are an essential part of technical project
-documentation. Material for MkDocs provides different ways to set up syntax
-highlighting for code blocks, either during build time using [Pygments] or
-during runtime using a JavaScript syntax highlighter.
+代码块和示例是技术项目文档的重要组成部分。Material for MkDocs 提供了不同的方式来设置代码块的语法高亮，可以在构建时使用 [Pygments] 或在运行时使用 JavaScript 语法高亮器。
 
   [Pygments]: https://pygments.org
 
-## Configuration
+## 配置 {#configuration}
 
-This configuration enables syntax highlighting on code blocks and inline code
-blocks, and allows to include source code directly from other files. Add the
-following lines to `mkdocs.yml`:
+此配置启用代码块和内联代码块的语法高亮，并允许直接从其他文件包含源代码。将以下行添加到 `mkdocs.yml`：
 
 ``` yaml
 markdown_extensions:
@@ -28,11 +23,9 @@ markdown_extensions:
   - pymdownx.superfences
 ```
 
-The following sections discuss how to use different syntax highlighting features
-with [Pygments], the recommended highlighter, so they don't apply when using a
-JavaScript syntax highlighter.
+以下部分讨论如何使用 [Pygments]（推荐的高亮器）来使用不同的语法高亮功能，这些功能在使用 JavaScript 语法高亮器时不适用。
 
-See additional configuration options:
+查看其他配置选项：
 
 - [Highlight]
 - [InlineHilite]
@@ -44,14 +37,12 @@ See additional configuration options:
   [SuperFences]: ../setup/extensions/python-markdown-extensions.md#superfences
   [Snippets]: ../setup/extensions/python-markdown-extensions.md#snippets
 
-### Code copy button
+### 代码复制按钮 {#code-copy-button}
 
 <!-- md:version 9.0.0 -->
 <!-- md:feature -->
 
-Code blocks can automatically render a button on the right side to allow the
-user to copy a code block's contents to the clipboard. Add the following to
-`mkdocs.yml` to enable them globally:
+代码块可以自动在右侧渲染一个按钮，允许用户将代码块的内容复制到剪贴板。将以下内容添加到 `mkdocs.yml` 以全局启用它们：
 
 ``` yaml
 theme:
@@ -59,11 +50,9 @@ theme:
     - content.code.copy
 ```
 
-??? info "Enabling or disabling code copy buttons for a specific code block"
+??? info "为特定代码块启用或禁用代码复制按钮"
 
-    If you don't want to enable code copy buttons globally, you can enable them
-    for a specific code block by using a slightly different syntax based on the
-    [Attribute Lists] extension:
+    如果您不想全局启用代码复制按钮，可以使用基于 [属性列表] 扩展的稍有不同的语法为特定代码块启用它们：
 
     ```` yaml
     ``` { .yaml .copy }
@@ -71,9 +60,7 @@ theme:
     ```
     ````
 
-    Note that the language shortcode which has to come first must now also be
-    prefixed by a `.`. Similarly, the copy button can also be disabled for a
-    specific code block:
+    注意语言简码必须首先出现，现在还必须加上 `.` 前缀。同样，复制按钮也可以为特定代码块禁用：
 
     ```` { .yaml .no-copy }
     ``` { .yaml .no-copy }
@@ -81,15 +68,13 @@ theme:
     ```
     ````
 
-### Code selection button
+### 代码选择按钮 {#code-selection-button}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.32.0 -->
 <!-- md:flag experimental -->
 
-Code blocks can include a button to allow for the selection of line ranges by
-the user, which is perfect for linking to a specific subsection of a code block. This allows the user to apply [line highlighting] dynamically. Add the following
-to `mkdocs.yml` to enable it globally:
+代码块可以包含一个按钮，允许用户选择行范围，这对于链接到代码块的特定子部分非常完美。这允许用户动态应用 [行高亮]。将以下内容添加到 `mkdocs.yml` 以全局启用它：
 
 ``` yaml
 theme:
@@ -97,11 +82,9 @@ theme:
     - content.code.select
 ```
 
-??? info "Enabling or disabling code selection buttons for a specific code block"
+??? info "为特定代码块启用或禁用代码选择按钮"
 
-    If you don't want to enable code selection buttons globally, you can enable
-    them for a specific code block by using a slightly different syntax based on
-    the [Attribute Lists] extension:
+    如果您不想全局启用代码选择按钮，可以使用基于 [属性列表] 扩展的稍有不同的语法为特定代码块启用它们：
 
     ```` yaml
     ``` { .yaml .select }
@@ -109,9 +92,7 @@ theme:
     ```
     ````
 
-    Note that the language shortcode which has to come first must now also be
-    prefixed by a `.`. Similarly, the selection button can also be disabled for
-    a specific code block:
+    注意语言简码必须首先出现，现在还必须加上 `.` 前缀。同样，选择按钮也可以为特定代码块禁用：
 
     ```` { .yaml .no-select }
     ``` { .yaml .no-select }
@@ -119,17 +100,14 @@ theme:
     ```
     ````
 
-  [line highlighting]: #highlighting-specific-lines
+  [行高亮]: #highlighting-specific-lines
 
-### Code annotations
+### 代码注释 {#code-annotations}
 
 <!-- md:version 8.0.0 -->
 <!-- md:feature -->
 
-Code annotations offer a comfortable and friendly way to attach arbitrary
-content to specific sections of code blocks by adding numeric markers in block
-and inline comments in the language of the code block. Add the following to
-`mkdocs.yml` to enable them globally:
+代码注释通过在代码块的块注释和内联注释中添加数字标记，提供了一种舒适和友好的方式来附加任意内容到代码块的特定部分。将以下内容添加到 `mkdocs.yml` 以全局启用它们：
 
 ``` yaml
 theme:
@@ -137,15 +115,11 @@ theme:
     - content.code.annotate # (1)!
 ```
 
-1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be written in Markdown.
+1.  :man_raising_hand: 我是代码注释！我可以包含 `代码`、__格式化文本__、图片……基本上任何可以用 Markdown 编写的内容。
 
-??? info "Enabling code annotations for a specific code block"
+??? info "为特定代码块启用代码注释"
 
-    If you don't want to enable code annotations globally, because you don't
-    like the automatic inlining behavior, you can enable them for a specific
-    code block by using a slightly different syntax based on the
-    [Attribute Lists] extension:
+    如果您不想全局启用代码注释，因为您不喜欢自动内联行为，您可以使用基于 [属性列表] 扩展的稍有不同的语法为特定代码块启用它们：
 
     ```` yaml
     ``` { .yaml .annotate }
@@ -153,23 +127,19 @@ theme:
     ```
     ````
 
-    Note that the language shortcode which has to come first must now also be
-    prefixed by a `.`.
+    注意语言简码必须首先出现，现在还必须加上 `.` 前缀。
 
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
+  [属性列表]: ../setup/extensions/python-markdown.md#attribute-lists
 
-#### Custom selectors
+#### 自定义选择器
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.32.0 -->
 <!-- md:flag experimental -->
 
-Normally, code annotations can only be [placed in comments], as comments can be
-considered safe for placement. However, sometimes it might be necessary to place
-annotations in parts of the code block where comments are not allowed, e.g. in
-strings.
+通常，代码注释只能[放置在注释中]，因为注释被认为是安全的放置位置。然而，有时可能需要在不允许注释的代码块部分放置注释，例如在字符串中。
 
-Additional selectors can be set per-language:
+可以为每种语言设置额外的选择器：
 
 ``` yaml
 extra:
@@ -177,14 +147,11 @@ extra:
     json: [.s2] # (1)!
 ```
 
-1.  [`.s2`][s2] is the name of the lexeme that [Pygments] generates for double-quoted
-    strings. If you want to use a code annotation in another lexeme than a
-    comment, inspect the code block and determine which lexeme needs to be added
-    to the list of additional selectors.
+1.  [`.s2`][s2] 是 [Pygments] 为双引号字符串生成的词法名。如果您想在注释以外的其他词法中使用代码注释，请检查代码块并确定需要添加到额外选择器列表中的词法名。
 
-    __Important__: Code annotations cannot be split between lexemes.
+    __重要__：代码注释不能跨词法分割。
 
-Now, code annotations can be used from within strings in JSON:
+现在，代码注释可以在 JSON 字符串中使用：
 
 ``` json
 {
@@ -192,18 +159,14 @@ Now, code annotations can be used from within strings in JSON:
 }
 ```
 
-1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be written in Markdown.
+1.  :man_raising_hand: 我是代码注释！我可以包含 `代码`、__格式化文本__、图片……基本上任何可以用 Markdown 编写的内容。
 
-  [placed in comments]: #adding-annotations
+  [放置在注释中]: #adding-annotations
   [s2]: https://github.com/squidfunk/mkdocs-material/blob/87d5ca487b9d9ab95c41ee72813149d214048693/src/assets/stylesheets/main/extensions/pymdownx/_highlight.scss#L45
 
-## Usage
+## 用法
 
-Code blocks must be enclosed with two separate lines containing three backticks.
-To add syntax highlighting to those blocks, add the language shortcode directly
-after the opening block. See the [list of available lexers] to find the
-shortcode for a given language:
+代码块必须用包含三个反引号的两行单独封闭。要为这些块添加语法高亮，请在打开块后直接添加语言简码。查看[可用词法器列表]以找到给定语言的简码：
 
 ```` markdown title="Code block"
 ``` py
@@ -219,13 +182,11 @@ import tensorflow as tf
 
 </div>
 
-  [list of available lexers]: https://pygments.org/docs/lexers/
+  [可用词法器列表]: https://pygments.org/docs/lexers/
 
-### Adding a title
+### 添加标题
 
-In order to provide additional context, a custom title can be added to a code
-block by using the `title="<custom title>"` option directly after the shortcode,
-e.g. to display the name of a file:
+为了提供额外的上下文，可以通过在简码后直接使用 `title="<custom title>"` 选项为代码块添加自定义标题，例如显示文件名：
 
 ```` markdown title="Code block with title"
 ``` py title="bubble_sort.py"
@@ -249,18 +210,12 @@ def bubble_sort(items):
 
 </div>
 
-### Adding annotations
+### 添加注释
 
-Code annotations can be placed anywhere in a code block where a comment for the
-language of the block can be placed, e.g. for JavaScript in `#!js // ...` and
-`#!js /* ... */`, for YAML in `#!yaml # ...`, etc.[^1]:
+代码注释可以放置在可以放置该块语言注释的代码块的任何位置，例如对于 JavaScript 在 `#!js // ...` 和 `#!js /* ... */`，对于 YAML 在 `#!yaml # ...` 等 [^1]：
 
   [^1]:
-    Code annotations require syntax highlighting with [Pygments] – they're
-    currently not compatible with JavaScript syntax highlighters, or languages
-    that do not have comments in their grammar. However, we're actively working
-    on supporting alternate ways of defining code annotations, allowing to
-    always place code annotations at the end of lines.
+    代码注释需要使用 [Pygments] 进行语法高亮 — 它们当前与 JavaScript 语法高亮器或没有注释语法的语言不兼容。然而，我们正在积极研究支持定义代码注释的替代方式，允许始终在行尾放置代码注释。
 
 ```` markdown title="Code block with annotation"
 ``` yaml
@@ -281,18 +236,16 @@ theme:
     - content.code.annotate # (1)
 ```
 
-1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be written in Markdown.
+1.  :man_raising_hand: 我是代码注释！我可以包含 `代码`、__格式化文本__、图片……基本上任何可以用 Markdown 编写的内容。
 
 </div>
 
-#### Stripping comments
+#### 去除注释
 
 <!-- md:version 8.5.0 -->
 <!-- md:flag experimental -->
 
-If you wish to strip the comment characters surrounding a code annotation,
-simply add an `!` after the closing parenthesis of the code annotation:
+如果您希望去除围绕代码注释的注释字符，请在代码注释的闭合括号后添加 `!`：
 
 ```` markdown title="Code block with annotation, stripped"
 ``` yaml
@@ -312,16 +265,11 @@ simply add an `!` after the closing parenthesis of the code annotation:
 
 </div>
 
-Note that this only allows for a single code annotation to be rendered per
-comment. If you want to add multiple code annotations, comments cannot be
-stripped for technical reasons.
+请注意，这只允许每个注释渲染一个代码注释。如果您想添加多个代码注释，由于技术原因，注释不能被去除。
 
-### Adding line numbers
+### 添加行号
 
-Line numbers can be added to a code block by using the `linenums="<start>"`
-option directly after the shortcode, whereas `<start>` represents the starting
-line number. A code block can start from a line number other than `1`, which
-allows to split large code blocks for readability:
+可以通过在简码后直接使用 `linenums="<start>"` 选项为代码块添加行号，其中 `<start>` 代表起始行号。代码块可以从 `1` 以外的行号开始，这有助于分割大型代码块以提高可读性：
 
 ```` markdown title="Code block with line numbers"
 ``` py linenums="1"
@@ -345,14 +293,11 @@ def bubble_sort(items):
 
 </div>
 
-### Highlighting specific lines
+### 高亮特定行
 
-Specific lines can be highlighted by passing the line numbers to the `hl_lines`
-argument placed right after the language shortcode. Note that line counts start
-at `1`, regardless of the starting line number specified as part of
-[`linenums`][Adding line numbers]:
+通过在语言简码后直接传递行号到 `hl_lines` 参数来高亮特定行。请注意，无论作为 [`linenums`][添加行号] 的一部分指定的起始行号是多少，行计数始终从 `1` 开始：
 
-=== "Lines"
+=== "行"
 
     ```` markdown title="Code block with highlighted lines"
     ``` py hl_lines="2 3"
@@ -376,7 +321,7 @@ at `1`, regardless of the starting line number specified as part of
 
     </div>
 
-=== "Line ranges"
+=== "行范围"
 
     ```` markdown title="Code block with highlighted line range"
     ``` py hl_lines="3-5"
@@ -400,13 +345,11 @@ at `1`, regardless of the starting line number specified as part of
 
     </div>
 
-  [Adding line numbers]: #adding-line-numbers
+  [添加行号]: #adding-line-numbers
 
-### Highlighting inline code blocks
+### 高亮内联代码块
 
-When [InlineHilite] is enabled, syntax highlighting can be applied to inline
-code blocks by prefixing them with a shebang, i.e. `#!`, directly followed by
-the corresponding [language shortcode][list of available lexers].
+当启用 [InlineHilite] 时，可以通过在内联代码块前加上一个 `#!`（直接跟着相应的[语言简码][可用词法器列表]）应用语法高亮。
 
 ``` markdown title="Inline code block"
 The `#!python range()` function is used to generate a sequence of numbers.
@@ -418,11 +361,9 @@ The `#!python range()` function is used to generate a sequence of numbers.
 
 </div>
 
-### Embedding external files
+### 嵌入外部文件
 
-When [Snippets] is enabled, content from other files (including source files)
-can be embedded by using the [`--8<--` notation][Snippets notation] directly
-from within a code block:
+当启用 [Snippets] 时，可以通过在代码块中直接使用 [`--8<--` 符号][Snippets 符号] 嵌入其他文件（包括源文件）的内容：
 
 ```` markdown title="Code block with external content"
 ``` title=".browserslistrc"
@@ -438,15 +379,13 @@ last 4 years
 
 </div>
 
-  [Snippets notation]: https://facelessuser.github.io/pymdown-extensions/extensions/snippets/#snippets-notation
+  [Snippets 符号]: https://facelessuser.github.io/pymdown-extensions/extensions/snippets/#snippets-notation
 
-## Customization
+## 自定义
 
-### Custom syntax theme
+### 自定义语法主题
 
-If [Pygments] is used, Material for MkDocs provides the [styles for code blocks]
-[colors], which are built with a custom and well-balanced palette that works
-equally well for both [color schemes]:
+如果使用 [Pygments]，Material for MkDocs 提供了[代码块样式][colors]，这些样式使用定制且平衡的调色板构建，同样适用于两种[配色方案]：
 
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-hl-number-color) " } `--md-code-hl-number-color`
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-hl-special-color) " } `--md-code-hl-special-color`
@@ -461,15 +400,13 @@ equally well for both [color schemes]:
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-hl-generic-color) " } `--md-code-hl-generic-color`
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-hl-variable-color) " } `--md-code-hl-variable-color`
 
-Code block foreground, background and line highlight colors are defined via:
+代码块的前景、背景和行高亮颜色通过以下方式定义：
 
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-fg-color) " } `--md-code-fg-color`
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-bg-color) " } `--md-code-bg-color`
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-hl-color) " } `--md-code-hl-color`
 
-Let's say you want to change the color of `#!js "strings"`. While there are
-several [types of string tokens], they use the same color. You can assign
-a new color by using an [additional style sheet]:
+假设您想改变 `#!js "strings"` 的颜色。虽然有几种[字符串令牌类型]，它们使用相同的颜色。您可以通过使用[额外样式表]分配新颜色：
 
 === ":octicons-file-code-16: `docs/stylesheets/extra.css`"
 
@@ -486,9 +423,7 @@ a new color by using an [additional style sheet]:
       - stylesheets/extra.css
     ```
 
-If you want to tweak a specific type of string, e.g. ``#!js `backticks` ``, you
-can lookup the specific CSS class name in the [syntax theme definition], and
-override it as part of your [additional style sheet]:
+如果您想调整特定类型的字符串，例如 ``#!js `backticks` ``，您可以在[语法主题定义]中查找特定的 CSS 类名，并在[额外样式表]中覆盖它：
 
 === ":octicons-file-code-16: `docs/stylesheets/extra.css`"
 
@@ -506,16 +441,14 @@ override it as part of your [additional style sheet]:
     ```
 
   [colors]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
-  [color schemes]: ../setup/changing-the-colors.md#color-scheme
-  [types of string tokens]: https://pygments.org/docs/tokens/#literals
-  [additional style sheet]: ../customization.md#additional-css
-  [syntax theme definition]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/extensions/pymdownx/_highlight.scss
+  [配色方案]: ../setup/changing-the-colors.md#color-scheme
+  [字符串令牌类型]: https://pygments.org/docs/tokens/#literals
+  [额外样式表]: ../customization.md#additional-css
+  [语法主题定义]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/extensions/pymdownx/_highlight.scss
 
-### Annotation tooltip width
+### 注释工具提示宽度
 
-If you have a lot of content hosted inside your code annotations, it can be a
-good idea to increase the width of the tooltip by adding the following as part
-of an [additional style sheet]:
+如果您的代码注释中托管了大量内容，通过在[额外样式表]的一部分中增加工具提示的宽度可能是个好主意：
 
 === ":octicons-file-code-16: `docs/stylesheets/extra.css`"
 
@@ -532,7 +465,7 @@ of an [additional style sheet]:
       - stylesheets/extra.css
     ```
 
-This will render annotations with a larger width:
+这将使注释以更大的宽度呈现：
 
 <div style="--md-tooltip-width: 600px;" markdown>
 
@@ -541,5 +474,6 @@ This will render annotations with a larger width:
 ```
 
 1. Muuuuuuuuuuuuuuuch more space for content
+   更多内容空间
 
 </div>

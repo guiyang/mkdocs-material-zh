@@ -1,20 +1,14 @@
-# Reference
+# 参考 {#reference}
 
-Material for MkDocs is packed with many great features that make technical
-writing a joyful activity. This section of the documentation explains how to set up
-a page, and showcases all available specimen that can be used directly from
-within Markdown files.
+Material for MkDocs 配备了许多出色的功能，使技术写作成为一种愉快的活动。本文档部分解释了如何设置页面，并展示了可以直接从 Markdown 文件中使用的所有可用样本。
 
-## Configuration
+## 配置 {#configuration}
 
-## Usage
+## 使用 {#usage}
 
-### Setting the page `title`
+### 设置页面 `title` {#setting-the-page-title}
 
-Each page has a designated title, which is used in the navigation sidebar, for
-[social cards] and in other places. While MkDocs attempts to automatically
-determine the title of a page in a [four step process], the title can also be
-explicitly set with the front matter `title` property:
+每个页面都有一个指定的标题，用于导航侧边栏、[社交卡片]和其他地方。虽然 MkDocs 会尝试通过[四步过程]自动确定页面的标题，但也可以通过前置事项 `title` 属性显式设置标题：
 
 ``` yaml
 ---
@@ -25,23 +19,17 @@ title: Lorem ipsum dolor sit amet # (1)!
 ...
 ```
 
-1.  This line sets the [`title`][title] inside the HTML document's
-    [`head`][head] for the generated page to the given value. Note that the
-    site title, which is set via [`site_name`][site_name], is appended with a
-    dash.
+1.  此行将生成页面的 HTML 文档的[`head`][head]中的[`title`][title]设置为给定值。请注意，通过[`site_name`][site_name]设置的站点标题会以破折号追加。
 
-  [social cards]: ../setup/setting-up-social-cards.md
-  [four step process]: https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
+  [社交卡片]: ../setup/setting-up-social-cards.md
+  [四步过程]: https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
   [title]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title
   [head]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head
   [site_name]: https://www.mkdocs.org/user-guide/configuration/#site_name
 
-### Setting the page `description`
+### 设置页面 `description` {#setting-the-page-description}
 
-A Markdown file can include a description that is added to the `meta` tags of
-a page, and is also used for [social cards]. It's a good idea to set a
-[`site_description`][site_description] in `mkdocs.yml` as a fallback value if
-the author does not explicitly define a description for a Markdown file:
+Markdown 文件可以包含添加到页面 `meta` 标签中的描述，并且也用于[社交卡片]。如果作者没有为 Markdown 文件明确定义描述，建议在 `mkdocs.yml` 中设置一个[`site_description`][site_description]作为后备值：
 
 ``` yaml
 ---
@@ -52,20 +40,16 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor. # (1)!
 ...
 ```
 
-1.  This line sets the `meta` tag containing the description inside the
-    document `head` for the current page to the provided value.
+1.  此行在当前页面的文档 `head` 中设置包含描述的 `meta` 标签。
 
   [site_description]: https://www.mkdocs.org/user-guide/configuration/#site_description
 
-### Setting the page `icon`
+### 设置页面 `icon` {#setting-the-page-icon}
 
 <!-- md:version 9.2.0 -->
 <!-- md:flag experimental -->
 
-An icon can be assigned to each page, which is then rendered as part of the
-navigation sidebar, as well as [navigation tabs], if enabled. Use the front
-matter `icon` property to reference an icon, adding the following lines at the
-top of a Markdown file:
+可以为每个页面分配一个图标，然后在导航侧边栏中以及启用时的[导航标签页]中渲染。使用前置事项 `icon` 属性引用一个图标，将以下行添加到 Markdown 文件顶部：
 
 ``` yaml
 ---
@@ -76,8 +60,7 @@ icon: material/emoticon-happy # (1)!
 ...
 ```
 
-1.  Enter a few keywords to find the perfect icon using our [icon search] and
-    click on the shortcode to copy it to your clipboard:
+1.  输入几个关键词在我们的[图标搜索]中找到完美的图标，并点击短码将其复制到剪贴板：
 
     <div class="mdx-iconsearch" data-mdx-component="iconsearch">
       <input class="md-input md-input--stretch mdx-iconsearch__input" placeholder="Search icon" data-mdx-component="iconsearch-query" value="emoticon happy" />
@@ -88,18 +71,16 @@ icon: material/emoticon-happy # (1)!
     </div>
 
   [Insiders]: ../insiders/index.md
-  [icon search]: icons-emojis.md#search
-  [navigation tabs]: ../setup/setting-up-navigation.md#navigation-tabs
+  [图标搜索]: icons-emojis.md#search
+  [导航标签页]: ../setup/setting-up-navigation.md#navigation-tabs
 
-### Setting the page `status`
+### 设置页面 `status` {#setting-the-page-status}
 
 <!-- md:version 9.2.0 -->
 <!-- md:flag experimental -->
 <!-- md:example page-status -->
 
-A status can be assigned to each page, which is then displayed as part of the
-navigation sidebar. First, associate a status identifier with a description by
-adding the following to `mkdocs.yml`:
+可以为每个页面分配一个状态，然后在导航侧边栏中显示。首先，通过在 `mkdocs.yml` 中添加以下内容，将状态标识符与描述关联起来：
 
 ``` yaml
 extra:
@@ -107,9 +88,7 @@ extra:
     <identifier>: <description> # (1)!
 ```
 
-1.  The identifier can only include alphanumeric characters, as well as dashes
-    and underscores. For example, if you have a status `Recently added`, you can
-    set `new` as an identifier:
+1.  标识符只能包含字母数字字符、破折号和下划线。例如，如果您有一个状态 `Recently added`，您可以设置 `new` 作为标识符：
 
     ``` yaml
     extra:
@@ -117,9 +96,7 @@ extra:
         new: Recently added
     ```
 
-The page status can now be set with the front matter `status` property. For
-example, you can mark a page as `new` with the following lines at the top of a
-Markdown file:
+现在可以使用前置事项 `status` 属性设置页面状态。例如，您可以用以下行将页面标记为 `new`：
 
 ``` yaml
 ---
@@ -130,27 +107,22 @@ status: new
 ...
 ```
 
-The following status identifiers are already defined:
+已经定义了以下状态标识符：
 
 - :material-alert-decagram: – `new`
 - :material-trash-can: – `deprecated`
 
-You can define a custom page status this way but if you want it to
-have an icon other than the default one you need to also configure
-that in your `extra.css`. We have an [example for a custom
-page status] to get you started.
+您可以这样定义自定义页面状态，但如果您希望它有一个默认图标之外的图标，您还需要在您的 `extra.css` 中配置它。我们有一个[自定义页面状态的示例]可以帮助您入门。
 
-[example for a custom page status]: https://mkdocs-material.github.io/examples/page-status/
+[自定义页面状态的示例]: https://mkdocs-material.github.io/examples/page-status/
 
-### Setting the page `subtitle`
+### 设置页面 `subtitle` {#setting-the-page-subtitle}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.25.0 -->
 <!-- md:flag experimental -->
 
-Each page can define a subtitle, which is then rendered below the title as part
-of the navigation sidebar by using the front matter `subtitle` property, and
-adding the following lines:
+每个页面都可以定义一个副标题，然后作为导航侧边栏的一部分渲染，方法是使用前置事项 `subtitle` 属性，并添加以下行：
 
 ``` yaml
 ---
@@ -161,11 +133,9 @@ subtitle: Nullam urna elit, malesuada eget finibus ut, ac tortor
 ...
 ```
 
-### Setting the page `template`
+### 设置页面 `template` {#setting-the-page-template}
 
-If you're using [theme extension] and created a new page template in the
-`overrides` directory, you can enable it for a specific page. Add the following
-lines at the top of a Markdown file:
+如果您正在使用[主题扩展]并在 `overrides` 目录中创建了一个新的页面模板，您可以为特定页面启用它。在 Markdown 文件顶部添加以下行：
 
 ``` yaml
 ---
@@ -176,28 +146,24 @@ template: custom.html
 ...
 ```
 
-??? question "How to set a page template for an entire folder?"
+??? question "如何为整个文件夹设置页面模板？"
 
-    With the help of the [built-in meta plugin], you can set a custom template
-    for an entire section and all nested pages, by creating a `.meta.yml` file
-    in the corresponding folder with the following content:
+    借助[内置 meta 插件]，您可以为整个部分及其嵌套页面设置自定义模板，方法是在相应文件夹中创建一个 `.meta.yml` 文件，内容如下：
 
     ``` yaml
     template: custom.html
     ```
 
-  [theme extension]: ../customization.md#extending-the-theme
-  [built-in meta plugin]: ../plugins/meta.md
+  [主题扩展]: ../customization.md#extending-the-theme
+  [内置 meta 插件]: ../plugins/meta.md
 
-## Customization
+## 自定义 {#customization}
 
-### Using metadata in templates
+### 在模板中使用元数据 {#using-metadata-in-templates}
 
-#### :material-check-all: on all pages
+#### :material-check-all: 在所有页面上 {#on-all-pages}
 
-In order to add custom `meta` tags to your document, you can [extend the theme
-][theme extension] and [override the `extrahead` block][overriding blocks],
-e.g. to add indexing policies for search engines via the `robots` property:
+为了在文档中添加自定义 `meta` 标签，您可以[扩展主题][主题扩展]并[覆盖 `extrahead` 块][overriding blocks]，例如通过 `robots` 属性为搜索引擎添加索引策略：
 
 ``` html
 {% extends "base.html" %}
@@ -209,11 +175,9 @@ e.g. to add indexing policies for search engines via the `robots` property:
 
   [overriding blocks]: ../customization.md#overriding-blocks
 
-#### :material-check: on a single page
+#### :material-check: 在单个页面上 {#on-a-single-page}
 
-If you want to set a `meta` tag on a single page, or want to set different
-values for different pages, you can use the `page.meta` object inside your
-template override, e.g.:
+如果您想在单个页面上设置 `meta` 标签，或者想为不同页面设置不同的值，您可以在模板覆盖中使用 `page.meta` 对象，例如：
 
 ``` html
 {% extends "base.html" %}
@@ -227,9 +191,7 @@ template override, e.g.:
 {% endblock %}
 ```
 
-You can now use `robots` exactly like [`title`][title] and
-[`description`][description] to set values. Note that in this case, the
-template defines an `else` branch, which would set a default if none was given.
+现在，您可以像使用[`title`][title]和[`description`][description]那样使用 `robots` 设置值。注意，在这种情况下，模板定义了一个 `else` 分支，如果没有给定值，就会设置一个默认值。
 
   [title]: #setting-the-page-title
   [description]: #setting-the-page-description
