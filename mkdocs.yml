@@ -20,8 +20,8 @@
 
 # Project information
 site_name: Material for MkDocs 中文版文档
-site_url: https://squidfunk.github.io/mkdocs-material/
-site_author: Martin Donath
+site_url: https://guiyang.github.io/mkdocs-material-zh/
+site_author: Gui Yang
 site_description: >-
   用 Markdown 编写你的文档，并在几分钟内创建一个专业的静态站点 —— 可搜索、可自定义、支持60多种语言、适用于所有设备
 
