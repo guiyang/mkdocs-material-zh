@@ -266,7 +266,7 @@ theme:
   [Navigation expansion enabled]: ../assets/screenshots/navigation-expand.png
   [Navigation expansion disabled]: ../assets/screenshots/navigation.png
 
-### 导航路径 <small>面包屑导航</small> { id=navigation-path } {#navigation-path}
+### 导航路径 <small>面包屑导航</small> {#navigation-path}
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.28.0 -->
